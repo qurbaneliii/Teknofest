@@ -1,0 +1,177 @@
+--- PAGE 1 ---
+You are a senior bioinformatics data scientist. Perform a complete, rigorous
+Exploratory Data Analysis (EDA) on the TEKNOFEST 2026 AI in Healthcare competition
+datasets. Do NOT build a predictive model yet — your only job in this task is to
+understand the data deeply and produce a structured EDA report with supporting code
+and visualizations.
+════════════════════════════════════════════════════════════
+═══════════════
+CONTEXT
+════════════════════════════════════════════════════════════
+═══════════════
+Four CSV files, identical 353-column schema:
+YARISMA_TRAIN_MASTER.csv — multi-gene general dataset
+YARISMA_TRAIN_KANSER.csv — cancer gene panel (BRCA1/2, TP53, etc.)
+YARISMA_TRAIN_PAH.csv — PAH gene (phenylketonuria)
+YARISMA_TRAIN_CFTR.csv — CFTR gene (cystic fibrosis)
+Schema: Variant_ID | AL_1...AL_334 | CAT_1...CAT_6 | EK_1...EK_9 | AA_1 | AA_2 | Label
+Target: Label (binary) — Pathogenic (1) vs Benign (0), per ACMG/AMP 2015 guidelines.
+Known column-group hypotheses to verify, not assume:
+AL_* — population allele frequencies and statistical comparison tests
+(some columns are raw frequencies, some appear to be triplets of
+[frequency/p-value, secondary statistic, binary threshold flag])
+CAT_* — categorical metadata (population source, genotype, quality filters)
+EK_* — computational pathogenicity prediction scores (continuous, some signed)
+AA_* — wild-type (AA_1) and mutant (AA_2) amino acid single-letter codes
+Treat every hypothesis above as something to CONFIRM or REFUTE empirically —
+do not take it on faith. If your findings contradict it, report the contradiction.
+════════════════════════════════════════════════════════════
+═══════════════
+PHASE 1 — DATA INTEGRITY AND STRUCTURE
+════════════════════════════════════════════════════════════
+═══════════════
+1.1 Load all four files. Report shape, dtypes, and confirm schema identity
+(same 353 column names) across all four.
+1.2 Check for duplicate Variant_ID within each file and across files.
+Compute exact overlap counts between MASTER and each panel dataset
+
+--- PAGE 2 ---
+(set intersection on Variant_ID). Report which panel variants are
+"unique" (absent from MASTER) — these matter most for generalization
+testing later.
+1.3 Identify constant or near-constant columns (zero or near-zero variance).
+Flag any column where >99% of non-null values are identical.
+1.4 Report class balance (Label) for all four datasets and for the
+MASTER-only / MASTER-shared-with-panel subsets separately.
+1.5 Produce a missingness profile for every column: % missing, and group
+columns by missingness rate into bands (0%, 1-25%, 26-50%, 51-75%,
+76-99%, 100%). Visualize as a missingness heatmap or bar chart.
+════════════════════════════════════════════════════════════
+═══════════════
+PHASE 2 — UNIVARIATE ANALYSIS BY FEATURE GROUP
+════════════════════════════════════════════════════════════
+═══════════════
+For EACH feature group (AL, CAT, EK, AA), produce:
+2.1 AL columns (continuous/mixed):
+- Distribution summary (min, max, mean, median, std, skew) per column
+- Identify which AL columns are strictly binary {0,1} vs continuous
+- Group AL columns by identical non-null count (this reveals which
+columns come from the same underlying sub-database/population —
+columns with the same n_notna almost certainly belong together)
+- Plot histograms for a representative sample from each discovered group
+- Check for a constant column (report value and frequency if found)
+2.2 CAT columns (categorical):
+- Unique value counts and frequency tables for each CAT_* column
+- Flag any column with composite/multi-value strings (e.g., containing
+delimiters like "&", ",", "|") and quantify how common these are
+- Cross-tabulate each CAT column against Label
+2.3 EK columns (continuous scores):
+- Distribution summary per column, explicitly noting sign (any negative
+values?) and approximate range
+- Missingness rate per EK column — flag any EK column whose missingness
+rate differs substantially from the others (this is informative)
+- Pairwise correlation matrix (Spearman) across all EK columns; flag
+pairs with |rho| > 0.5 as candidates for redundancy
+
+--- PAGE 3 ---
+2.4 AA columns:
+- Frequency table of AA_1 and AA_2 individually
+- Frequency table of (AA_1, AA_2) pairs — the actual substitutions
+- Check for non-standard codes (stop codons, ambiguous codes, frameshift
+markers) and report how they're encoded
+════════════════════════════════════════════════════════════
+═══════════════
+PHASE 3 — BIVARIATE ANALYSIS: FEATURES vs LABEL
+════════════════════════════════════════════════════════════
+═══════════════
+3.1 For every numeric feature (raw AL, EK, and any engineered aggregate),
+compute a single-feature separation metric vs Label:
+- Mann-Whitney U test → convert to AUC-equivalent (rank-biserial)
+- Report p-value and effect size
+- Rank ALL numeric features by this AUC and present the top 25 and
+bottom 25 in a table
+3.2 For every categorical feature, compute Label rate per category
+(group-by mean) with category counts, sorted by Label rate. Flag any
+category whose Label rate deviates by more than 20 percentage points
+from the dataset-wide base rate.
+3.3 Investigate missingness AS a feature: for every column with partial
+missingness, compute the correlation (or mean Label difference) between
+"is this value missing" and Label. Report the columns where missingness
+itself is most predictive — this is a strong signal in ACMG-style data
+(absence from a population database can itself indicate rarity).
+3.4 Produce box plots or violin plots of the top 10 most separating numeric
+features, split by Label.
+════════════════════════════════════════════════════════════
+═══════════════
+PHASE 4 — MULTIVARIATE AND STRUCTURAL ANALYSIS
+════════════════════════════════════════════════════════════
+═══════════════
+4.1 If you confirm a triplet/grouped structure within the AL columns,
+verify it explicitly: for a sample of adjacent column triples, compute
+pairwise Spearman correlation. Determine whether the three columns in
+each apparent group are independent or redundant.
+
+--- PAGE 4 ---
+4.2 Run a correlation analysis across feature groups (not just within EK or
+within AL) to detect cross-group redundancy — e.g., does any AL
+aggregate correlate strongly with any EK score?
+4.3 Run PCA or another dimensionality-reduction technique on the AL block
+alone and report how much variance the top 10-20 components explain.
+This quantifies the effective dimensionality versus the raw 334 columns.
+4.4 Single-feature leakage scan: report any individual feature whose
+univariate AUC-equivalent exceeds 0.85. Treat any such feature as a
+leakage suspect requiring explanation, not automatic inclusion.
+════════════════════════════════════════════════════════════
+═══════════════
+PHASE 5 — CROSS-DATASET COMPARISON (MASTER vs PANELS)
+════════════════════════════════════════════════════════════
+═══════════════
+5.1 For each of the top 10 most discriminative features (from Phase 3),
+compare their distribution (and their Label-conditional means) across
+MASTER, KANSER, PAH, and CFTR. Identify any feature exhibiting
+meaningful covariate shift between panels.
+5.2 Compare class balance, missingness rates, and feature ranges between
+the "panel-unique" variants (present in a panel but absent from MASTER)
+versus the panel variants that overlap with MASTER. State explicitly
+whether the panel-unique subset looks like a harder or easier
+classification problem than the overlapping subset.
+5.3 Summarize, in one paragraph per panel, how that panel's variant
+population differs biologically/statistically from MASTER.
+════════════════════════════════════════════════════════════
+═══════════════
+PHASE 6 — ACMG EVIDENCE INTERPRETATION
+════════════════════════════════════════════════════════════
+═══════════════
+6.1 For every feature or engineered aggregate found to be strongly
+predictive in Phase 3, propose which ACMG/AMP evidence category
+(e.g., BA1, BS1, BS2, PM1, PM2, PM5, PP3, BP4, BP7) it most plausibly
+represents, and justify the mapping using the observed statistics
+(direction of effect, threshold-like behavior, biological mechanism).
+
+--- PAGE 5 ---
+6.2 Note any feature whose behavior does NOT cleanly map to a known ACMG
+criterion — these are candidates for being purely statistical/technical
+artifacts (e.g., sequencing depth proxies, quality filters) rather than
+direct clinical evidence.
+════════════════════════════════════════════════════════════
+═══════════════
+DELIVERABLE FORMAT
+════════════════════════════════════════════════════════════
+═══════════════
+Produce:
+1. A written EDA report (markdown), organized by the six phases above,
+with all tables and numeric findings embedded directly (not just
+described) — every claim should cite a specific computed number.
+2. All accompanying code (Python, pandas/numpy/scipy/matplotlib or
+seaborn) needed to reproduce every statistic and figure.
+3. A one-page "Executive Summary" at the very top of the report listing:
+- The 10 most predictive individual features and their AUC-equivalent
+- The single most important structural discovery about the AL columns
+- The most important missingness-related finding
+- The most important cross-dataset finding
+- Any leakage suspects found
+4. Do not proceed to model building, feature engineering for modeling, or
+hyperparameter discussion — this deliverable stops at understanding.
+Be skeptical of your own assumptions. Where column meanings are inferred
+rather than confirmed by metadata, say so explicitly and rate your
+confidence (high/medium/low) for each inference.
