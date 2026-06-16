@@ -1,0 +1,196 @@
+
+
+--- PAGE 1 ---
+PHASE 9.5 — REQUIRED VISUALIZATIONS AND GENERAL EVALUATION METRICS
+In addition to the previously defined evaluation outputs, generate all important model-specific
+plots and save them as high-resolution PNG files suitable for the official TEKNOFEST Project
+Detail Report.
+Required plots:
+1. Correlation Matrix / Feature Correlation Heatmap
+○ Generate a correlation matrix for the most important numeric features.
+○ Do not plot all 300+ raw columns if the figure becomes unreadable.
+○ Select a meaningful subset:
+■ top model features,
+■ EK features,
+■ key engineered AL frequency features,
+■ key ACMG-inspired flags,
+■ selected AA/CAT engineered features if numeric.
+○ Save as:
+■ reports/figures/correlation_matrix_top_features.png
+○ Also save the underlying correlation table as:
+■ reports/tables/correlation_matrix_top_features.csv
+2. Confusion Matrix
+○ Generate confusion matrices for:
+■ MASTER cross-validation predictions,
+■ KANSER-unique evaluation,
+■ PAH-unique evaluation,
+■ CFTR-unique evaluation,
+■ combined panel-unique evaluation if applicable.
+○ Show both raw counts and normalized percentages where possible.
+○ Save as:
+■ reports/figures/confusion_matrix_master.png
+■ reports/figures/confusion_matrix_kanser_unique.png
+■ reports/figures/confusion_matrix_pah_unique.png
+■ reports/figures/confusion_matrix_cftr_unique.png
+■ reports/figures/confusion_matrix_panel_unique_combined
+.png
+3. ROC Curve
+○ Plot ROC curves for the main model.
+○ Include AUC values in the legend.
+○ Generate separate or combined plots for:
+■ MASTER CV,
+■ KANSER-unique,
+■ PAH-unique,
+
+--- PAGE 2 ---
+■ CFTR-unique.
+○ Save as:
+■ reports/figures/roc_curve_master.png
+■ reports/figures/roc_curve_panel_unique.png
+4. Precision-Recall Curve
+○ Plot PR curves because the dataset is imbalanced and PR-AUC / Average
+Precision is important.
+○ Include Average Precision values in the legend.
+○ Save as:
+■ reports/figures/pr_curve_master.png
+■ reports/figures/pr_curve_panel_unique.png
+5. Threshold Optimization Plot
+○ Plot F1-macro, precision, recall, MCC, and Youden-J across thresholds.
+○ Clearly mark:
+■ default threshold 0.5,
+■ F1-optimal threshold,
+■ Youden-J threshold.
+○ Save as:
+■ reports/figures/threshold_optimization.png
+6. Model Comparison Plot
+○ Compare all implemented models:
+■ majority baseline,
+■ ACMG rule baseline,
+■ Logistic Regression EK-only,
+■ LightGBM,
+■ ensemble if implemented.
+○ Compare at least:
+■ ROC-AUC,
+■ PR-AUC / Average Precision,
+■ F1-macro,
+■ MCC.
+○ Save as:
+■ reports/figures/model_comparison_metrics.png
+7. Feature Importance Plot
+○ Generate feature importance for the main model.
+○ Prefer SHAP mean absolute importance if SHAP is available.
+○ Otherwise use LightGBM feature importance or permutation importance.
+○ Save as:
+■ reports/figures/feature_importance_top30.png
+○ Save the table as:
+■ reports/tables/feature_importance_top30.csv
+8. Class Distribution Plot
+○ Plot class distribution for:
+
+--- PAGE 3 ---
+■ MASTER,
+■ KANSER,
+■ PAH,
+■ CFTR,
+■ panel-unique subsets.
+○ Save as:
+■ reports/figures/class_distribution_by_dataset.png
+9. Missingness Plot
+○ Plot missing value percentages for important feature groups:
+■ AL,
+■ EK,
+■ CAT,
+■ AA.
+○ Save as:
+■ reports/figures/missingness_by_feature_group.png
+10. Error Analysis Plot
+● Analyze false positives and false negatives.
+● Plot the distribution of key features among:
+○ true positives,
+○ true negatives,
+○ false positives,
+○ false negatives.
+● At minimum, include:
+○ EK_7,
+○ EK_9,
+○ n_pops,
+○ max_AF,
+○ log_max_AF,
+○ EK_net_evidence if available.
+● Save as:
+○ reports/figures/error_analysis_key_features.png
+General evaluation metrics:
+For every model and every evaluation split, compute and save the following metrics:
+● Accuracy
+● Balanced Accuracy
+● ROC-AUC
+● PR-AUC / Average Precision
+● F1-score
+● F1-macro
+● F1-weighted
+● Precision
+
+--- PAGE 4 ---
+● Recall / Sensitivity
+● Specificity
+● Matthews Correlation Coefficient
+● Log Loss, if probability predictions are available
+● Brier Score, if probability predictions are available
+● Confusion matrix values:
+○ TN
+○ FP
+○ FN
+○ TP
+Save the full metric table as:
+reports/tables/all_evaluation_metrics.csv
+The metric table must contain these columns:
+model_name
+evaluation_split
+threshold_type
+threshold_value
+accuracy
+balanced_accuracy
+roc_auc
+pr_auc
+f1
+f1_macro
+f1_weighted
+precision
+recall
+specificity
+mcc
+log_loss
+brier_score
+tn
+fp
+fn
+tp
+n_samples
+Rules for plots and metrics:
+1. Do not fabricate any metric.
+2. Only report metrics that are actually computed from predictions.
+
+--- PAGE 5 ---
+3. If a metric cannot be computed because only one class is present in a split, write NaN
+and document the reason.
+4. Every plot must have:
+○ clear title,
+○ axis labels,
+○ readable legend where needed,
+○ appropriate figure size,
+○ high resolution, at least 300 DPI.
+5. Use consistent naming and save all figures under:
+○ reports/figures/
+6. Use consistent naming and save all metric tables under:
+○ reports/tables/
+7. These plots must also be referenced in:
+○ reports/final_model_report_summary.md
+○ relevant notebooks.
+8. The notebooks must display the most important plots inline:
+○ correlation matrix,
+○ confusion matrix,
+○ ROC curve,
+○ PR curve,
+○ threshold optimization,
+○ model comparison,
+○ feature importance.

@@ -1,0 +1,425 @@
+--- PAGE 1 ---
+╔═══════════════════════════════════════════════════════════
+════════════════╗
+║ TEKNOFEST 2026 — GENETIC VARIANT CLASSIFIER MASTER PROMPT ║
+║ For an expert AI model to build the complete competition solution ║
+╚═══════════════════════════════════════════════════════════
+════════════════╝
+You are an elite ML engineer with expertise in clinical genomics.
+Build the complete, competition-winning solution for TEKNOFEST 2026.
+Every instruction below is grounded in empirical analysis of the competition data.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+A. VERIFIED DATA FACTS (treat these as axioms — already empirically confirmed)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Schema: 353 cols per dataset. Variant_ID + AL_1:334 + CAT_1:6 + EK_1:9 + AA_1 + AA_2 +
+Label
+MASTER=2931(73.3%+), KANSER=388(69.1%+), PAH=372(83.3%+), CFTR=111(81.1%+)
+Confirmed overlaps:
+MASTER∩KANSER=246 MASTER∩PAH=255 MASTER∩CFTR=77 (panels mutually
+exclusive)
+MASTER-only: 2353 variants 68.5% pathogenic
+MASTER-shared: 578 variants 93.1% pathogenic ← exclude from CV val folds
+KANSER-unique: 142 variants 31.7% pathogenic ← true generalization test
+PAH-unique: 117 variants 58.1% pathogenic
+CFTR-unique: 34 variants 50.0% pathogenic
+AL_185 = constant 264,690 for all non-null values → DROP immediately
+AL_186 = global Fisher's p-value, n=2012, AUC=0.634 → keep
+Top single-feature AUCs: EK_7=0.738, EK_9=0.696, EK_3=0.690, EK_2=0.674
+n_pops=0.684, n_nonmiss_AL=0.663, AL_287=0.657, AL_26=0.645
+ACMG rule engine baseline: AUC=0.594, F1-macro=0.520
+LightGBM quick CV baseline: AUC=0.838±0.016, F1-macro=0.752±0.014
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+B. DATA PREPARATION — execute in this exact order
+
+--- PAGE 2 ---
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 1 — SETUP
+import numpy as np, pandas as pd
+np.random.seed(42)
+import random; random.seed(42)
+master = pd.read_csv("YARISMA_TRAIN_MASTER.csv")
+kanser = pd.read_csv("YARISMA_TRAIN_KANSER.csv")
+pah = pd.read_csv("YARISMA_TRAIN_PAH.csv")
+cftr = pd.read_csv("YARISMA_TRAIN_CFTR.csv")
+STEP 2 — OVERLAP MAPS (compute once, use throughout)
+master_ids = set(master.Variant_ID)
+kanser_ids = set(kanser.Variant_ID)
+pah_ids = set(pah.Variant_ID)
+cftr_ids = set(cftr.Variant_ID)
+panel_ids = kanser_ids | pah_ids | cftr_ids
+master_only_mask = master.Variant_ID.isin(master_ids - panel_ids)
+master_shared_mask = master.Variant_ID.isin(master_ids & panel_ids)
+kanser_unique = kanser[~kanser.Variant_ID.isin(master_ids)]
+pah_unique = pah[~pah.Variant_ID.isin(master_ids)]
+cftr_unique = cftr[~cftr.Variant_ID.isin(master_ids)]
+STEP 3 — DROP AL_185
+for df in [master, kanser, pah, cftr]:
+df.drop(columns=["AL_185"], inplace=True)
+al_cols = [c for c in master.columns if c.startswith("AL_")]
+al_raw = [f"AL_{i}" for i in range(1, 27)] # direct AF columns
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+C. FEATURE ENGINEERING — full function
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+def engineer_features(df, flag_cols, fit_cat1_encoder=None):
+"""
+df: input dataframe
+flag_cols: pre-computed list of binary AL columns
+fit_cat1_encoder: None for training (fit here), encoder for test/val
+Returns: (X_df, cat1_encoder)
+"""
+d = df.copy()
+
+--- PAGE 3 ---
+# ── BLOCK 1: Missingness indicators (BEFORE any imputation) ───────────────
+d["miss_AL1_6"] = d["AL_1"].isna().astype(float) # r=0.346 with label
+d["miss_AL7_15"] = d["AL_7"].isna().astype(float)
+d["miss_AL16_25"] = d["AL_16"].isna().astype(float)
+d["miss_AL27_38"] = d["AL_27"].isna().astype(float) # r=0.310 with label
+d["miss_EK3"] = d["EK_3"].isna().astype(float) # encodes variant type
+# Missingness PCA (captures "which database analyzed this variant")
+miss_matrix = d[al_cols].isna().astype(float)
+# Note: fit PCA on training data only; transform test data
+# Append miss_pc1..miss_pc10 as features
+# ── BLOCK 2: Population AF aggregates
+─────────────────────────────────────
+d["n_pops"] = d[al_raw].notna().sum(axis=1).astype(float)
+# n_pops=0 → 82.4% path; n_pops=10 → 84.9%; n_pops=26 → 27.4% (PM2 encoding)
+d["n_nonmiss_AL"] = d[al_cols].notna().sum(axis=1).astype(float)
+d["max_AF"] = d[al_raw].max(axis=1).fillna(0.0)
+d["min_AF_nz"] = d[al_raw].replace(0, np.nan).min(axis=1) # smallest non-zero
+d["log_max_AF"] = np.log10(d["max_AF"] + 1e-15)
+d["log_min_AF"] = np.log10(d["min_AF_nz"].fillna(1e-15) + 1e-15)
+d["BA1_flag"] = (d["max_AF"] > 0.05).astype(float) # ACMG BA1
+d["BS1_flag"] = (d["max_AF"] > 0.01).astype(float) # ACMG BS1
+d["PM2_flag"] = (d["n_pops"] == 0).astype(float) # ACMG PM2
+d["BS2_proxy"] = (d["n_pops"] >= 20).astype(float) # present in many pops
+d["n_pops_squared"]= d["n_pops"] ** 2 # captures nonlinearity
+# n_pops discrete tier encoding (top-k most informative tiers)
+d["npops_tier_0"] = (d["n_pops"] == 0).astype(float)
+d["npops_tier_10"] = (d["n_pops"] == 10).astype(float)
+d["npops_tier_26"] = (d["n_pops"] == 26).astype(float)
+# ── BLOCK 3: Triplet binary flag aggregates
+────────────────────────────────
+d["sum_flags"] = d[flag_cols].sum(axis=1)
+d["n_valid_flags"] = d[flag_cols].notna().sum(axis=1).clip(lower=1)
+d["frac_flags"] = d["sum_flags"] / d["n_valid_flags"]
+# ── BLOCK 4: EK score engineering
+─────────────────────────────────────────
+# DO NOT absolute-value any EK column. Negative = benign direction.
+# DO NOT impute EK_3 — let GBM handle NaN natively.
+d["EK7xEK9"] = d["EK_7"] * d["EK_9"] # AUC boost confirmed
+d["EK2xEK4"] = d["EK_2"] * d["EK_4"] # CADD × REVEL
+
+--- PAGE 4 ---
+d["EK4xEK6"] = d["EK_4"] * d["EK_6"] # REVEL × AlphaMissense
+d["EK7_minus_EK9"] = d["EK_7"] - d["EK_9"] # conservation disagreement
+d["max_prob_EK"] = d[["EK_4","EK_5","EK_6"]].max(axis=1) # best prob score
+# ACMG PP3/BP4 evidence counts
+d["n_EK_path"] = (
+(d["EK_2"] > 0).astype(float) +
+(d["EK_7"] > 5.0).astype(float) +
+(d["EK_9"] > 7.0).astype(float) +
+(d["EK_4"] > 0.7).astype(float) +
+(d["EK_6"] > 0.7).astype(float) +
+(d["EK_3"] > 2.0).astype(float)
+)
+d["n_EK_ben"] = (
+(d["EK_2"] < 0).astype(float) +
+(d["EK_7"] < 1.0).astype(float) +
+(d["EK_9"] < 3.0).astype(float) +
+(d["EK_4"] < 0.3).astype(float) +
+(d["EK_6"] < 0.3).astype(float)
+)
+d["EK_net_evidence"] = d["n_EK_path"] - d["n_EK_ben"] # PP3 minus BP4
+# ── BLOCK 5: Categorical features
+─────────────────────────────────────────
+# CAT_1 decomposition
+d["cat1_multipop"] = d["CAT_1"].str.contains("&", na=False).astype(float)
+# 95.1% pathogenic — single strongest binary flag in this group
+d["cat1_AFR"] = d["CAT_1"].str.contains("AFR", na=False).astype(float)
+# 18-30% pathogenic — dominant benign signal
+d["cat1_NFE"] = d["CAT_1"].str.contains("NFE", na=False).astype(float)
+# 83.3% pathogenic — dominant pathogenic signal
+d["cat1_gnomADe"] = d["CAT_1"].str.contains("gnomADe", na=False).astype(float)
+d["cat1_gnomADg"] = d["CAT_1"].str.contains("gnomADg", na=False).astype(float)
+# CAT_1 target encoding (5-fold, Laplace-smoothed, α=30)
+if fit_cat1_encoder is not None:
+d["cat1_te"] = d["CAT_1"].map(fit_cat1_encoder).fillna(
+fit_cat1_encoder.get("__global__", 0.73))
+else:
+global_mean = d["Label"].mean() if "Label" in d.columns else 0.73
+counts = d.groupby("CAT_1")["Label"].agg(["sum","count"])
+alpha = 30
+cat1_enc = ((counts["sum"] + alpha * global_mean) / (counts["count"] + alpha)).to_dict()
+cat1_enc["__global__"] = global_mean
+
+--- PAGE 5 ---
+d["cat1_te"] = d["CAT_1"].map(cat1_enc).fillna(global_mean)
+fit_cat1_encoder = cat1_enc
+# CAT_2: one-hot (7 AllofUs populations)
+cat2_dummies = pd.get_dummies(d["CAT_2"].fillna("missing"), prefix="cat2")
+d = pd.concat([d, cat2_dummies], axis=1)
+# CAT_6: quality filter
+d["cat6_has_filter"] = d["CAT_6"].notna().astype(float)
+d["cat6_segdup"] = (d["CAT_6"] == "segdup").astype(float)
+d["cat6_lcr"] = (d["CAT_6"] == "lcr").astype(float)
+# CAT_3/4/5 genotype consistency
+d["geno_consistent"] = (
+(d["CAT_3"] == d["CAT_4"]) & (d["CAT_4"] == d["CAT_5"])
+).astype(float)
+d["geno_missing"] = (d["CAT_3"] == "./.").astype(float)
+# ── BLOCK 6: Amino acid change features
+───────────────────────────────────
+hydrophobic = set("VILMFYWC")
+pos_charged = set("RKH")
+neg_charged = set("DE")
+special = set("GP") # glycine and proline
+def aa_class(aa):
+if pd.isna(aa): return "unknown"
+if aa in hydrophobic: return "hydrophobic"
+if aa in pos_charged: return "pos_charged"
+if aa in neg_charged: return "neg_charged"
+if aa in special: return "special"
+return "polar"
+d["aa1_class"] = d["AA_1"].apply(aa_class)
+d["aa2_class"] = d["AA_2"].apply(aa_class)
+d["aa_class_change"] = d["aa1_class"] + "_to_" + d["aa2_class"]
+# High-value binary flags (empirically derived from physicochemical analysis)
+d["aa_involves_G"] = ((d["AA_1"]=="G") | (d["AA_2"]=="G")).astype(float)
+d["aa_involves_P"] = ((d["AA_1"]=="P") | (d["AA_2"]=="P")).astype(float)
+d["aa_involves_C"] = ((d["AA_1"]=="C") | (d["AA_2"]=="C")).astype(float)
+d["aa_involves_R"] = ((d["AA_1"]=="R") | (d["AA_2"]=="R")).astype(float)
+d["aa_to_special"] = (d["aa2_class"] == "special").astype(float)
+d["aa_from_special"]= (d["aa1_class"] == "special").astype(float)
+
+--- PAGE 6 ---
+d["aa_class_changed"]=(d["aa1_class"] != d["aa2_class"]).astype(float)
+# BLOSUM62 (partial — most discriminative substitutions)
+BLOSUM62_key = {
+("G","R"):-2, ("G","P"):0, ("C","R"):-3, ("C","Y"):-2,
+("L","P"):-3, ("R","W"):-3, ("R","Q"): 1, ("E","K"): 1,
+("A","T"): 0, ("V","M"): 1, ("S","T"): 1, ("N","D"): 1
+}
+def get_blosum(r):
+key = (str(r["AA_1"]), str(r["AA_2"]))
+return BLOSUM62_key.get(key, BLOSUM62_key.get(key[::-1], 0))
+d["blosum62_approx"] = d.apply(get_blosum, axis=1)
+# For full BLOSUM62: use biopython Bio.Align.substitution_matrices.load("BLOSUM62")
+# AA change target encoding
+aa_change_str = d["AA_1"].astype(str) + d["AA_2"].astype(str)
+if "Label" in d.columns:
+global_mean = d["Label"].mean()
+counts = d.groupby(aa_change_str)["Label"].agg(["sum","count"])
+alpha = 10
+aa_enc = ((counts["sum"] + alpha * global_mean) / (counts["count"] + alpha)).to_dict()
+d["aa_change_te"] = aa_change_str.map(aa_enc).fillna(global_mean)
+return d, fit_cat1_encoder
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+D. VALIDATION STRATEGY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PRIMARY — 5-fold CV on MASTER with contamination guard:
+skf = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+shared_mask = master.Variant_ID.isin(panel_ids)
+for fold, (tr_idx, va_idx) in enumerate(skf.split(X, y)):
+# Remove shared variants from validation fold
+va_idx = [i for i in va_idx if not shared_mask.iloc[i]]
+# Train on all tr_idx (including shared variants — they help training)
+train_model(X[tr_idx], y[tr_idx])
+evaluate(X[va_idx], y[va_idx])
+SECONDARY — Panel-unique generalization (contamination-free):
+Train on: full MASTER (all 2931 variants)
+
+--- PAGE 7 ---
+Test on: kanser_unique (n=142), pah_unique (n=117), cftr_unique (n=34)
+Report: AUC-ROC, F1-macro, + bootstrap 95% CI (n=1000) for each
+THRESHOLD OPTIMIZATION:
+For each fold: precision_recall_curve → find threshold maximizing F1-macro
+Use median optimal threshold from all folds on final test predictions
+Report at: default(0.5), F1-optimal, Youden-J (for clinical recall trade-off)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+E. MODEL TRAINING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+BASELINE-1: ACMG rule engine (AUC=0.594, F1=0.520) — implement per Part III.6
+BASELINE-2: LR on EK_1–EK_9 (AUC=0.708) — StandardScaler + LogReg(C=1, balanced)
+MAIN: LightGBM with Optuna (100 trials)
+lgb.LGBMClassifier(
+n_estimators=3000, learning_rate=optimize,
+num_leaves=optimize([31,255]),
+min_child_samples=optimize([5,100]),
+colsample_bytree=optimize([0.5,1.0]),
+subsample=optimize([0.5,1.0]),
+reg_alpha=optimize([1e-4,10],log=True),
+reg_lambda=optimize([1e-4,10],log=True),
+scale_pos_weight=optimize([0.15,0.55]),
+random_state=42, verbose=-1
+)
+Objective: maximize mean 5-fold AUC on MASTER (contamination-aware)
+ENSEMBLE STACK:
+L0: [CatBoost, LightGBM, XGBoost, ExtraTrees, LR_EK_only]
+L1: LogisticRegression on [L0_OOF × 5, EK_7, EK_9, n_pops, max_AF]
+OOF training: each L0 model produces out-of-fold predictions on MASTER
+Final: average test predictions from 5-fold models → pass through L1
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+F. EXPLAINABILITY (required for competition report)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+--- PAGE 8 ---
+SHAP Analysis on best LightGBM model:
+explainer = shap.TreeExplainer(lgbm_best)
+shap_vals = explainer(X_val)
+Required figures:
+1. Global bar chart: mean |SHAP| → label each top feature with its ACMG criterion
+2. Beeswarm plot: feature value × SHAP direction
+3. Dependence: EK_7 colored by EK_9 (conservation × evolution interaction)
+4. Dependence: n_pops colored by max_AF (PM2 × BA1 interaction)
+5. Waterfall: 5 TP, 5 TN, 5 FP, 5 FN cases
+ACMG→Feature mapping table (include in report):
+| Feature | SHAP Direction | ACMG Criterion | Clinical Meaning |
+|---------------|---------------|----------------|-----------------------------|
+| max_AF > 0.05 | Negative | BA1 | Allele freq > 5% = Benign |
+| n_pops = 0 | Positive | PM2 | Absent from all databases |
+| EK_7 high | Positive | PP3 | Highly conserved position |
+| EK_9 high | Positive | PP3 | Evolution predicts pathogen |
+| cat1_multipop | Positive | PM2 strong | Rare across all populations |
+| EK_7 < 1.0 | Negative | BP4 | Not conserved = benign |
+| cat6_segdup | Negative | BP7 proxy | Low-quality region |
+| aa_involves_G | Positive | PS1/PM5 | Glycine change → structural |
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+G. ABLATION TABLE (run all 10, report in Chapter 7)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ABL-01: EK cols only (9 raw features) — Expected AUC: ~0.74–0.75
+ABL-02: AL cols only (raw, no engineering) — Expected AUC: ~0.65–0.68
+ABL-03: Engineered features only (no raw AL/EK) — Expected AUC: ~0.75–0.79
+ABL-04: All features, zero-imputation, no miss_flags — Expected: ~0.81–0.83
+ABL-05: All features + miss_flags (proposed) — Expected AUC: ~0.83–0.85
+ABL-06: No EK interaction terms — Expected: ~0.82–0.84
+ABL-07: No AA chemistry features — Expected: ~0.83–0.84
+ABL-08: No CAT_1 decomposition — Expected: ~0.82–0.84
+ABL-09: Single best LightGBM vs. full ensemble — Compare absolute values
+ABL-10: Default threshold (0.5) vs. optimized — Compare F1-macro only
+Format: table with [Model, CV_AUC, CV_F1macro, vs_Full_ΔAUC, vs_Full_ΔF1, Conclusion]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+--- PAGE 9 ---
+H. METRICS AND STATISTICS TO REPORT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+For every model and every evaluation set:
+Primary: AUC-ROC, AUC-PR (precision-recall), F1-macro
+Secondary: F1-weighted, MCC (Matthews), Cohen's Kappa
+Per-class: Precision, Recall, F1 for Pathogenic and Benign separately
+CIs: 95% bootstrap CI (n=1000) for all metrics on test sets
+Statistical tests:
+McNemar's test: best ML vs. ACMG rule engine
+Wilcoxon signed-rank: LightGBM vs. CatBoost (fold-level AUCs)
+DeLong test: full model AUC vs. EK-only LR AUC
+Calibration:
+Reliability diagram (calibration curve) for best model
+Expected Calibration Error (ECE)
+Brier score
+Apply isotonic regression if ECE > 0.05
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+I. PROJECT DETAIL REPORT OUTLINE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Ch 1 Problem and Clinical Motivation
+1.1 Why variant classification matters (1 in 300 person has a clinically actionable variant)
+1.2 ACMG/AMP 2015 guidelines: 5-tier system condensed to binary
+1.3 Dataset: 4 panels, 3,802 variants total, ACMG-labeled
+1.4 Competition framing: ML as clinical decision support tool
+Ch 2 Dataset Analysis
+2.1 Schema: 5 feature groups with biological meaning (table with ACMG mapping)
+2.2 AL column architecture: definitive group map with n_notna table
+2.3 EK column analysis: AUC table, correlation matrix, missingness
+2.4 Class imbalance: all 4 datasets, P:B ratios
+2.5 MNAR missingness: missingness ↔ label correlations (r=0.31–0.35)
+2.6 Cross-dataset overlap: contamination analysis, panel-unique statistics
+Ch 3 Feature Engineering
+3.1 Rationale for each feature group → ACMG evidence mapping
+3.2 n_pops: the PM2 evidence quantifier (empirical AUC=0.684, tier table)
+
+--- PAGE 10 ---
+3.3 Missingness as signal: biological interpretation + r values
+3.4 EK interaction terms: EK7×EK9 and EK2×EK4 rationale + AUC improvement
+3.5 Amino acid physicochemistry: class-change table, BLOSUM62 rationale
+3.6 CAT_1 target encoding: biological interpretation + Laplace smoothing
+Ch 4 Model Architecture
+4.1 Three-tier comparison: ACMG rules → LR-EK → LightGBM-full
+[Key chart: AUC = 0.594 → 0.708 → 0.838 → ~0.86 (ensemble)]
+4.2 Why gradient boosting: native NaN, non-linear interactions, SHAP
+4.3 Stacking ensemble diagram: L0 → L1 flow
+4.4 Hyperparameter optimization: Optuna TPE, search space, convergence
+Ch 5 Validation and Results
+5.1 Contamination-aware CV: methodology and justification
+5.2 Results table: per-fold + mean ± std for all 5 models
+5.3 Panel-unique generalization (KANSER/PAH/CFTR-unique)
+5.4 Threshold optimization analysis
+5.5 Calibration: reliability diagram + ECE scores
+Ch 6 Explainability
+6.1 SHAP global importance → ACMG criterion labeling
+6.2 Key SHAP dependence plots (EK_7 × EK_9, n_pops × max_AF)
+6.3 Four-quadrant case analysis (20 variants)
+6.4 ML vs. ACMG rules: where does ML add value? (quantified)
+Ch 7 Ablation Studies
+7.1 Full 10-experiment table
+7.2 Key findings: missingness flags add +X AUC, EK interactions add +Y
+Ch 8 Discussion
+8.1 Covariate shift: EK_7 benign means differ by panel (quantified)
+8.2 Limitations: CFTR n=34 unique, VUS not in training data
+8.3 Clinical implications: probability calibration, confidence thresholds
+8.4 Future work: multi-task learning, gene-specific calibration
+Ch 9 Conclusion
+9.1 Summary: ML achieves ΔAUC=+0.244 over clinical rules
+9.2 Reproducibility: seeds, code, requirements
+9.3 Clinical applicability statement
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+J. CRITICAL IMPLEMENTATION CHECKLIST
+
+--- PAGE 11 ---
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[ ] AL_185 dropped (constant = 264,690)
+[ ] Overlap maps computed; panel_ids defined
+[ ] Missingness flags created BEFORE imputation in all datasets
+[ ] n_pops computed from AL_1:26 (confirm bimodal 0/10/26 structure)
+[ ] EK negative values preserved (no abs())
+[ ] EK_3 left as NaN (not mean-imputed)
+[ ] CAT_1 target encoding uses only training-fold labels (no leakage)
+[ ] CAT_1 multi-pop "&" flag created (95.1% pathogenic)
+[ ] BLOSUM62 scores applied to AA_1/AA_2
+[ ] AA physicochemical class features created
+[ ] CV validation folds exclude MASTER-shared variants
+[ ] Panel-unique generalization test uses kanser_unique/pah_unique/cftr_unique
+[ ] Class weights set per dataset (not just global MASTER ratio)
+[ ] Threshold optimized on CV folds; applied to test set
+[ ] Optuna study saved; convergence plot in report
+[ ] SHAP computed on best LightGBM; all 5 required plots generated
+[ ] All 10 ablation experiments completed and tabulated
+[ ] Bootstrap CI (n=1000) for all test set metrics
+[ ] McNemar test vs. ACMG rule baseline reported
+[ ] Calibration curve + ECE score included
+[ ] Global random seeds: np.random.seed(42), random.seed(42), per-model seeds
+[ ] requirements.txt saved with pinned versions
+[ ] Final predicted probabilities saved alongside binary predictions
+╔═══════════════════════════════════════════════════════════
+════════════════╗
+║ END OF MASTER PROMPT ║
+╚═══════════════════════════════════════════════════════════
+════════════════╝

@@ -1,0 +1,59 @@
+SAĞLIKTA YAPAY ZEKA YARIŞMASI PROJE DETAY RAPORUGÖREV: Klinik Genomik Verilerde Yapay Zeka Tabanlı Varyant Patojenite TahminiYarışma Eğitim Seviyesi: Üniversite ve Üzeri SeviyesiProje Adı: Takım Adı:Takım ID:Başvuru ID:2026SAĞLIKTA YAPAY ZEKA YARIŞMASI PROJE DETAY RAPORUGÖREV: Klinik Genomik Verilerde Yapay Zeka Tabanlı Varyant Patojenite TahminiYarışma Eğitim Seviyesi: Üniversite ve Üzeri SeviyesiProje Adı: Takım Adı:Takım ID:Başvuru ID:2026
+SAĞLIKTA YAPAY ZEKA YARIŞMASI PROJE DETAY RAPORU
+GÖREV: Klinik Genomik Verilerde Yapay Zeka Tabanlı Varyant Patojenite Tahmini
+Yarışma Eğitim Seviyesi: Üniversite ve Üzeri Seviyesi
+Proje Adı:
+Takım Adı:
+Takım ID:
+Başvuru ID:
+2026
+SAĞLIKTA YAPAY ZEKA YARIŞMASI PROJE DETAY RAPORU
+GÖREV: Klinik Genomik Verilerde Yapay Zeka Tabanlı Varyant Patojenite Tahmini
+Yarışma Eğitim Seviyesi: Üniversite ve Üzeri Seviyesi
+Proje Adı:
+Takım Adı:
+Takım ID:
+Başvuru ID:
+2026
+1. GİRİŞ (10 puan)
+Bu bölümde, *missense varyant patojenite tahmini* problemi açık ve anlaşılır bir şekilde tanımlanmalıdır. Problemin özellikle klinik ve genomik bağlamdaki önemi vurgulanmalı ve tablo türü veri yapılarında sıkça karşılaşılan sınıf dengesizliği probleminin model başarımı üzerindeki etkileri açıklanmalıdır. Ayrıca, konuya ilişkin güncel 5–10 uluslararası çalışma incelenmeli; bu çalışmalarda kullanılan yöntemler, veri kaynakları (Örneğin ClinVar ve gnomAD) ve raporlanan başarım ölçütleri özetlenmelidir.
+2. YÖNTEM (25 puan)
+Bu bölümde, veri mühendisliği ve model geliştirme süreci bütüncül bir şekilde ele alınmalıdır.  Yöntemsel kurguda ilgili literatüre atıf yapılmalı ve kaynakçada sunulmalıdır.
+Bu bölümde veri işlemeyle ilgili olarak:
+kullanılan asimetrik ve şifreli genomik veri kümesinin yapısı
+veri kümesindeki eksik değerlerin nasıl tamamlandığı ve aykırı değerlerin model üzerindeki olumsuz etkisinin nasıl azaltıldığı
+veri kümesine dış kaynaklardan yeni veri eklenip eklenmediği belirtilmeli
+mevcut verilerden yeni özelliklerin, eğer üretildiyse,  nasıl üretildiği
+açıklanmalıdır.
+Ayrıca bu bölümde model geliştirme aşamasında kullanılan basamaklar belirtilmeli, özellikle:
+denenen algoritmalar ve seçilme gerekçeleri,
+modellerin başarımını artırmak amacıyla kullanılan ayar parametrelerinin( İng. hiperparameter) nasıl belirlendiği, hangi arama yönteminin tercih edildiği ve bu seçimlerin modelin genelleme gücü üzerindeki etkileri,
+modellerin doğrulama sürecinde kullanılan çapraz doğrulama yaklaşımları,
+modellerin aşırı uyum(İng. overfitting) riskini azaltmak için alınan önlemler,
+modellerin karar mekanizmasını anlamak amacıyla kullanılan açıklanabilirlik yöntemleri,
+modellerin karar eşiği belirleme süreci
+açıklanmalıdır.
+3. BULGULAR (30 puan)
+Bu bölümde sunulan yöntem sonucu elde edilen bulgular nesnel ve yorumsuz bir şekilde sunulmalıdır.
+Bulgulara ulaşmada kullanılan her bir algoritma ve o algoritmayla kullanılan hiperparametre optimizasyon çalışmaları gerekli istatistiksel veriler ile sunulmalıdır.
+Başarım ölçütü olarak en azından F1 skoru, Matthews korelasyon katsayısı ve kesinlik-duyarlılık eğrisi altında kalan alan ölçütleri raporlanmalıdır. Elde edilen bulgular karmaşıklık matrisi ve karşılaştırma grafikleri ile desteklenmelidir.
+Modellerin  başarımları yalnızca genel veri kümesi üzerinde ve ayrıca farklı alt gruplar (MASTER, KANSER, CFTR ve PAH) bazında ayrı ayrı raporlanmalıdır.
+Farklı karar eşiklerinin test sonuçları ve en doğru eşik değerler verisi sağlanmalıdır.
+4. SONUÇ (25 puan)
+Bu bölümde elde edilen bulgular yorumlanmalı ve çalışmanın genel katkısı ortaya konulmalıdır.
+Aday modellerin hangi durumlarda başarılı olduğu ve hangi durumlarda yetersiz kaldığı analiz edilmeli, kullanılan yöntemlerin güçlü ve zayıf yönleri açık bir şekilde tartışılmalıdır.
+Özellikle yanlış pozitif ve yanlış negatif sonuçlar ayrıntılı olarak incelenmeli, modelin hangi özellik gruplarında zorlandığı belirlenmeli ve bu hataların klinik veya biyolojik anlamı yorumlanmalıdır.
+Genel değerlendirme kapsamında, çalışmanın literatürdeki yeri yeniden ele alınmalı ve elde edilen sonuçların uygulama açısından ne ifade ettiği açıklanmalıdır.
+Son olarak, yarışmanın son basamağında karşılaşılabilecek zorluklar tartışılmalıdır.
+5. KAYNAKÇA (ve RAPOR DÜZENİ 10 PUAN)
+Raporun akademik yazım ve Türkçe dil kuralları ile belirtilen punto/sayfa sınırı kısıtlamalarına uyması; verilen bilgilerin grafik ve tablolar gibi görsel iletişim araçları ile yeterli, anlaşılabilir ve etkili sunulması ve referansların IEEE formatında doğru ve eksiksiz bir şekilde verilmesi.
+RAPOR TASLAKLARI İLE İLGİLİ NOT
+Tüm raporlar akademik rapor standartlarına uygun olarak yazılmalıdır.
+Raporların içerikleri ile ilgili bilgiler yukarıda belirtilmiştir.
+Tüm raporlar “İçindekiler” ve “Kaynakça” içermelidir.
+Her rapor bir kapak sayfası içermelidir.
+Her rapor bir “İçindekiler” sayfası içermelidir.
+Raporlar sayfaları birbirini takip edecek şekilde numaralandırılmalıdır.
+Yazı tipi: Aptos, Punto: 12, Başlık Yazı Tipi: Aptos, Başlık Punto: 14, Satır Aralıkları: 1.15, İki tarafa yaslı, Sayfa kenar boşlukları: üst 2.8 alt-sağ-sol 2.5 olmalıdır.
+Rapor içindekiler- “Kapak” ve “İçindekiler” kısmı hariç rapor 10 sayfayı geçmemelidir.
+10 sayfayı geçen raporlar değerlendirmeye alınmayacaktır.

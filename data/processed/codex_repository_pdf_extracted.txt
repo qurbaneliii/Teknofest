@@ -1,0 +1,468 @@
+--- PAGE 1 ---
+You are ChatGPT Codex working inside my project repository.
+Your role is to act as a senior AI engineer, data scientist, clinical genomics ML specialist, and
+technical project architect. Your task is to turn this repository into a complete, reproducible,
+competition-ready TEKNOFEST 2026 Healthcare AI solution for university-level clinical
+genomics variant pathogenicity prediction.
+The attached documents are the source of truth:
+1. prompt.pdf
+○ Contains the project-specific master prompt, verified data facts, feature
+engineering plan, validation strategy, model training plan, explainability
+requirements, and expected competition solution logic.
+2. şartname.pdf
+○ Contains the TEKNOFEST 2026 Healthcare AI competition rules, technical
+constraints, ethical requirements, evaluation logic, and university-level task
+definition.
+3. 2026_PDR_Şablon_Universite_TR_bCw49.docx
+○ Contains the official Project Detail Report structure and scoring expectations.
+You must read all three documents carefully before modifying the repository.
+Core mission:
+Build a fully working, clean, tested, academically documented, and report-ready AI/ML pipeline
+that predicts whether missense genetic variants are Pathogenic or Benign using the provided
+TEKNOFEST datasets. The final project must be suitable for university-level TEKNOFEST
+submission and must generate all technical outputs needed for the Project Detail Report.
+Do not only summarize the documents. You must implement the solution in the repository.
+Follow this workflow strictly.
+PHASE 0 — INITIAL REPOSITORY INSPECTION
+1. Inspect the full repository structure.
+2. Identify existing notebooks, scripts, data files, configuration files, outputs, and temporary
+files.
+3. Detect the available dataset files. Expected training files may include:
+○ YARISMA_TRAIN_MASTER.csv
+○ YARISMA_TRAIN_KANSER.csv
+○ YARISMA_TRAIN_PAH.csv
+○ YARISMA_TRAIN_CFTR.csv
+4. Do not assume file paths. Discover them programmatically.
+5. Before editing anything, produce a short implementation plan containing:
+
+--- PAGE 2 ---
+○ what the documents require,
+○ what the repository currently contains,
+○ which files you will create or modify,
+○ what the final runnable pipeline will look like.
+PHASE 1 — DOCUMENT ANALYSIS AND REQUIREMENT CHECKLIST
+Read and analyze all attached documents.
+Extract a strict implementation checklist from the documents, including:
+1. Competition task:
+○ binary classification of missense variants as Pathogenic or Benign,
+○ use of ACMG-based labels as ground truth,
+○ university-level TEKNOFEST Healthcare AI track,
+○ evaluation under asymmetric and clinically realistic dataset conditions.
+2. Dataset structure:
+○ MASTER, KANSER, PAH, and CFTR panels,
+○ Variant_ID,
+○ AL population/frequency features,
+○ CAT categorical metadata features,
+○ EK evolutionary/conservation/predictor score features,
+○ AA amino acid change features,
+○ Label as target.
+3. Critical constraints:
+○ no direct external lookup of hidden genomic addresses or labels,
+○ no leakage through identifiers,
+○ no validation contamination from overlapping variants,
+○ training/validation/test separation must be defensible,
+○ all preprocessing must be fitted only on training folds where applicable,
+○ results must be reproducible.
+4. Report requirements:
+○ Introduction-ready problem framing,
+○ Method-ready pipeline description,
+○ Findings-ready metrics and figures,
+○ Conclusion-ready error analysis,
+○ IEEE-style references placeholder or bibliography section,
+○ visual assets such as architecture diagram, metric tables, confusion matrices, PR
+curves, SHAP plots.
+Save the extracted checklist as:
+reports/implementation_checklist.md
+PHASE 2 — CLEAN PROJECT ARCHITECTURE
+
+--- PAGE 3 ---
+Create or normalize the repository into a clean structure similar to this:
+project_root/
+data/
+raw/
+processed/
+notebooks/
+01_data_understanding.ipynb
+02_feature_engineering_and_validation.ipynb
+03_model_training_and_evaluation.ipynb
+04_explainability_and_report_outputs.ipynb
+src/
+__init__.py
+config.py
+data_loading.py
+validation.py
+features.py
+baselines.py
+models.py
+evaluation.py
+explainability.py
+utils.py
+reports/
+figures/
+tables/
+implementation_checklist.md
+final_model_report_summary.md
+artifacts/
+models/
+preprocessors/
+predictions/
+metrics/
+tests/
+test_data_loading.py
+test_features.py
+test_validation.py
+README.md
+requirements.txt
+If the repository already has a reasonable structure, preserve it and adapt instead of blindly
+replacing it.
+PHASE 3 — DATA LOADING AND VALIDATION
+
+--- PAGE 4 ---
+Implement robust data loading in src/data_loading.py.
+Requirements:
+1. Load MASTER, KANSER, PAH, and CFTR datasets.
+2. Validate schema consistency across datasets.
+3. Confirm presence of:
+○ Variant_ID
+○ Label
+○ AL columns
+○ CAT columns
+○ EK columns
+○ AA columns
+4. Print and save dataset summaries:
+○ shape,
+○ class distribution,
+○ missingness summary,
+○ duplicate Variant_ID counts,
+○ overlap statistics between MASTER and panel datasets.
+5. Drop AL_185 if present, because the project prompt identifies it as constant.
+6. Do not drop biologically meaningful missingness before feature engineering.
+7. Save summary tables to:
+○ reports/tables/dataset_summary.csv
+○ reports/tables/missingness_summary.csv
+○ reports/tables/overlap_summary.csv
+PHASE 4 — LEAKAGE CONTROL AND VALIDATION DESIGN
+Implement contamination-aware validation in src/validation.py.
+Requirements:
+1. Compute overlap maps:
+○ MASTER ∩ KANSER
+○ MASTER ∩ PAH
+○ MASTER ∩ CFTR
+○ MASTER-only variants
+○ MASTER-shared variants
+○ panel-unique variants.
+2. Primary validation:
+○ 5-fold StratifiedKFold on MASTER,
+○ remove MASTER-shared variants from validation folds,
+○ allow shared variants only in training if justified,
+○ report fold sizes and class distributions.
+
+--- PAGE 5 ---
+3. Secondary validation:
+○ train on full MASTER,
+○ evaluate on KANSER-unique, PAH-unique, and CFTR-unique subsets,
+○ report each panel separately.
+4. Save validation split diagnostics to:
+○ reports/tables/validation_split_diagnostics.csv
+5. Ensure Variant_ID is never used as a model feature.
+PHASE 5 — FEATURE ENGINEERING
+Implement feature engineering in src/features.py.
+The implementation must follow prompt.pdf as the primary source of truth, but it must be
+coded cleanly and safely.
+Feature engineering requirements:
+1. Missingness indicators:
+○ AL block missingness indicators,
+○ EK missingness indicators where relevant,
+○ missingness PCA fitted only on training folds and transformed on validation/test
+folds.
+2. Population/frequency features:
+○ number of non-missing population frequency values,
+○ maximum allele frequency,
+○ minimum non-zero allele frequency,
+○ log-transformed frequency features,
+○ ACMG-inspired flags such as BA1, BS1, PM2, BS2 proxy,
+○ nonlinear and tier features for population count.
+3. Binary flag aggregates:
+○ sum of binary AL flag columns,
+○ number of valid flags,
+○ fraction of active flags.
+4. EK score features:
+○ preserve negative EK directions,
+○ do not absolute-value EK columns,
+○ avoid invalid imputation for EK_3 if tree models can handle NaN,
+○ interaction features such as EK7 × EK9, EK2 × EK4, EK4 × EK6,
+○ evidence counts such as pathogenic evidence count, benign evidence count, and
+net evidence.
+5. CAT categorical metadata features:
+○ CAT_1 decomposition,
+○ CAT_1 target encoding using fold-safe training-only fitting,
+○ CAT_2 one-hot encoding with train/validation column alignment,
+
+--- PAGE 6 ---
+○ CAT_6 quality/filter flags,
+○ genotype consistency features from CAT_3, CAT_4, and CAT_5.
+6. AA amino acid change features:
+○ amino acid class mapping,
+○ class-change features,
+○ flags for glycine, proline, cysteine, arginine involvement,
+○ approximate or full BLOSUM62 substitution score,
+○ fold-safe amino acid change target encoding.
+7. All encoders, PCA objects, imputers, and feature column lists must be fitted only on
+training data and reused for validation/test data.
+8. Save final feature list to:
+○ artifacts/metrics/feature_list.json
+PHASE 6 — BASELINES
+Implement baselines in src/baselines.py.
+Required baselines:
+1. Majority-class baseline.
+2. ACMG-inspired rule engine baseline.
+3. Logistic Regression baseline using EK features only:
+○ StandardScaler,
+○ class balancing,
+○ reproducible random state.
+For each baseline, report:
+● ROC-AUC,
+● PR-AUC / Average Precision,
+● F1-macro,
+● MCC,
+● precision,
+● recall,
+● confusion matrix.
+Save baseline results to:
+reports/tables/baseline_results.csv
+PHASE 7 — MAIN MODEL TRAINING
+Implement model training in src/models.py.
+Main model priority:
+
+--- PAGE 7 ---
+1. LightGBM classifier with Optuna hyperparameter optimization if LightGBM and Optuna
+are available.
+2. If Optuna is unavailable, use a strong manually defined LightGBM configuration.
+3. If LightGBM is unavailable, fall back to HistGradientBoostingClassifier or
+RandomForest/ExtraTrees with clear documentation of the fallback.
+4. Optional ensemble if dependencies are available:
+○ LightGBM,
+○ CatBoost,
+○ XGBoost,
+○ ExtraTrees,
+○ LogisticRegression EK-only.
+5. Use out-of-fold predictions for stacking if ensemble is implemented.
+6. Do not implement a fragile ensemble unless all dependencies and data alignment are
+stable.
+7. Prioritize a working, reproducible, well-tested model over a broken overcomplicated
+model.
+Training requirements:
+1. Use contamination-aware 5-fold validation.
+2. Optimize primarily for ROC-AUC and F1-macro.
+3. Also report PR-AUC and MCC because the official report template requires them.
+4. Use fixed random seeds.
+5. Save trained models to:
+○ artifacts/models/
+6. Save out-of-fold predictions to:
+○ artifacts/predictions/oof_predictions.csv
+7. Save panel-unique predictions to:
+○ artifacts/predictions/panel_unique_predictions.csv
+PHASE 8 — THRESHOLD OPTIMIZATION
+Implement threshold analysis in src/evaluation.py.
+Requirements:
+1. Evaluate threshold 0.5.
+2. Compute F1-macro optimal threshold from validation predictions.
+3. Compute Youden-J threshold.
+4. Report metrics at all thresholds.
+5. Save:
+○ reports/tables/threshold_results.csv
+○ threshold comparison plot in
+reports/figures/threshold_comparison.png
+
+--- PAGE 8 ---
+PHASE 9 — EVALUATION AND REPORT-READY RESULTS
+For each model and validation setup, compute:
+1. ROC-AUC.
+2. PR-AUC / Average Precision.
+3. F1-macro.
+4. MCC.
+5. Precision.
+6. Recall.
+7. Confusion matrix.
+8. Class-specific errors.
+9. Bootstrap 95% confidence intervals where sample size allows.
+Report results separately for:
+1. MASTER cross-validation.
+2. KANSER-unique.
+3. PAH-unique.
+4. CFTR-unique.
+5. Combined panel-unique evaluation if appropriate.
+Save outputs:
+reports/tables/main_model_cv_results.csv
+reports/tables/panel_generalization_results.csv
+reports/tables/error_analysis.csv
+reports/figures/confusion_matrix_master.png
+reports/figures/pr_curve_master.png
+reports/figures/roc_curve_master.png
+reports/figures/model_comparison.png
+PHASE 10 — EXPLAINABILITY
+Implement explainability in src/explainability.py.
+Requirements:
+1. Use SHAP for LightGBM if available.
+2. If SHAP is unavailable, use permutation importance as fallback.
+3. Produce:
+○ global feature importance bar chart,
+○ SHAP or permutation importance table,
+○ dependence-style plots for key features where possible,
+○ error-case analysis for false positives and false negatives.
+
+--- PAGE 9 ---
+4. Map major engineered features to ACMG-inspired biological interpretations where
+possible:
+○ population frequency features → BA1 / BS1 / PM2-style evidence,
+○ conservation/evolution features → PP3 / BP4-style evidence,
+○ amino acid change features → protein impact proxy,
+○ quality/filter features → data reliability.
+Save:
+● reports/tables/feature_importance.csv
+● reports/tables/acmg_feature_mapping.csv
+● reports/figures/feature_importance.png
+● SHAP figures if available.
+PHASE 11 — NOTEBOOKS
+Create clean Jupyter notebooks.
+Required notebooks:
+1. notebooks/01_data_understanding.ipynb
+○ dataset loading,
+○ schema validation,
+○ class distributions,
+○ missingness analysis,
+○ overlap analysis,
+○ leakage risk discussion.
+2. notebooks/02_feature_engineering_and_validation.ipynb
+○ feature engineering explanation,
+○ validation strategy,
+○ fold diagnostics,
+○ examples of generated features.
+3. notebooks/03_model_training_and_evaluation.ipynb
+○ baseline models,
+○ main model,
+○ threshold optimization,
+○ cross-validation metrics,
+○ panel-unique generalization.
+4. notebooks/04_explainability_and_report_outputs.ipynb
+○ feature importance,
+○ SHAP/permutation explainability,
+○ error analysis,
+○ report-ready tables and figures.
+
+--- PAGE 10 ---
+Notebook rules:
+1. Every notebook must have academic markdown explanations.
+2. Every notebook must be executable from top to bottom.
+3. Do not leave broken, empty, duplicate, or experimental cells.
+4. Keep outputs useful but not excessively large.
+5. All notebooks must use functions from src/ instead of duplicating large code blocks.
+PHASE 12 — TESTING
+Create a minimal but meaningful test suite.
+Tests should verify:
+1. Data files load correctly.
+2. Required columns are detected.
+3. Variant_ID is excluded from features.
+4. AL_185 is dropped if present.
+5. Feature engineering returns aligned train/validation columns.
+6. Validation folds do not include MASTER-shared variants in validation.
+7. Metric functions work on small synthetic arrays.
+8. The main pipeline can run in a smoke-test mode.
+Add a command such as:
+python -m pytest tests
+If pytest is not installed, provide a simple fallback smoke test script:
+python src/smoke_test.py
+PHASE 13 — END-TO-END RUNNER
+Create a single end-to-end runner script if appropriate:
+run_pipeline.py
+It should:
+1. Load data.
+2. Build overlap maps.
+3. Create validation folds.
+4. Train baselines.
+5. Train main model.
+
+--- PAGE 11 ---
+6. Optimize thresholds.
+7. Evaluate MASTER CV and panel-unique generalization.
+8. Generate figures/tables.
+9. Save artifacts.
+10. Print a final concise summary.
+Add CLI options:
+python run_pipeline.py --mode full
+python run_pipeline.py --mode smoke
+The smoke mode should run quickly with reduced trials/folds/sample size if needed.
+PHASE 14 — README AND REPORT SUMMARY
+Update README.md with:
+1. Project title.
+2. TEKNOFEST task description.
+3. Dataset placement instructions.
+4. Environment setup.
+5. How to run notebooks.
+6. How to run the full pipeline.
+7. How to run tests.
+8. Output file descriptions.
+9. Reproducibility notes.
+10. Leakage-control explanation.
+Create:
+reports/final_model_report_summary.md
+This file must be directly usable while writing the official Project Detail Report. It should contain:
+1. Problem definition.
+2. Dataset summary.
+3. Method summary.
+4. Feature engineering summary.
+5. Validation strategy.
+6. Model architecture.
+7. Metrics table references.
+8. Explainability summary.
+9. Error analysis summary.
+10. Limitations and next steps.
+
+--- PAGE 12 ---
+PHASE 15 — CLEANUP
+After implementation and testing:
+1. Remove unnecessary temporary files.
+2. Remove duplicate notebooks or broken scripts.
+3. Remove debug-only outputs.
+4. Keep only essential, clean, reproducible files.
+5. Do not delete raw data files.
+6. Do not delete official uploaded documents.
+7. Do not delete generated metrics, figures, models, or reports.
+PHASE 16 — FINAL VERIFICATION
+Before finishing, run:
+1. Python syntax checks.
+2. Unit tests or smoke tests.
+3. End-to-end smoke pipeline.
+4. At least one notebook execution check if possible.
+5. Confirm that all expected report tables and figures are generated.
+If a full run is computationally expensive, run smoke mode and clearly document how to run full
+mode.
+FINAL RESPONSE FORMAT
+When finished, report the following:
+1. Documents analyzed.
+2. Requirement checklist completed.
+3. Files created or modified.
+4. Pipeline architecture.
+5. Models implemented.
+6. Validation strategy implemented.
+7. Metrics generated.
+8. Figures generated.
+9. Tests run and results.
+10. How I can run the project.
+11. Remaining limitations or assumptions.
+Critical rules:
+1. Treat the attached documents as the source of truth.
+2. If the project prompt and repository conflict, follow the documents unless the repository
+reveals a hard technical constraint.
+
+--- PAGE 13 ---
+3. If a requirement is ambiguous, make the most reasonable professional decision and
+document the assumption.
+4. Do not fabricate results. Only report metrics that are actually computed by running code.
+5. Do not use Variant_ID as a feature.
+6. Do not leak validation labels into preprocessing, target encoding, PCA, imputation,
+threshold selection, or model fitting.
+7. Do not use external sources to directly recover hidden variant labels.
+8. Prioritize a fully working, tested, reproducible solution over unnecessary complexity.
+9. Keep the codebase clean and academic/professional.
+10. The final output must be competition-ready, report-ready, and reproducible.

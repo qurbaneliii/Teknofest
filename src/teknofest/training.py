@@ -13,6 +13,7 @@ from sklearn.impute import SimpleImputer
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import (
     average_precision_score,
+    cohen_kappa_score,
     f1_score,
     matthews_corrcoef,
     precision_recall_fscore_support,
@@ -58,6 +59,7 @@ class FoldResult:
     f1_macro: float
     f1_weighted: float
     mcc: float
+    cohen_kappa: float
     benign_precision: float
     benign_recall: float
     benign_f1: float
@@ -120,6 +122,7 @@ def metric_row(
         f1_macro=float(f1_score(y_true_arr, y_pred, average="macro")),
         f1_weighted=float(f1_score(y_true_arr, y_pred, average="weighted")),
         mcc=float(matthews_corrcoef(y_true_arr, y_pred)),
+        cohen_kappa=float(cohen_kappa_score(y_true_arr, y_pred)),
         benign_precision=float(precision[0]),
         benign_recall=float(recall[0]),
         benign_f1=float(f1[0]),
@@ -286,6 +289,61 @@ def optimize_lgbm(prepared: PreparedData, n_trials: int = 100) -> tuple[dict[str
     study = optuna.create_study(direction="maximize", sampler=optuna.samplers.TPESampler(seed=42))
     study.optimize(objective, n_trials=n_trials, show_progress_bar=True)
     return dict(study.best_params), pd.DataFrame(trial_rows)
+
+
+def optimize_lgbm_resumable(
+    prepared: PreparedData,
+    n_trials: int = 100,
+    storage_url: str | None = None,
+    study_name: str = "teknofest_lgbm",
+    max_estimators: int = 3000,
+    timeout_seconds: int | None = None,
+) -> tuple[dict[str, object], pd.DataFrame]:
+    folds = contamination_aware_folds(prepared.master["Label"], prepared.master_shared_mask)
+    fold_data = []
+    for fold in folds:
+        train_df, val_df = fold_engineered_data(prepared, fold.train_idx, fold.val_idx)
+        x_train, x_val = align_numeric(train_df, val_df)
+        fold_data.append((x_train, train_df["Label"], x_val, val_df["Label"]))
+
+    def objective(trial: optuna.Trial) -> float:
+        params = {
+            "n_estimators": max_estimators,
+            "learning_rate": trial.suggest_float("learning_rate", 0.01, 0.08, log=True),
+            "num_leaves": trial.suggest_int("num_leaves", 31, 255),
+            "min_child_samples": trial.suggest_int("min_child_samples", 5, 100),
+            "colsample_bytree": trial.suggest_float("colsample_bytree", 0.5, 1.0),
+            "subsample": trial.suggest_float("subsample", 0.5, 1.0),
+            "reg_alpha": trial.suggest_float("reg_alpha", 1e-4, 10.0, log=True),
+            "reg_lambda": trial.suggest_float("reg_lambda", 1e-4, 10.0, log=True),
+            "scale_pos_weight": trial.suggest_float("scale_pos_weight", 0.15, 0.55),
+        }
+        aucs = []
+        for x_train, y_train, x_val, y_val in fold_data:
+            model = make_lgbm(params)
+            model.fit(
+                x_train,
+                y_train,
+                eval_set=[(x_val, y_val)],
+                eval_metric="auc",
+                callbacks=[lgb.early_stopping(100, verbose=False)],
+            )
+            preds = model.predict_proba(x_val)[:, 1]
+            aucs.append(roc_auc_score(y_val, preds))
+        return float(np.mean(aucs))
+
+    optuna.logging.set_verbosity(optuna.logging.WARNING)
+    study = optuna.create_study(
+        direction="maximize",
+        sampler=optuna.samplers.TPESampler(seed=42),
+        storage=storage_url,
+        study_name=study_name,
+        load_if_exists=True,
+    )
+    study.optimize(objective, n_trials=n_trials, timeout=timeout_seconds, show_progress_bar=True)
+    trials = study.trials_dataframe(attrs=("number", "value", "params", "state"))
+    trials = trials.rename(columns={"number": "trial", "value": "mean_auc"})
+    return dict(study.best_params), trials
 
 
 def fit_final_lgbm(

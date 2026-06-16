@@ -1,0 +1,568 @@
+--- PAGE 1 ---
+SAĞLIKTA YAPAY
+ZEKA YARIŞMASI
+ŞARTNAMESİ
+2026
+
+--- PAGE 2 ---
+VERSİYONLAR
+Versiyon Tarih Açıklama
+V1.0 09.01.2026 İlk yayın
+V1.1 21.01.2026 Lise Seviyesi Yarışma Kapsamı
+V1.2 20.02.2026 Yarışma Takvimi
+V2.0 23.03.2026 3.2. Üniversite ve Üzeri Seviyesi ve
+7.3.Üniversite ve Üzeri Seviyesi
+Final Değerlendirmesi güncellendi.
+
+--- PAGE 3 ---
+İÇİNDEKİLER
+1. TANIMLAR VE KISALTMALAR ............................................................................... 3
+2. YARIŞMANIN AMACI .......................................................................................... 4
+3. YARIŞMA KAPSAMI ............................................................................................. 5
+3.1. Lise Seviyesi .................................................................................................. 5
+3.1.1. Kullanılacak Veri Seti .................................................................................. 5
+3.1.2. Yarışma Aşamaları ..................................................................................... 5
+3.2. Üniversite ve Üzeri Seviyesi ............................................................................ 6
+4. YARIŞMAYA KATILIM KOŞULLARI......................................................................... 8
+5. TAKIM OLUŞTURMA ........................................................................................... 9
+6. YARIŞMA TAKVİMİ ............................................................................................ 11
+7. PUANLAMA VE DEĞERLENDİRME ..................................................................... 11
+7.1. Yarışmanın Değerlendirilmesi ....................................................................... 11
+7.1.1. Proje Sunuş Raporunun Sunulması ve Değerlendirilmesi ............................ 12
+7.1.2. Proje Detay Raporunun Sunulması ve Değerlendirilmesi ............................. 12
+7.2. Lise Seviyesi Final Değerlendirmesi .............................................................. 12
+7.3. Üniversite ve Üzeri Seviyesi Final Değerlendirmesi ......................................... 13
+7.4. Genel Değerlendirme ve Puanlama ............................................................... 13
+7.5. Yarışmanın Puanlanması.............................................................................. 13
+7.6. Takımlarla Soru-Cevap Toplantıları ............................................................... 13
+7.7. Yarışmacılarla Paylaşılacak Veri Setleri ......................................................... 14
+8. ÖDÜLLER ........................................................................................................ 14
+8.1. En İyi Sunum Ödülleri ................................................................................... 14
+8.2. Ödüllendirme ile İlgili Hususlar ..................................................................... 15
+9. GENEL KURALLAR ........................................................................................... 15
+10. ETİK KURALLAR ........................................................................................... 15
+11. İLETİŞİM ...................................................................................................... 16
+12. SORUMLULUK BEYANI ................................................................................. 16
+12.1. Kişisel Verilerin Kullanılması/İşlenmesi ......................................................... 17
+
+--- PAGE 4 ---
+1. TANIMLAR VE KISALTMALAR
+İşbu şartnamede belirtilen;
+Banka Bildirim Formu: Adına ödeme yapılacak kişinin ödemenin yapılacağı banka bilgisi
+ve gerekli kişisel bilgilerini beyan ettiği matbu formu,
+Danışma ve Değerlendirme Kurulu: TEKNOFEST Sağlıkta Yapay Zekâ Yarışmasında
+konu belirleme, veri seti oluşturma ve düzenleme, rapor değerlendirme, şartname
+revizyonu, rapor şablonu oluşturma, teknik soruları yanıtlama, yarışmacı bilgi kiti
+oluşturma gibi konularda görev alan, alanında uzman kişilerden oluşan kurulu,
+KYS: TEKNOFEST Kurumsal Yönetim Sistemi’ni,
+Lise Seviyesi: Lisede okuyan ya da son bitirdiği okul lise olan ve başka bir eğitim
+kurumunda kayıtlı olmayan kişilerin katıldığı yarışmaları,
+Gizlilik Sözleşmesi: Sağlıkta Yapay Zekâ Yarışması kapsamında T.C. Sağlık
+Bakanlığı/TÜSEB tarafından yarışmacıların modellerini eğitmek ve/veya test etmek
+amacıyla paylaşılan anonimleştirilmiş bilgi/belge/veriyi kullanabilmeleri için
+yarışmacıların imzaladıkları “Kurumsal Gizlilik Taahhütnamesi”ni,
+Paydaş: T.C. Sağlık Bakanlığı, Türkiye Sağlık Enstitüleri Başkanlığı ve T3 Vakfı’nı,
+Sistem: Yarışmacıların çözüm ve önerilerinin işler durumda olabilmesi için gerekli her
+türlü donanım ve yazılımları içeren düzeni,
+Takım: En az 2 (iki) ya da en fazla 5 (beş) kişiden oluşan ekibe verilen ismi,
+Takım Kaptanı: Yarışmalarda takımı temsil yetkisi olan takım üyesini,
+Takım Danışmanı: Lise seviyesinde zorunlu, Üniversite ve Üzeri seviyelerinde ise isteğe
+bağlı ve her takım için en fazla 1 (bir) öğretmen/eğitmen/akademisyeni,
+TEKNOFEST: Havacılık, Uzay ve Teknoloji Festivalini,
+TEKNOFEST Yarışmalar Komitesi: Paydaş kurumlardan ilgili sorumlu üyelerin
+oluşturduğu komiteyi,
+TÜSEB: Türkiye Sağlık Enstitüleri Başkanlığını,
+T3 Vakfı: Türkiye Teknoloji Takımı Vakfını,
+Yarışma Süreci: Yarışma başvurularının alınmaya başladığı tarih ile final sonuçlarının
+açıklandığı tarih arasında geçen süreyi belirtmektedir.
+
+--- PAGE 5 ---
+2. YARIŞMANIN AMACI
+Son yıllarda yapay zekâ, sağlık alanında giderek daha görünür ve etkili bir rol
+üstlenmektedir. Tanıdan tedaviye, risk öngörüsünden klinik karar destek süreçlerine
+kadar pek çok aşamada kullanılan yapay zekâ tabanlı çözümler, sağlık hizmetlerinin hem
+doğruluğunu hem de verimliliğini artırmaktadır. Bu yaklaşımdan hareketle düzenlenen
+TEKNOFEST Sağlıkta Yapay Zekâ Yarışması, sağlık alanına yönelik yenilikçi, uygulanabilir
+ve yüksek katma değerli yapay zekâ çözümlerinin geliştirilmesini teşvik etmektedir. Bu
+yılki yarışmada, önceki yıllarda ağırlıklı olarak ele alınan radyoloji alanından farklı olarak,
+yüksek veri hacmine sahip olmaları ve güçlü klinik etki potansiyeli taşımaları nedeniyle
+Genetik ve Kardiyoloji alanları öncelikli odak alanları olarak belirlenmiştir. Genetik
+alanında hastalıkların erken tanısına ve kişiselleştirilmiş tedavi yaklaşımlarına yönelik
+çözümler öne çıkarken; kardiyoloji alanında ise kalp ve damar hastalıklarının erken
+tespiti, risk değerlendirmesi ve klinik karar süreçlerini destekleyen yapay zekâ
+uygulamaları ön plana çıkmaktadır.
+Lise Seviyesindeki takımlar,
+Elektrokardiyografi (EKG) verilerini yapay zekâ yöntemleriyle işleyerek kardiyak ritim
+bozuklukları, iletim anormallikleri gibi temel klinik durumları tanıyabilen modeller
+geliştirecektir. Bu alanın seçimi, yarışmacıların sinyal işleme ve makine öğrenmesi
+mimarilerini kullanarak, klinik açıdan kritik karar noktalarını temsil eden detaylı EKG
+bulguları üzerinde çalışmalarına olanak tanıyacaktır.
+Üniversite ve Üzeri Seviyesindeki takımlar,
+Bilinen az sayıdaki varyantın biyolojik ve hesaplamalı özelliklerini kullanarak, klinik etkisi
+bilinmeyen varyantların "Patojenik (hastalık yapıcı)" veya "Benign (iyi huylu)" olma
+durumuna yönelik tahmin modelleri geliştirecektir.
+Yarışmacıların geliştirecekleri modeller ile bilinen az sayıdaki varyantın biyolojik
+özelliklerinden yola çıkıp bilinmeyenler üzerinde tahmin yürüterek literatüre katkı
+sunulması amaçlanmaktadır.
+TEKNOFEST 2026 kapsamında, takımlar modellerini, belirlenen problemler ile ilgili
+verilen veri setleri ile birlikte açık veri kaynaklarını da kullanarak geliştirecektir. Geliştirilen
+modeller, yarışma sırasında yeni verilerle test edilerek eksternal validasyon (dış
+doğrulama) süreci gerçekleştirilecektir. Klinik uygulamalara geçişte kritik bir aşama olan
+eksternal validasyon, takımların çeşitli veriler kullanarak geliştirdikleri modellerin yeni
+verilerde ne kadar etkili olduğunu ortaya koyması için önemlidir.
+Sonuç olarak bu yılki yarışma kurgusu, genetik ve kardiyoloji gibi veri yoğun alanlarda
+geliştirilen yapay zekâ çözümlerinin, laboratuvar ortamından çıkıp gerçek sağlık sistemi
+ihtiyaçlarına yanıt verebilecek olgunluğa erişmesine doğrudan hizmet edecek şekilde
+planlanmıştır.
+
+--- PAGE 6 ---
+3. YARIŞMA KAPSAMI
+3.1. Lise Seviyesi
+Yarışmanın ilk aşamasında katılımcılardan, 12 derivasyonlu EKG verilerini kullanarak dört
+ana kardiyak durumu sınıflandıran bir model geliştirmeleri beklenmektedir.
+Katılımcıların EKG verilerinden aşağıdaki üç ana kardiyak durumu ayırt edebilen bir model
+geliştirmesi beklenmektedir:
+1. Ritim Bozuklukları (Arrhythmias)
+2. İletim Bozuklukları (Conduction Blocks)
+3. Normal EKG
+Çıktı Formatı: Her kayıt için tek bir üst sınıf tahmini yapılacaktır. (Multi-class)
+İkinci aşamada katılımcılar, birinci aşamada sunulan iki üst sınıf altındaki daha spesifik
+kardiyak tanıları ayırt eden bir “fine-grained” sınıflandırma modeli geliştireceklerdir.
+Alt grup örnekleri aşağıda verilmiştir.
+• Ritim Bozuklukları → AFIB, AFL, AT, SVT, APB, VPB vb.
+• İletim Bozuklukları → LBBB, RBBB, AV blok tipleri vb.
+Not: Alt grupların kesin listesi Proje Sunum Raporu (PSR) sonrasında açıklanacaktır.
+3.1.1. Kullanılacak Veri Seti
+Yarışmada örnek veri olarak, PhysioNet tarafından paylaşılan ECG Arrhythmia Dataset
+(1.0.0) sunulacaktır*. Bu veri seti 12 derivasyonlu EKG kayıtlarını, 500 Hz örnekleme
+frekansını, yaklaşık kırk beş bin bireyin sinyalini ve SNOMED-CT standartlarına uygun tanı
+etiketlerini içermektedir. Veriler mat ve hea formatında sağlanmakta olup, yarışmacılar
+bu dosyalardan sinyal ve meta veriye erişebileceklerdir. Yarışmacılar erişime açık olan
+farklı veri setlerini ve/veya kendi oluşturacakları veri setlerini de model eğitimi için
+kullanabileceklerdir.
+*(https://physionet.org/content/ecg-arrhythmia/1.0.0/ )
+3.1.2. Yarışma Aşamaları
+Birinci Aşama: Kardiyak Sınıflandırma
+Yarışmacılar bu aşamada her bir EKG kaydını üst sınıflardan biriyle eşleştiren bir model
+geliştireceklerdir. Bu sınıflar, EKG’nin temel desenlerini öğrenmeyi gerektirdiği için
+katılımcılara sinyal işleme, özellik çıkarımı, zaman-frekans analizi ve makine öğrenmesi
+mimarileri konusunda kapsamlı bir çalışma alanı sunmaktadır.
+
+--- PAGE 7 ---
+Birinci aşamanın resmi değerlendirme metriği macro F1-score olacaktır. Macro F1’in
+kullanılma nedeni, üst sınıflar arasında veri dağılımının dengesiz olabilmesi ve bu
+nedenle doğruluk (accuracy) gibi metriklerin yanıltıcı olabilmesidir. Değerlendirme
+sürecinde karışıklık matrisi analizi, öğrenme eğrisi ve sınıf bazlı hatalar da incelenecektir.
+İkinci Aşama: Alt Grupların Sınıflandırılması
+İkinci aşamada katılımcılar iki üst sınıftan birine ait alt tanı gruplarını ayırt eden bir
+sınıflandırma sistemi geliştireceklerdir. Bu aşama, klinik açıdan daha kritik karar
+noktalarını temsil eden detaylı EKG bulgularını içerdiği için yarışmanın bilimsel yönünü
+güçlendirmektedir. Alt sınıfların kesin listesi klinik anlamlılık, veri dağılımı ve uzman
+görüşleri temel alınarak Danışma Kurulu tarafından belirlenecek ve yarışmacılara ikinci
+aşama öncesi duyurulacaktır.
+3.2. Üniversite ve Üzeri Seviyesi
+Veri setlerinde yer alan varyantların Patojenik veya Benign olarak sınıflandırılmasında,
+Amerikan Tıbbi Genetik ve Genomik Koleji (ACMG) rehberleri ve kriterleri referans
+alınmıştır. Sınıflandırma sürecinde, kaynak veri tabanlarında bulunan ACMG uyumlu
+mevcut etiketler referans kabul edilerek veri setine dahil edilmiştir. Bu etiketler, yarışma
+kapsamında 'Doğru Sınıf' (Ground Truth) olarak kullanılacaktır. Yarışmacılara sağlanacak
+veri setleri aşağıdaki standartlarda hazırlanmıştır:
+Patojenik Sınıf: ClinVar ve ClinGen veri tabanlarından, "Expert Panel" ve güvenilir
+"Practice Guideline" inceleme statüsüne sahip, 3 ve 4 yıldız güvenilirlik seviyesindeki
+missense varyantlar seçilmiştir. Veri setlerindeki 'Pathogenic' (Patojenik) ve 'Likely
+Pathogenic' (Olası Patojenik) olarak tanımlanan varyantlar tek bir Patojenik sınıfı altında
+birleştirilmiştir (3062 varyant).
+Benign Sınıf: Sınıf dengesizliğini gidermek amacıyla ClinVar (1381 varyant) verilerine ek
+olarak gnomAD veri tabanından ClinVar datasındaki genlerin sık görülen sağlıklı
+popülasyon varyantları eklenecektir (2153 varyant). Veri setlerindeki 'Benign' (İyi Huylu)
+ve 'Likely Benign' (Olası İyi Huylu) olarak tanımlanan varyantlar tek bir Benign sınıfı altında
+birleştirilmiştir.
+Yarışmacılara dört ana başlık altında (MASTER, Kanser, CFTR, PAH) veri setleri
+sunulacaktır. Veri setlerinin oluşturulmasında, gerçek dünyadaki klinik senaryoları
+(düşük hastalık prevalansı) simüle etmek amacıyla standart dengeli dağılım yerine
+asimetrik veri bölümlemesi (Klinik Stres Testi) uygulanmıştır. Modellerin benign sınıfı
+kolayca ezberlemesini engellemek için veri bilerek dengesiz bırakılmış; eğitim setinde
+Patojenik varyantlar ağırlıkta tutulurken, test setinde Benign varyantların baskın olduğu
+bir yapı kurgulanmıştır.
+Sağlanacak eğitim veri setlerinin içerdiği varyant sayıları (yaklaşık) aşağıdaki şekildedir:
+1. Genel Veri Seti (Master Paneli): 2000 adet Patojenik varyant, 800 adet Benign
+Varyant
+
+--- PAGE 8 ---
+2. Kalıtsal (Herediter) Kanser Paneli: 250 adet Patojenik varyant, 100 adet Benign
+varyant
+3. Fenilketonüri (PAH) Gen Paneli: 300 adet Patojenik varyant, 50 adet Benign
+varyant
+4. Kistik Fibrozis (CFTR) Gen Paneli: 100 adet Patojenik varyant, 20 adet Benign
+varyant.
+Sağlanacak test veri setlerinin içerdiği varyant sayıları (yaklaşık) aşağıdaki şekildedir:
+1. Genel Veri Seti (Master Paneli): 500 adet Patojenik varyant, 3000 adet Benign
+varyant,
+2. Kalıtsal (Herediter) Kanser Paneli: 100 adet Patojenik varyant, 500 adet Benign
+varyant
+3. Fenilketonüri (PAH) Gen Paneli: 100 adet Patojenik varyant, 250 adet Benign
+varyant
+4. Kistik Fibrozis (CFTR) Gen Paneli: 20 adet Patojenik varyant, 100 adet Benign
+varyant.
+Toplam veri havuzu, model geliştirme süreçlerinin sağlıklı yürütülmesi adına ikiye
+ayrılmıştır:
+Eğitim Seti: Proje Sunuş Raporu aşamasını geçen yarışmacılara, modellerini eğitmeleri
+için etiketli olarak verilecek olan eğitim setidir.
+Test Seti: Geliştirilen modellerin nihai başarımını değerlendirmek amacıyla ayrılan bu
+set, yarışma esnasında sınıf etiketleri gizlenmiş (etiketsiz) olarak paylaşılacaktır.
+Yarışma veri setinde varyantların genomik adres (kromozom ve pozisyon) bilgileri,
+katılımcıların dış veri kaynaklarına başvurarak etiketi doğrudan bulmalarını engellemek
+amacıyla tamamen gizlenmiştir. Bu kısıtlamanın amacı; yarışmacıların patojenite
+tahminlerini harici veri kaynaklarına başvurmaksızın, yalnızca yarışma komitesi
+tarafından sağlanan varyant profilleri üzerinden yapmalarını sağlamak ve kamuya açık
+veri tabanlarından elde edilebilecek hazır etiket bilgisinin kullanımını engellemektir.
+Modellerin yüksek başarımla eğitilebilmesi amacıyla, genomik adres (kromozom ve
+pozisyon) bilgisi yerine biyoinformatik araçlarla zenginleştirilmiş, kapsamlı ve çok boyutlu
+varyant profilleri sunulacaktır. Her bir varyant için sağlanan öznitelik seti belirli biyolojik
+ve istatistiksel kategorilere ayrılmıştır. Tersine mühendisliği engellemek amacıyla veri
+paylaşılırken orijinal öznitelik kolon isimleri gizlenecek, bunun yerine özelliklerin ait
+olduğu kategorileri temsil eden genel isimlendirmeler kullanılacaktır. Bu kategoriler
+şunlardır:
+
+--- PAGE 9 ---
+• Frekans / Popülasyon (AL_): Varyantın toplumdaki yaygınlığını, allel frekanslarını
+ve sayımlarını ifade eden verilerdir.
+• Amino Asit Değişimi (AA_): Amino asit değişim bilgisini (örneğin, Alanin'den
+Valin'e dönüşüm gibi referans ve alternatif amino asit detaylarını) içeren verilerdir
+• Evrimsel Korunmuşluk (EK_): Varyantın bulunduğu gen bölgesinin, farklı canlı
+türleri (filogenetik çeşitlilik) ve insan toplulukları arasındaki genomik benzerliği; bu
+bölgenin evrimsel süreçte ne kadar korunduğuna dair skorlar.
+• Kategorik Meta-Veri (CAT_): Varyanta ait sayısal olmayan sınıflandırıcı verileri
+içerir. Temel olarak; varyantın en sık gözlemlendiği popülasyon etiketlerini,
+dizileme güvenilirliğini gösteren kalite bayraklarını ve varyantın evrimsel
+geçmişine ışık tutan arkaik genom (Neandertal, Denisova) genotip bilgilerini
+barındırır.
+4. YARIŞMAYA KATILIM KOŞULLARI
+• Türkiye ve yurt dışında öğrenim gören lise öğrencisi ve mezunları Lise seviyesine,
+üniversite öğrencileri (Lisans, Ön lisans, Yüksek Lisans, Doktora ve Açık Öğretim
+dâhil) ile mezunları ise Üniversite ve Üzeri seviyesine başvuru gerçekleştirebilir.
+• Proje Detay Raporu ile birlikte öğrenciler için onaylı öğrenci belgelerinin
+www.t3kys.com sunulması gerekmektedir.
+• Lise seviyesi için, Proje Sunuş Raporunda, Birinci Aşamaya yönelik literatür
+taraması, kullanılan/kullanılacak yöntemler, açık veri setleri ve elde edilen ön
+sonuçlar açık bir şekilde sunulacaktır. Proje Detay Raporunda ise, İkinci Aşamaya
+ilişkin literatür, tercih edilen yöntemler, kullanılan veri setleri ve elde edilen
+sonuçlar ayrıntılı bir şekilde ele alınacaktır. Her aşama sonunda yarışmacılardan
+model eğitimi, ön işleme süreçleri ve değerlendirme metodolojilerini içeren teknik
+rapor ile birlikte, tahmin üreten kodlar, kullanılan veri setleri ve sonuç dosyaları
+gerekli durumda talep edilebilecektir. Kodların çalışabilir, yeniden üretilebilir ve
+açık bir şekilde dokümante edilmiş olması beklenmektedir.
+• Üniversite ve üzeri seviyesi için, Proje Sunuş Raporunda, genel problemin
+tanımlanması, bu probleme yönelik literatür taraması ve önerilen çözüm
+yönteminin detayları açık bir şekilde sunulacaktır. Proje Detay Raporunda ise,
+geliştirilen modelin mimarisi, eğitim süreçleri ve iç test (validasyon) sonuçları
+detaylı olarak sunulacaktır.
+• Rapor şablonları TEKNOFEST web sitesi üzerinden paylaşılacaktır.
+• Aynı takım üyeleri farklı projeler ile TEKNOFEST kapsamında düzenlenen diğer
+yarışmalara başvuru yapabilir.
+
+--- PAGE 10 ---
+• Yarışmacılar, yarışmada paydaşlar tarafından sağlanacak verilere ancak “Gizlilik
+Sözleşmesini” imzalı olarak sunmaları halinde erişim sağlayabilecek ve yarışmaya
+katılabileceklerdir.
+• Yarışmacı, başvuru yapmadan önce işbu şartnamedeki tüm açıklamaları ve
+katılım koşullarını okuyup onaylamak suretiyle yarışmaya katılabilecektir.
+Yarışmacının 18 (on sekiz) yaşından küçük olması durumunda, işbu şartnamenin
+velisi/vasisi tarafından onaylandığını gösterir bir belge sunulması zorunludur.
+• Başvurular 20.02.2026 tarihine kadar www.t3kys.com başvuru sistemi üzerinden
+çevrimiçi olarak yapılır.
+5. TAKIM OLUŞTURMA
+• Başvuru sırasında Takım Yetkilisi sistem üzerinden kaydolur, takım üyelerini doğru
+ve eksiksiz olarak sisteme kaydeder ve (varsa) danışman ve üyelerin e-postalarına
+davet gönderir. Davet gönderilen üye başvuru sistemine giriş yaparak “Takım
+bilgilerim” kısmından gelen daveti kabul eder ve kayıt tamamlanır. Aksi durumda
+kayıt tamamlanmış sayılmaz.
+• Takım oluşturma işlemini tamamlayan yarışmacıların projesine uygun yarışmaya
+başvuru yapması gerekmektedir.
+• Yarışma kapsamında gerekli tüm süreçler (Başvuru, Rapor Alımı, Rapor Sonuçları,
+İtiraz Süreçleri, Üye Ekleme/Çıkarma İşlemleri, vb.) KYS üzerinden yapılmaktadır.
+Takımların KYS üzerinden süreçlerini takip etmesi gerekmektedir.
+• Üye ekleme/çıkarma işlemleri Proje Detay Raporu teslim tarihine kadar
+yapılmalıdır.
+• Yarışma süreci boyunca KYS üzerinden başvuru yapma, rapor yükleme, form
+doldurma işlemleri Takım Yetkilisi sorumluluğunda olup yarışma süreçleri bu
+Takım Yetkilisi üzerinden yönetilmektedir.
+• Finale kalan takımlara sağlanacak ulaşım ve konaklama desteği sınırlıdır. Destek
+verilecek kişi sayısı takım başı 3 kişi (danışman dâhil) olup, TEKNOFEST Yarışmalar
+Komitesinin değişiklik yapma hakkı saklıdır.
+• Bir takımın üyesi, aynı yarışmada başka bir takımının üyesi olarak yer alamaz.
+• Yarışmada takımlar en az 2 (iki) en fazla 5 (beş) kişiden oluşabilir. (Bu sayıya
+danışman dâhil değildir.)
+
+--- PAGE 11 ---
+• Takımlar, tek bir okuldan oluşturulabileceği gibi bir veya birden fazla
+ortaöğretim/yükseköğretim öğrencisinin bir araya gelmesi ile karma olarak da
+oluşturulabilir.
+• TEKNOFEST Yarışmalar Komitesi festival alanında bulunacak üye sayısını
+sınırlandırma yetkisine sahiptir. Sınırlandırma yapılması durumunda komite
+tarafından bilgilendirme yapılacaktır.
+• Lise Seviyesi takımlarında bir danışman olması zorunludur. Üniversite ve Üzeri
+Seviyesine yapılacak başvurularda danışman bulunması zorunlu değildir.
+• Danışmanın temel görevi; öğrencilere kendi eğitim-öğretimlerini planlayabilmeleri
+konusunda yardımcı olmak; akademik, sosyal ve kültürel konularda yol
+göstermek; zihinsel, sosyal ve duygusal yönleriyle öğrencinin kişiliğinin bir bütün
+olarak gelişebilmesi için uygun ortamın hazırlanmasına yardımcı olmaktır.
+Danışmanının takımdaki özgül rolü ise projede ihtiyaç duyulacak akademik
+desteği sağlayarak takım üyelerinin problemlere çözüm üretebilmeleri için yol
+göstermektir. Proje fikrinin takım üyeleri tarafından oluşturulması gerekmektedir.
+Danışmanların fikir aşamasında sadece yönlendirme yapması istenmektedir.
+Proje sahibinin danışman olduğu saptandığında başvuru geçersiz sayılacaktır.
+• Danışman, takım üyesi olarak eklenmemelidir.
+• Danışman olarak görev yapacak kişinin danışmanlık görevlerini yerine
+getireceğine ve öğretmenlik/eğitmenlik/akademisyenlik veya ilgili alanda kariyer
+hayatını devam ettiren mühendis/uzman vb. olduğunu kanıtlayan ıslak
+imzalı/elektronik imzalı taranmış belgeyi ve çalıştığı kurumdan alacağı
+görevlendirme yazısını TEKNOFEST Yarışmalar Komitesine (www.t3kys.com) Proje
+Detay Raporu teslim tarihine kadar iletmesi zorunludur.
+• Yarışmanın her aşamasında üretilen model, kod ve her türlü rapor, takımda yer
+alan yarışmacı/yarışmacıların emeğinin neticesinde oluşmuş olmakla birlikte
+takım üyelerinin hususiyetini yansıtmakta olup Danışman, eser sahibi olarak
+kabul edilmeyecektir.
+• Danışman final aşamasına kadar takıma destek olacağını ve final aşaması
+süresince takımın yanında bulunacağını taahhüt eder. Final aşamasına kalan
+projelerde takımların danışmanları ile alanda bulunmaları beklenmektedir.
+• Takımlar danışman değişikliği olması durumunda, bu değişiklikle ilgili taleplerini
+KYS üzerinden takım üye/ekleme çıkarma işlemleri süresince güncelleyebilir.
+
+--- PAGE 12 ---
+6. YARIŞMA TAKVİMİ
+Tarih Açıklama
+28.02.2026 Yarışma Son Başvuru Tarihi
+23.03.2026 Soru-Cevap Toplantıları I (Lise ve Üniversite)
+25.03.2026 -17:00 Proje Sunuş Raporu Son Teslim Tarihi (Lise ve Üniversite)
+Proje Sunuş Raporu Sonuçlarına göre Ön Elemeyi Geçen
+14.04.2026
+Takımların Açıklanması
+05.05.2026 Verilerin Paylaşılması (Lise ve Üniversite Kategorisi)
+18.05.2026 Soru-Cevap Toplantıları II (Lise ve Üniversite)
+29.06.2026- 17:00 Proje Detay Raporu Son Teslim Tarihi (Lise ve Üniversite)
+Proje Detay Raporu Sonuçlarının ve Finale Kalan Takımların
+20.07.2026
+Açıklanması
+Ağustos-Eylül 2026 Yarışma Finalleri
+30 Eylül-4 Ekim 2026 TEKNOFEST Şanlıurfa
+7. PUANLAMA VE DEĞERLENDİRME
+7.1. Yarışmanın Değerlendirilmesi
+Proje Sunuş ve Proje Detay Raporları, Danışma ve Değerlendirme Kurulu tarafından ön
+elemeye tabi tutulacaktır. Bu aşamada alınan puanlar, yalnızca eleme amacıyla
+değerlendirilecek olup final puanına bir etkisi olmayacaktır. Değerlendirme kapsamı
+dışında kalan raporlar işleme alınmayacak olup, bu durumdan kaynaklı elenmeler için
+itiraz kabul edilmeyecektir. Proje Sunuş Raporu aşamasını geçen takımların sunacağı
+Proje Detay Raporu, Danışma ve Değerlendirme Kurulu tarafından değerlendirilecektir.
+Proje Detay Raporuna göre değerlendirmeyi geçenler finale katılmaya hak kazanacaktır.
+Finalistler belirtilen Final Değerlendirmesine uygun olarak Değerlendirme Kurulu
+tarafından değerlendirilecek ve dereceye girenler ilan edilecektir. Danışma ve
+Değerlendirme Kurulu gerekli görmesi durumunda değerlendirme süreçlerinde kullanılan
+performans ölçüm metriklerini değiştirme hakkına sahiptir.
+
+--- PAGE 13 ---
+7.1.1. Proje Sunuş Raporunun Sunulması ve Değerlendirilmesi
+Takımlar Proje Sunuş Raporunu TEKNOFEST web sitesinde sayfasında belirtilen tarihe
+kadar ve yayınlanacak rapor formatına uygun olarak KYS sistemine yüklemelidir. Proje
+Sunuş Raporlarının teslimi ile ilgili detaylı bilgilendirme yarışma başvuru tarihinin sona
+ermesinin ardından başvurusunu tamamlamış olan takımlar ile paylaşılacaktır.
+Gönderilen bu raporlar Danışma ve Değerlendirme Kurulu tarafından incelenecek ve
+yarışmaya devam etmeye hak kazanan takımlar duyurulacaktır. Proje Sunuş Raporları
+Değerlendirme Kurulu tarafından değerlendirip puanlandıktan sonra baraj puanı ve
+üstünü alan takımlar bir sonraki aşamaya devam edebilecektir. Proje Sunuş Raporu
+göndermeyen, kapsam dışı rapor sunan veya raporu baraj puanının altında kalan takımlar
+sonraki aşamaya katılamayacaklardır. PSR baraj puanının en fazla 15 puan altında kalan
+takımların itiraz hakkı bulunmaktadır. Baraj puanının 15 puandan daha fazla altında kalan
+takımların ise itiraz hakkı bulunmamaktadır. Proje sunuş rapor şablonuna web sitesi
+üzerinden ulaşılabilecektir.
+7.1.2. Proje Detay Raporunun Sunulması ve Değerlendirilmesi
+Proje Detay Raporu şablonu yarışma özelinde hazırlanıp TEKNOFEST internet sayfasında
+Sağlıkta Yapay Zekâ Yarışması altında sunulacaktır. Proje Detay Raporu aşamasına geçen
+takımlar, raporlarını TEKNOFEST internet sayfasında belirtilen tarihe kadar ve sunulan
+rapor şablona uygun olarak KYS sistemine yüklemelidirler. Proje Detay Raporları Danışma
+ve Değerlendirme Kurulu tarafından değerlendirip puanlandıktan sonra TEKNOFEST
+Yarışmalar Komitesinin belirleyeceği baraj puanı ve üstünü alan takımlar final aşamasına
+devam edebilecektir. PDR baraj puanının en fazla 15 puan altında kalan takımların itiraz
+hakkı bulunmaktadır. Baraj puanının 15 puandan daha fazla altında kalan takımların ise
+itiraz hakkı bulunmamaktadır. Finale katılmaya hak kazanan takımlar Yarışma Takviminde
+belirtilen tarihte açıklanacaktır.
+7.2. Lise Seviyesi Final Değerlendirmesi
+TEKNOFEST 2026 festival alanında yapılacak olan yarışma sürecinde, model
+performansının klinik gerçeklik içinde sınanabilmesi amacıyla external validasyon
+yapılacaktır. Bu doğrultuda, TEKNOFEST için özgün ve tamamen anonimleştirilmiş yeni
+bir EKG veri seti kullanılacaktır. Bu veri seti, hem yarışmacıların geliştirdiği algoritmaların
+farklı hasta gruplarında nasıl davrandığını test etmek hem de genelleme yeteneğini
+değerlendirmek amacıyla kullanılacaktır. Dış doğrulama veri seti yalnızca araştırma,
+yarışma değerlendirmesi ve eğitim amaçlı kullanılacak olup, kişisel verilerin korunmasına
+ilişkin tüm yasal düzenlemelere eksiksiz uyulacaktır.
+Lise seviyesi final aşamasındaki değerlendirme metriği macro F1-score olacaktır.
+
+--- PAGE 14 ---
+7.3. Üniversite ve Üzeri Seviyesi Final Değerlendirmesi
+Modellerin başarısı, test verisi üzerindeki tahminlerin gerçek etiketlerle
+karşılaştırılmasıyla ölçülecektir. Modellerin başarısı, test verisi üzerindeki tahminlerin
+gerçek etiketlerle karşılaştırılmasıyla ölçülecektir. Yarışma sıralamasını
+belirleyecek temel metrik, TP (Doğru Pozitif), FP (Yanlış Pozitif) ve FN (Yanlış Negatif)
+değerleri üzerinden hesaplanan F1 Skoru olacaktır. Bununla birlikte, veri setindeki
+asimetrik sınıf dağılımı göz önüne alınarak, modellerin hem pozitif hem de negatif
+sınıflardaki genel tahmin başarısını daha bütüncül bir şekilde değerlendirebilmek
+amacıyla MCC (Matthews Korelasyon Katsayısı) gibi ek istatistiksel metriklere de
+başvurulabilecektir.
+7.4. Genel Değerlendirme ve Puanlama
+Her seviye (lise/üniversite ve üzeri) için verilen görevlerin yarışma toplam puanına katkısı
+%90 olacaktır. Son aşamada yapılan sunum, toplam puanın %10’udur. Toplam puanlar,
+görevlerden alınan puanlara sunum puanlarının eklenmesi ile oluşturulacaktır. Başarı
+sıralamaları bu puan göz önünde bulundurularak yapılacaktır. Başarı sırasına göre ilk üçe
+giren takımlar, belirlenen ödülleri almaya hak kazanacaktır.
+7.5. Yarışmanın Puanlanması
+Aşağıdaki tabloda puanlama türleri ve yüzdeleri belirtilmiştir.
+PUANLAMA TÜRÜ PUANLAMA YÜZDESİ
+Proje Sunuş Formu 0
+Proje Detay Raporu 0
+Final Yarışmaları (Fiziki) %90
+Final Sunum Puanlaması %10
+Finalistlerin algoritma/poster/uygulama sunumları Değerlendirme Kurulu tarafından
+etkinlik alanında bizzat değerlendirilir. Değerlendirme Kurulu sonucu yarışma alanında
+tutanak ile imza altına alır. Final alanına gelen her Takım, (alanda bulunan ve
+bulunmayan) tüm üyelerine ait (danışmanlar dahil) Banka Bildirim Formunu doldurup
+yarışma alanını terk etmeden önce imzalı olarak TÜSEB Yarışmacılar Sorumlusuna teslim
+etmelidir. Yarışma jürisi, finale kalan takımların kodlarını tekrar çalıştırmasını ve beyan
+ettikleri sonuçları bulmalarını isteme yetkisine sahiptir.
+TÜSEB, yarışma değerlendirme aşamasında kullanılan değerlendirme metrikleri ve
+değerlendirme oranlarında değişiklik yapma hakkını saklı tutar.
+7.6. Takımlarla Soru-Cevap Toplantıları
+Yarışma başvuruları tamamlandıktan sonra takımlar ile Soru Cevap Toplantısı-I
+yapılacaktır. Toplantı ile ilgili bilgi daha sonra açıklanacaktır.
+
+--- PAGE 15 ---
+Proje sunuş aşamasını geçen yarışmacılar ile yarışma hakkında soruları cevaplamak
+amacı ile Soru Cevap Toplantısı-II yapılacaktır. Yarışmacılara, toplantı tarihinde değişiklik
+olması durumunda ve toplantı ortamı hakkında bilgilendirme yapılacaktır.
+7.7. Yarışmacılarla Paylaşılacak Veri Setleri
+Lise seviyesi için Proje Sunuş Raporu aşamasında herhangi bir veri paylaşımı
+yapılmayacaktır. Yarışmacılar açık veri setlerinden yararlanacaklardır. Proje Sunuş
+Raporu değerlendirmesini geçen yarışmacılara alt grupları içeren veri seti paylaşılacaktır.
+Üniversite ve üzeri seviyesi için, Proje Sunuş Raporu aşamasını geçen takımlara Patojenik
+ve Benign sınıflara ait etiketlenmiş veriler paylaşılacaktır. Veri setlerinin detayları Bölüm
+3.2’de verilmiştir.
+8. ÖDÜLLER
+Yarışmada üç aşamada ayrı ayrı değerlendirme neticesinde tüm aşamaları geçerek kendi
+kategorisinde finale kalan ve final değerlendirmesinde dereceye giren takımlara para
+ödülü verilecektir. Aşağıdaki tabloda belirtilen ödüller, ödül almaya hak kazanan
+takımlara verilecek toplam tutarı göstermektedir, bireysel ödüllendirme yapılmayacaktır.
+Birincilik, ikincilik ve üçüncülük ödülleri, KYS’ deki takımınızda yer alan mevcut takım
+üyeleri (danışman dahil değildir) toplam sayısına göre eşit miktarda bölünerek her
+yarışmacının başvuru esnasında belirttiği banka hesabına yatırılacaktır. Yarışma
+kapsamında dereceye giren takımın danışmanına “Danışman Ödülü” ödemesi
+yapılacaktır.
+Derece Birinci İkinci Üçüncü
+Lise Seviyesi 150.000,00 ₺ 120.000,00 ₺ 100.000,00 ₺
+Üniversite ve Üzeri
+180.000,00 ₺ 150.000,00 ₺ 130.000,00 ₺
+Seviyesi
+Danışman 15.000,00 ₺ 12.000,00 ₺ 10.000,00 ₺
+(Yapılacak ödemelere vergi, harç vs. masraflar dâhil olup yarışmacının elde edeceği
+ödüle esas değer söz konusu yasal kesintiler çıkarıldıktan sonra kalan kısımdan ibaret
+olacaktır.)
+8.1. En İyi Sunum Ödülleri
+Finale kalan takımlar, sunumlarını TEKNOFEST tarafından belirlenen sunum formatında
+hazırlayacaklardır. Bu sunumlar, Danışma ve Değerlendirme Kurulu üyeleri tarafından
+sunum teknikleri açısından değerlendirilerek, takım adına "En İyi Sunum Ödülü" adı
+
+--- PAGE 16 ---
+altında bir plaketle ödüllendirilecektir. Yapılan sunum, Takımın dereceye girip
+girilmediğinden bağımsız olarak değerlendirilecektir. Belirtilen ödül prestij amaçlı olup bir
+maddi karşılığı bulunmamaktadır.
+8.2. Ödüllendirme ile İlgili Hususlar
+• Ödüller başarı kriterini sağlayan takımlar için geçerlidir.
+• Ödüller takımlara verilecek ve takım üyeleri arasında eşit olarak pay edilecektir.
+• Takım üyelerinden Türkiye’de faaliyet gösteren bir bankada hesabı olmayan
+yabancı uyruklu olanlar için Türkiye’de yerleşik bir kişiyi mutemet olarak
+belirlemeleri gerekmektedir.
+• Yarışmacıların, varsa kendi adlarına açılmış banka hesaplarına ya da kanunen
+reşit olmayan yarışmacılar için merkezi yönetim harcama belgeleri yönetmeliği
+gereğince belgelemek kaydı ile duruma göre vekiline, velisine, vasisine veya
+mutemedine ödeme yapılacaktır. Banka Bildirim Formu buna göre
+doldurulmalıdır.
+• Yarışmacılar, ödeme ile ilgili tüm evrakları ödemenin yapılabilmesi için ıslak imzalı
+olarak TÜSEB’e iletilmelidir.
+• Lise Seviyesinde dereceye giren takımın danışmanına (aynı görevi ifa eden kişiler
+dâhil) sayısına bakılmaksızın yarışmacı veya takım başına toplam en fazla
+yukarıdaki tabloda verilen miktarda ödeme yapılacaktır.
+• Ödüllendirmeye ilişkin diğer hususlarda 25.09.2021 tarihli ve 31609 sayılı Resmî
+Gazete’de yayımlanan Türkiye Sağlık Enstitüleri Başkanlığı Ödül Yönetmeliği ve
+31.12.2005 tarihli ve 26040 sayılı Resmî Gazete’de yayımlanan Merkezî Yönetim
+Harcama Belgeleri Yönetmeliği hükümleri esas alınacaktır.
+9. GENEL KURALLAR
+Yarışma kapsamında geçerli olan Genel Kurallar kitapçığına ulaşmak için tıklayınız.
+10. ETİK KURALLAR
+Yarışma kapsamında geçerli olan Etik Kurallar kitapçığına ulaşmak için tıklayınız.
+Yarışma kapsamında kullanılan tüm genetik veriler, ClinVar, ClinGen ve gnomAD gibi
+uluslararası bilimsel konsorsiyumlar tarafından yönetilen, kamuya açık ve
+anonimleştirilmiş veri tabanlarından temin edilmektedir.
+Kullanılan genetik veriler, birincil toplayıcı kurumlar (NCBI, Broad Institute vb.) tarafından
+halihazırda uluslararası biyoetik standartlara (Helsinki Bildirgesi) ve ilgili hasta onam
+süreçlerine uygun olarak toplanmış verilerdir. Yarışma kapsamında yapılan işlem, “ikincil
+veri kullanımı” statüsündedir.
+
+--- PAGE 17 ---
+Yarışmacılara sunulan veri setleri, Kişisel Verilerin Korunması Kanunu (KVKK) ve
+uluslararası GDPR standartlarına uygun olarak, katılımcıların kimliğini ifşa edebilecek
+(ad, soyad, doğum tarihi vb.) hiçbir Kişisel Tanımlayıcı Bilgi (PII) içermemektedir. Ek
+olarak, üniversite ve üzeri kategorisindeki yarışma formatı gereği varyantların genomik
+adres bilgileri de kaldırılarak “re-identification” (yeniden kimliklendirme) riski teknik
+olarak elimine edilmiştir. Yarışma kapsamında sağlanan veri setlerine ilişkin veri
+sorumlusu TEKNOFEST organizasyonudur.
+Yarışmacılar, ilgili verileri yalnızca organizasyon tarafından belirlenen kapsamda ve veri
+işleyen sıfatıyla kullanmakla yükümlüdür.
+Verilerin kullanımı ticari bir amaç gütmemekte, tamamen bilimsel algoritma geliştirme
+amacı taşımaktadır. Bu durum, UNESCO İnsan Genomu ve İnsan Hakları Evrensel
+Bildirgesi’nin “bilimsel ilerlemenin insanlığın yararına kullanılması” ilkesiyle birebir
+örtüşmektedir.
+Yarışma kapsamında geliştirilen modeller ve elde edilen çıktılar, herhangi bir klinik tanı,
+tedavi veya tıbbi karar destek amacıyla kullanılamaz. Bu çıktılar yalnızca araştırma ve
+eğitim amaçlıdır.
+11. İLETİŞİM
+Yarışma hakkında sorular için TEKNOFEST web sitesinde Sağlıkta Yapay Zeka Yarışması
+sayfasından yarışmanın grubuna katılabilirsiniz. Bu grubun aktif olarak takip edilmesi ve
+her takımdan en az 1 kişinin üye olarak bu gruptaki duyuruları, soru ve cevapları takip
+etmesi yarışmacıların sorumluluğundadır. Belirtilen e-posta grubunun takip edilmemesi
+sonucunda doğacak takımların güncel bilgilendirmelere ulaşamama durumundan
+TEKNOFEST Yarışmalar Komitesi sorumlu değildir.
+Yarışmanın organizasyonel bölümleri ile ilgili soruların iletisim@teknofest.org e-posta
+adresi üzerinden iletilmesi gereklidir.
+Sorularınızın yukarıda doğru kanallar üzerinden iletilmesi, sorulan sorulara hızlı dönüş
+yapılabilmesi açısından önem arz etmektedir.
+12. SORUMLULUK BEYANI
+TEKNOFEST ve Paydaş Kurumlar, yarışmacıların teslim etmiş olduğu herhangi bir
+üründen veya yarışmacıdan kaynaklanan herhangi bir yaralanma veya hasardan hiçbir
+şekilde sorumlu değildir. Yarışmacıların üçüncü kişilere verdiği zararlardan TEKNOFEST,
+Paydaş Kurumlar ve organizasyon yetkilileri sorumlu değildir. TEKNOFEST ve Paydaş
+Kurumlar, takımların kendi sistemlerini Türkiye Cumhuriyeti yasaları çerçevesinde
+hazırlamalarını ve uygulamalarını sağlamaktan sorumlu değildir.
+
+--- PAGE 18 ---
+Türkiye Teknoloji Takımı Vakfı işbu şartnamede her türlü değişiklik yapma hakkını
+saklı tutar.
+12.1. Kişisel Verilerin Kullanılması/İşlenmesi
+Yarışmaya başvuran kişilerin kişisel verileri (TCKN, e-posta, telefon no, IBAN, Nüfus Kayıt
+Örneği), ödül ödemesi ve tanıtım faaliyetleri kapsamında yürütülen iş ve işlemlerle ilgili
+olarak TÜSEB tarafından işlenebilir ve aktarılabilir. Söz konusu kişisel veriler, 6698 sayılı
+Kişisel Verilerin Korunması Kanununun 5’inci maddesinin ikinci fıkrasının (ç) bendinde
+belirtilen “Veri sorumlusunun hukuki yükümlülüğünü yerine getirebilmesi için zorunlu
+olması” ve 5 inci maddesinin ikinci fıkrasının (f) bendinde belirtilen “İlgili kişinin temel hak
+ve özgürlüklerine zarar vermemek kaydıyla, veri sorumlusunun meşru menfaatleri için
+veri işlenmesinin zorunlu olması” hükümlerine istinaden işlenmektedir. TÜSEB’e
+tarafınızca gönderilen kişisel verilerin mevzuata uygun olarak elde edildiği ve bu kişisel
+veriler ile ilgili gerekli teknik ve idari tedbirlerin tarafınızca alındığı kabul edilmektedir. Bu
+şekilde elde edilen kişisel veriler, yetkili kamu kurum ve kuruluşları, gerçek kişiler ve özel
+hukuk tüzel kişileri ile taraflar arasındaki ilişkinin amacına ve 6698 sayılı Kanunun 8 inci
+maddesine uygun olarak aktarılabilir. Veri sorumlusu olarak TÜSEB’e iletilen kişisel
+verileriniz ile ilgili 6698 sayılı Kanunun 11’inci maddesi kapsamındaki haklarınızı
+kullanabilirsiniz.
+TEKNOFEST ve Paydaş Kurumlar işbu şartnamede ve ilgili dokümanlarında (rapor
+şablonları, formlar, vb.) her türlü değişiklik yapma hakkını saklı tutar.
+Yarışmaya başvuranların işbu şartnamedeki koşulların tamamını kabul etmiş oldukları
+sayılmaktadır.
+
+--- PAGE 19 ---

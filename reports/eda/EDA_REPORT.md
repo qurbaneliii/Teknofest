@@ -504,3 +504,15 @@ Strong features mapped to plausible ACMG evidence categories. These mappings are
 | AL_178       |         0.398848 | BA1/BS1/PM2              | Population frequency or rarity evidence; direction must be interpreted from AUC and distributions. | medium       |
 
 Features that do not cleanly map to ACMG are marked as technical/statistical artifact candidates, especially PCA or availability-derived signals whose biology is indirect.
+
+## EDA To Model Bridge
+
+The EDA findings have been connected to the final modeling decisions in a separate bridge report:
+
+- Report: `reports/eda/EDA_MODEL_BRIDGE.md`
+- Decision table: `reports/eda/tables/eda_to_model_decision_bridge.csv`
+- Feature alignment table: `reports/eda/tables/eda_model_feature_alignment.csv`
+- Panel shift/model alignment table: `reports/eda/tables/eda_panel_model_alignment.csv`
+- Figure: `reports/eda/figures/eda_model_feature_alignment.png`
+
+This bridge shows how the main EDA findings were applied: overlap risk is handled by contamination-aware validation, missingness is retained as signal, EK/population-frequency evidence is kept in the model, and panel-unique subsets are evaluated separately because their label and distribution profiles differ from MASTER-shared variants.
