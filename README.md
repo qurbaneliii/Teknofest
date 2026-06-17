@@ -103,6 +103,8 @@ and `lgbm_optuna_convergence.png`.
 ```powershell
 python run_pipeline.py --mode smoke
 python run_pipeline.py --mode full
+python run_pipeline.py --mode tune
+python run_pipeline.py --mode evaluate
 ```
 
 The smoke mode is intended for quick verification and writes the same output
@@ -113,6 +115,38 @@ cached master-prompt outputs are absent. The pipeline writes:
 - figures to `reports/figures`
 - model/preprocessor/prediction artifacts to `artifacts`
 - the final summary to `reports/final_model_report_summary.md`
+
+Use `--mode tune` to run the Phase 9.6 performance-diagnosis layer after the
+pipeline, creating experiment folders, comparison tables, final selection
+artifacts, and `reports/final_performance_analysis.md`. Use `--mode evaluate`
+to regenerate evaluation/diagnosis outputs from existing saved predictions and
+model artifacts without retraining.
+
+The current final interpretation is intentionally conservative: the model is
+moderate, not weak and not strong. ROC-AUC and panel-unique generalization are
+acceptable, while MASTER F1-macro and MCC remain moderate-to-good. The surgical
+Phase 10 diagnostics focus on threshold stability, MCC-aware thresholding,
+probability calibration, overfitting gaps, panel-specific errors, controlled
+LightGBM profiles, and feature-ablation evidence. Key outputs include:
+
+- `reports/tables/advanced_threshold_comparison.csv`
+- `reports/tables/fold_threshold_stability.csv`
+- `reports/tables/calibration_comparison.csv`
+- `reports/tables/overfitting_gap_analysis.csv`
+- `reports/tables/feature_group_ablation_results.csv`
+- `reports/tables/panel_specific_error_analysis.csv`
+- `reports/tables/final_model_selection_table.csv`
+- `reports/current_results_verification.md`
+
+The final scientific audit/report-readiness pass additionally writes:
+
+- `reports/final_metric_verification_audit.md`
+- `reports/tables/phase10_before_after_comparison.csv`
+- `reports/calibration_decision_review.md`
+- `reports/tables/final_error_group_feature_summary.csv`
+- `reports/tables/final_panel_specific_metrics.csv`
+- `reports/final_feature_interpretation.md`
+- `reports/final_model_strength_statement.md`
 
 Required notebooks are generated with:
 

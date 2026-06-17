@@ -32,3 +32,7 @@ Panel-unique false positives and false negatives are saved in `reports/tables/er
 
 ## Limitations And Next Steps
 Final competition performance depends on the hidden external validation set distribution.
+
+## Phase 10 Final Selection
+The final model is classified as moderate rather than weak or strong. The selected threshold strategy is `profile_f1_macro_opt` with threshold 0.471. The main technical weakness is thresholding/probability calibration rather than feature learning. See `reports/final_performance_analysis.md`, `reports/tables/final_model_selection_table.csv`, and `reports/tables/advanced_threshold_comparison.csv`.
+

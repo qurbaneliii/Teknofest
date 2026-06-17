@@ -1,0 +1,22 @@
+{
+  "selected_threshold_strategy": "profile_f1_macro_opt",
+  "selected_threshold": 0.471,
+  "selected_profile": "conservative_regularized",
+  "selected_lightgbm_config": {
+    "colsample_bytree": 0.7,
+    "learning_rate": 0.03,
+    "max_bin": 255,
+    "max_depth": 5,
+    "min_child_samples": 80,
+    "min_split_gain": 0.01,
+    "n_estimators": 800,
+    "num_leaves": 31,
+    "reg_alpha": 1.5,
+    "reg_lambda": 5.0,
+    "scale_pos_weight": 0.4950848528129137,
+    "subsample": 0.75,
+    "subsample_freq": 1
+  },
+  "calibration_selected": "none",
+  "reason": "Calibration diagnostics are reported, but final selection prioritizes F1-macro, MCC, panel performance, and threshold stability."
+}

@@ -1,0 +1,14 @@
+configuration,status,master_cv_roc_auc,master_cv_f1_macro,panel_unique_roc_auc,panel_unique_pr_auc,panel_unique_f1_macro,panel_unique_mcc,f1_macro_threshold,mcc_threshold,feature_count,top_features,generalization_flag
+EK-only,computed_existing_ablation,0.7247337283457347,0.6611075197191107,,,,,,,,,panel metrics unavailable for this saved ablation
+AL-only engineered frequency features,computed_existing_ablation,0.8051481329598038,0.7474521868283057,,,,,,,,,panel metrics unavailable for this saved ablation
+All engineered features,computed_existing_ablation,0.8271002990239218,0.760860437031081,,,,,,,,,panel metrics unavailable for this saved ablation
+All features,computed_existing_ablation,0.838855486293348,0.7648272574536178,,,,,,,,,panel metrics unavailable for this saved ablation
+All except AA chemistry,computed_existing_ablation,0.837095862839738,0.76291317497608,,,,,,,,,panel metrics unavailable for this saved ablation
+All except CAT_1 decomposition,computed_existing_ablation,0.8401409675957922,0.7655105384991325,,,,,,,,,panel metrics unavailable for this saved ablation
+CAT-only engineered features,not_retrained_in_surgical_pass,,,,,,,,,,,queued for full retraining; not fabricated
+AA-only engineered features,not_retrained_in_surgical_pass,,,,,,,,,,,queued for full retraining; not fabricated
+EK + AL,not_retrained_in_surgical_pass,,,,,,,,,,,queued for full retraining; not fabricated
+EK + AL + AA,not_retrained_in_surgical_pass,,,,,,,,,,,queued for full retraining; not fabricated
+EK + AL + CAT,not_retrained_in_surgical_pass,,,,,,,,,,,queued for full retraining; not fabricated
+All features except suspicious high-cardinality or dataset-specific features,not_retrained_in_surgical_pass,,,,,,,,,,,queued for full retraining; not fabricated
+Top-k features by SHAP/permutation importance,not_retrained_in_surgical_pass,,,,,,,,,20,aa_change_te; EK_7; miss_pc7; EK_1; EK_5; EK7xEK9; max_prob_EK; EK_9; EK_8; min_AF_nz; EK_6; cat1_te; EK4xEK6; AL_12; AL_26; EK2xEK4; EK_2; AL_10; EK7_minus_EK9; AL_11,queued for full retraining; not fabricated
