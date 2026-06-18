@@ -1,10 +1,11 @@
 # TEKNOFEST 2026 Genetic Variant Classifier
 
-This repository implements the competition solution described in
-`TEKNOFEST2026_FINAL_ANALYSIS_AND_MASTER_PROMPT.md`.
-
-The first implemented slice is Part IV, Section B: data loading, overlap maps,
-panel-unique splits, and dropping `AL_185`.
+This repository implements a reproducible TEKNOFEST 2026 Healthcare AI clinical
+genomics pipeline for missense variant pathogenicity prediction. It includes
+leakage-aware data preparation, feature engineering, contamination-aware
+validation, baseline and LightGBM modeling, threshold/calibration diagnostics,
+panel-unique generalization checks, explainability, notebooks, tests, and
+report-ready outputs.
 
 ## Setup
 
@@ -185,3 +186,19 @@ visualizations and general metric table required by `PHASE 9.pdf`:
 - `model_comparison_metrics.png`
 - `feature_importance_top30.png`
 - class distribution, missingness, and error-analysis plots
+
+## Run Model Performance Improvement Plan
+
+```powershell
+python scripts/run_model_performance_improvement.py --reports-only
+python scripts/run_model_performance_improvement.py --mode evaluate
+```
+
+The reports-only command is fast and regenerates the audit/final deliverable
+documents from saved real metrics. The evaluate command refreshes Phase 10
+thresholding, calibration, stability, model-selection, and final audit outputs
+using existing OOF and panel predictions.
+
+## Phase 11 Final Audit Status
+
+The final selected profile is `conservative_regularized` with threshold strategy `profile_f1_macro_opt` and threshold 0.471. Verified metrics are MASTER ROC-AUC 0.8475, PR-AUC 0.9025, F1-macro 0.7764, MCC 0.5548; panel-unique ROC-AUC 0.8725, PR-AUC 0.8251, F1-macro 0.7708, MCC 0.5825. Calibration is reported only; the uncalibrated final decision model is retained because selection prioritizes decision metrics, panel behavior, overfitting gap, and threshold stability. The model is moderate-to-good, conservatively reported as moderate.

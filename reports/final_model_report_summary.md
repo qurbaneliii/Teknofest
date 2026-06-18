@@ -28,11 +28,14 @@ Phase 9.5 visualizations are saved under `reports/figures`: `correlation_matrix_
 See `reports/tables/feature_importance.csv`, `acmg_feature_mapping.csv`, and `reports/figures/feature_importance.png`.
 
 ## Error Analysis Summary
-Panel-unique false positives and false negatives are saved in `reports/tables/error_analysis.csv`.
+Panel-unique false positives and false negatives are saved in `reports/tables/error_analysis.csv`; final selected-model FP/FN cases are saved in `reports/tables/final_false_positive_cases.csv` and `reports/tables/final_false_negative_cases.csv`.
 
 ## Limitations And Next Steps
 Final competition performance depends on the hidden external validation set distribution.
 
 ## Phase 10 Final Selection
 The final model is classified as moderate rather than weak or strong. The selected threshold strategy is `profile_f1_macro_opt` with threshold 0.471. The main technical weakness is thresholding/probability calibration rather than feature learning. See `reports/final_performance_analysis.md`, `reports/tables/final_model_selection_table.csv`, and `reports/tables/advanced_threshold_comparison.csv`.
+
+## Phase 11 Final Audit
+The final audit verifies saved predictions against the report tables, compares the previous threshold-optimized model with the conservative regularized final model, reviews calibration as reported-only, analyzes FP/FN cases, summarizes panel-specific behavior, updates feature interpretation, and preserves the model-strength statement as moderate-to-good but conservatively reported as moderate. See `reports/final_metric_verification_audit.md`, `reports/calibration_decision_review.md`, `reports/panel_specific_final_interpretation.md`, `reports/final_feature_interpretation.md`, and `reports/final_model_strength_statement.md`.
 

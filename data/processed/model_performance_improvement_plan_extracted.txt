@@ -1,0 +1,483 @@
+
+
+--- PAGE 1 ---
+You are now responsible for the MODEL PERFORMANCE IMPROVEMENT phase of the TEKNOFEST 2026
+Artificial Intelligence in Healthcare genomic variant classification project.
+Context:
+This is a medical AI / clinical genomics binary classification task. The model classifies genetic variants as:
+• Pathogenic
+• Benign
+The ground truth labels are derived from ACMG-compatible clinical annotations. This means the model
+must not only achieve high scores, but also be reliable, well-calibrated, robust, and defensible in a
+medical setting.
+Your task is NOT to rewrite the whole project.
+Your task is to improve the existing model pipeline as much as possible.
+Focus only on measurable model improvement.
+You must act as:
+• a Kaggle Grandmaster,
+• a clinical machine learning researcher,
+• a bioinformatics ML engineer,
+• an ACMG-aware variant interpretation specialist.
+Your objective is to maximize validation and expected hidden-test performance while avoiding leakage
+and overfitting.
+============================================================ PRIMARY OBJECTIVE
+============================================================
+Improve the current model so that it performs strongly across all medically relevant metrics:
+• ROC-AUC
+• PR-AUC
+• F1 Macro
+• F1 for Pathogenic class
+• F1 for Benign class
+• MCC
+• Balanced Accuracy
+• Sensitivity / Recall for Pathogenic class
+• Specificity
+• Precision / PPV
+• NPV
+• Brier Score
+• Calibration quality
+• Confusion matrix stability across folds
+1
+
+--- PAGE 2 ---
+Do not optimize Accuracy alone.
+Because this is medical data, prioritize:
+1. strong Pathogenic recall,
+2. high balanced performance,
+3. good MCC,
+4. good PR-AUC,
+5. reliable probability calibration,
+6. stable cross-validation results.
+The final model must be strong, robust, and medically interpretable.
+============================================================ IMPORTANT RULES
+============================================================
+Do not fabricate results.
+Do not report fake improvements.
+Do not use test labels.
+Do not introduce data leakage.
+Do not optimize on the same validation fold used for final evaluation.
+Do not use Variant_ID as a predictive feature.
+Do not use any feature that directly or indirectly encodes the final label.
+Every improvement must be validated using leakage-safe cross-validation.
+If a technique improves train performance but worsens validation stability, reject it.
+If a feature improves one fold but is unstable across folds, flag it.
+If a model has high ROC-AUC but poor calibration or poor pathogenic recall, do not treat it as final.
+============================================================ PHASE 1 — CURRENT MODEL
+AUDIT ============================================================
+First inspect the existing project files, notebooks, training scripts, preprocessing pipeline, feature
+engineering code, and model outputs.
+Identify:
+• current best model,
+• current validation strategy,
+• current metrics,
+• current preprocessing steps,
+2
+
+--- PAGE 3 ---
+• current feature set,
+• current feature selection method,
+• current threshold,
+• current calibration method,
+• current ensemble method if any.
+Then produce an audit report answering:
+1. Where is the model currently weak?
+2. Which metric is the biggest problem?
+3. Is the model underfitting or overfitting?
+4. Are there fold-to-fold performance instabilities?
+5. Are there class-specific weaknesses?
+6. Is Pathogenic recall strong enough?
+7. Are probabilities calibrated?
+8. Are any features suspiciously predictive?
+9. Is validation realistic for hidden-test performance?
+Only after this audit, start modifying code.
+============================================================ PHASE 2 — METRIC-
+CENTERED OPTIMIZATION ============================================================
+Create a medical-metric evaluation module.
+It must compute:
+• ROC-AUC
+• PR-AUC
+• Accuracy
+• Balanced Accuracy
+• Precision
+• Recall
+• Specificity
+• F1 Binary
+• F1 Macro
+• MCC
+• Brier Score
+• Log Loss
+• Confusion Matrix
+• Sensitivity for Pathogenic
+• Specificity for Benign
+• PPV
+• NPV
+Implement metric reporting per fold and aggregated across folds:
+• mean,
+• standard deviation,
+• minimum,
+• maximum,
+• confidence interval if possible.
+3
+
+--- PAGE 4 ---
+The main model selection metric should not be Accuracy.
+Use a combined medical score such as:
+MedicalScore = 0.20 * ROC_AUC
+• 0.20 * PR_AUC
+• 0.20 * F1_Macro
+• 0.20 * MCC
+• 0.10 * Balanced_Accuracy
+• 0.10 * Pathogenic_Recall
+Implement this score clearly and use it for model comparison.
+Also report individual metrics separately.
+============================================================ PHASE 3 — VALIDATION
+IMPROVEMENT ============================================================
+Review the current validation setup.
+If the current split is simple random train/test split, replace it with robust cross-validation.
+Implement and compare:
+1. StratifiedKFold
+2. RepeatedStratifiedKFold
+3. GroupKFold if group/panel/gene information exists
+4. Leave-one-panel-out validation if panel identifiers can be inferred
+The validation strategy must protect against:
+• overfitting,
+• panel-specific artifacts,
+• hidden leakage,
+• optimistic estimates,
+• fold instability.
+Use out-of-fold predictions for all final model comparisons.
+Save OOF predictions for every model.
+============================================================ PHASE 4 — FEATURE
+CLEANING AND LEAKAGE CONTROL
+============================================================
+Perform a strict leakage and feature quality audit.
+Detect and handle:
+• constant features,
+4
+
+--- PAGE 5 ---
+• near-constant features,
+• duplicate features,
+• highly correlated features,
+• label-leaking features,
+• ID-like features,
+• features with suspiciously perfect separation,
+• features with unrealistically high mutual information,
+• categorical features that may encode dataset source or class.
+For each suspicious feature:
+• calculate correlation / mutual information with target,
+• check fold stability,
+• test model performance with and without it,
+• decide whether to keep, transform, or remove it.
+Create a leakage report.
+Do not remove useful biomedical predictors blindly, but be strict with direct label proxies.
+============================================================ PHASE 5 — ADVANCED
+FEATURE ENGINEERING ============================================================
+Improve feature representation.
+Implement and test:
+1. Missingness indicators
+2. Add binary indicators for missing values.
+3. Missingness may be biologically informative.
+4. Numeric transformations
+5. log1p transformation for frequency-like features,
+6. rank transformation,
+7. quantile transformation,
+8. robust scaling where needed.
+9. Interaction features
+10. interaction between frequency-like features and conservation-like features,
+11. interaction between in-silico prediction scores,
+12. interaction between missingness patterns and score availability.
+13. Aggregated features
+5
+
+--- PAGE 6 ---
+14. row-wise mean of numeric features,
+15. row-wise standard deviation,
+16. row-wise min/max,
+17. row-wise missing count,
+18. row-wise high-risk score count,
+19. row-wise low-frequency count if frequency-like columns can be identified.
+20. Categorical encoding
+21. CatBoost native categorical handling where possible,
+22. leakage-safe target encoding,
+23. frequency encoding,
+24. rare category grouping.
+Every engineered feature must be evaluated by OOF performance.
+Keep only features that improve generalization.
+============================================================ PHASE 6 — STRONG MODEL
+SEARCH ============================================================
+Train and compare the following models using the same validation framework:
+1. Logistic Regression with ElasticNet
+2. Random Forest
+3. ExtraTrees
+4. XGBoost
+5. LightGBM
+6. CatBoost
+7. HistGradientBoosting
+8. Calibrated linear model
+For each model:
+• train using OOF cross-validation,
+• save fold models,
+• save OOF probabilities,
+• compute all medical metrics,
+• generate confusion matrices,
+• evaluate threshold sensitivity.
+Pay special attention to:
+• CatBoost for categorical features,
+• LightGBM for high-dimensional tabular features,
+• XGBoost for robust gradient boosting,
+• ExtraTrees for nonlinear feature interactions.
+Do not assume one model is best before testing.
+6
+
+--- PAGE 7 ---
+============================================================ PHASE 7 — HYPERPARAMETER
+OPTIMIZATION ============================================================
+Implement Optuna optimization for:
+• CatBoost
+• LightGBM
+• XGBoost
+• ExtraTrees
+Use MedicalScore as the primary optimization objective.
+Also track:
+• ROC-AUC,
+• PR-AUC,
+• F1 Macro,
+• MCC,
+• Pathogenic Recall,
+• Brier Score.
+Search spaces must include:
+For LightGBM:
+• num_leaves
+• max_depth
+• learning_rate
+• n_estimators
+• min_child_samples
+• subsample
+• colsample_bytree
+• reg_alpha
+• reg_lambda
+• class_weight / scale_pos_weight
+For XGBoost:
+• max_depth
+• learning_rate
+• n_estimators
+• subsample
+• colsample_bytree
+• min_child_weight
+• gamma
+• reg_alpha
+• reg_lambda
+• scale_pos_weight
+For CatBoost:
+• depth
+7
+
+--- PAGE 8 ---
+• learning_rate
+• iterations
+• l2_leaf_reg
+• random_strength
+• bagging_temperature
+• border_count
+• auto_class_weights
+• loss_function
+• eval_metric
+Use early stopping.
+Use pruning.
+Save best trials.
+Save optimization history.
+Do not over-optimize on one split.
+============================================================ PHASE 8 — CLASS
+WEIGHTING AND MEDICAL LOSS STRATEGY
+============================================================
+Because this is medical classification, test different class handling strategies:
+• no class weighting,
+• balanced class weights,
+• custom positive class weighting,
+• scale_pos_weight,
+• threshold adjustment instead of class weighting.
+Compare their effect on:
+• Pathogenic Recall,
+• Benign Specificity,
+• MCC,
+• F1 Macro,
+• PR-AUC.
+Do not blindly maximize recall if it destroys specificity.
+Find the best clinical trade-off.
+============================================================ PHASE 9 — THRESHOLD
+OPTIMIZATION ============================================================
+Do not use default threshold 0.50 as final.
+8
+
+--- PAGE 9 ---
+Use OOF predictions to find optimal thresholds for:
+• F1 Macro,
+• MCC,
+• Balanced Accuracy,
+• Pathogenic Recall with minimum Specificity constraint,
+• MedicalScore.
+Implement threshold search from 0.05 to 0.95.
+Report:
+• best threshold for each objective,
+• confusion matrix at each threshold,
+• metric trade-offs,
+• recommended final threshold.
+For medical data, include a clinically safer threshold option that prioritizes Pathogenic Recall while
+preserving acceptable Specificity.
+============================================================ PHASE 10 — CALIBRATION
+============================================================
+Medical AI requires calibrated probabilities.
+Test:
+• no calibration,
+• Platt scaling,
+• isotonic regression,
+• beta calibration if available.
+Evaluate:
+• Brier Score,
+• Log Loss,
+• Calibration Curve,
+• Expected Calibration Error,
+• reliability diagram.
+Compare calibrated vs uncalibrated models.
+Select final calibration method based on validation performance, not assumption.
+============================================================ PHASE 11 — ENSEMBLE
+OPTIMIZATION ============================================================
+Build ensembles using OOF predictions only.
+9
+
+--- PAGE 10 ---
+Test:
+1. Simple average ensemble
+2. Weighted average ensemble
+3. Rank average ensemble
+4. Soft voting
+5. Stacking with Logistic Regression meta-model
+6. Stacking with Ridge / ElasticNet meta-model
+7. Stacking with LightGBM meta-model if safe
+Candidate base models:
+• CatBoost
+• LightGBM
+• XGBoost
+• ExtraTrees
+• Logistic Regression
+Optimize ensemble weights using validation OOF predictions.
+The ensemble must improve MedicalScore, MCC, F1 Macro, and PR-AUC.
+If ensemble improves ROC-AUC but worsens MCC or calibration, do not select it blindly.
+============================================================ PHASE 12 — ERROR ANALYSIS
+============================================================
+Perform detailed error analysis.
+Identify:
+• false negatives: Pathogenic predicted as Benign,
+• false positives: Benign predicted as Pathogenic,
+• low-confidence errors,
+• high-confidence errors,
+• panel-specific errors,
+• feature-pattern-specific errors.
+For medical data, false negatives are especially important.
+Generate:
+• error tables,
+• top features associated with errors,
+• probability distribution plots,
+• confusion matrices per fold,
+• threshold impact plots.
+Use this analysis to improve the model.
+10
+
+--- PAGE 11 ---
+============================================================ PHASE 13 — STABILITY
+ANALYSIS ============================================================
+A strong competition model must be stable.
+Analyze:
+• fold-to-fold metric variance,
+• feature importance stability,
+• SHAP stability,
+• prediction variance across models,
+• ensemble disagreement,
+• threshold stability.
+If performance depends heavily on one fold, treat the model as risky.
+Prefer slightly lower mean performance with much better stability if hidden-test robustness improves.
+============================================================ PHASE 14 — FINAL MODEL
+SELECTION ============================================================
+Select the final model based on:
+1. MedicalScore
+2. MCC
+3. F1 Macro
+4. PR-AUC
+5. Pathogenic Recall
+6. Calibration
+7. Fold stability
+8. Interpretability
+9. Hidden-test generalization expectation
+Produce a final comparison table:
+• model name,
+• feature set,
+• threshold,
+• calibration,
+• ROC-AUC,
+• PR-AUC,
+• F1 Macro,
+• MCC,
+• Balanced Accuracy,
+• Pathogenic Recall,
+• Specificity,
+• Brier Score.
+Then select:
+• best single model,
+11
+
+--- PAGE 12 ---
+• best ensemble,
+• best calibrated model,
+• final recommended model.
+============================================================ PHASE 15 — CODE QUALITY
+REQUIREMENTS ============================================================
+Implement improvements directly in the existing codebase.
+Do not create random experimental notebooks unless necessary.
+Prefer modular code in:
+• src/metrics.py
+• src/model_selection.py
+• src/optimization.py
+• src/thresholding.py
+• src/calibration.py
+• src/ensembling.py
+• src/error_analysis.py
+• src/train_improved.py
+Code requirements:
+• executable Python,
+• type hints,
+• clear function names,
+• reproducible random seeds,
+• saved artifacts,
+• saved metrics,
+• saved plots,
+• no hardcoded absolute paths,
+• clear configuration file,
+• clean logging.
+============================================================ FINAL DELIVERABLE
+============================================================
+At the end, provide:
+1. Current baseline performance
+2. Improved model performance
+3. Before vs After comparison
+4. Best single model
+5. Best ensemble model
+6. Best threshold
+7. Best calibration method
+8. Feature selection decision
+9. Leakage audit summary
+10. Medical metric report
+11. Error analysis summary
+12
+
+--- PAGE 13 ---
+12. Final hidden-test strategy
+The final answer must clearly state:
+• what was improved,
+• why it improved,
+• which changes were rejected,
+• which model should be used for final submission,
+• which threshold should be used,
+• which metrics justify the decision.
+Begin by auditing the existing model pipeline, then implement improvements step by step.
+13

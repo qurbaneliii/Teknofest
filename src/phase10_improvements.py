@@ -698,7 +698,16 @@ def feature_ablation_outputs() -> pd.DataFrame:
 
 
 def panel_specific_error_outputs(prepared: PreparedData, selected_threshold: float) -> pd.DataFrame:
-    panel = pd.read_csv(PREDICTIONS_DIR / "panel_unique_predictions.csv")
+    final_panel_path = PREDICTIONS_DIR / "final_panel_predictions.csv"
+    if final_panel_path.exists():
+        panel = pd.read_csv(final_panel_path)
+    else:
+        panel = pd.read_csv(PREDICTIONS_DIR / "panel_unique_predictions.csv").rename(
+            columns={
+                "predicted_probability": "score",
+                "predicted_label": "prediction",
+            }
+        )
     engineer = FeatureEngineer(prepared.al_cols, prepared.al_raw, detect_binary_al_cols(prepared.master, prepared.al_cols))
     engineer.fit(prepared.master)
     engineered = []
@@ -712,7 +721,8 @@ def panel_specific_error_outputs(prepared: PreparedData, selected_threshold: flo
         engineered.append(df)
     features = pd.concat(engineered, ignore_index=True)
     merged = panel.merge(features, on=["dataset", "Variant_ID", "Label"], how="left")
-    merged["score"] = merged["predicted_probability"]
+    if "score" not in merged.columns and "predicted_probability" in merged.columns:
+        merged["score"] = merged["predicted_probability"]
     merged["prediction"] = (merged["score"] >= selected_threshold).astype(int)
     merged["error_group"] = np.select(
         [
@@ -1194,6 +1204,16 @@ def calibration_decision_review_outputs() -> pd.DataFrame:
     cal = pd.read_csv(TABLES_DIR / "calibration_comparison.csv")
     master = cal[cal["evaluation_split"].eq("MASTER_CV") & cal["threshold_strategy"].eq("f1_macro_opt")].copy()
     panel = cal[cal["evaluation_split"].eq("panel_unique_combined")].copy()
+    stability = pd.read_csv(TABLES_DIR / "fold_threshold_stability.csv") if (TABLES_DIR / "fold_threshold_stability.csv").exists() else pd.DataFrame()
+    f1_stability = stability[stability["threshold_strategy"].eq("f1_macro_opt")].copy()
+    selected = selected_final_row()
+    threshold_stability_std = (
+        float(selected["threshold_instability"])
+        if pd.notna(selected.get("threshold_instability", pd.NA))
+        else float(f1_stability["std"].dropna().iloc[0])
+        if not f1_stability.empty
+        else np.nan
+    )
     panel_cols = panel[["calibration_method", "f1_macro", "mcc", "pr_auc", "brier_score", "log_loss"]].rename(
         columns={
             "f1_macro": "panel_f1_macro",
@@ -1205,6 +1225,19 @@ def calibration_decision_review_outputs() -> pd.DataFrame:
     )
     matrix = master.merge(panel_cols, on="calibration_method", how="left")
     none = matrix[matrix["calibration_method"].eq("none")].iloc[0]
+    matrix["threshold_stability_std"] = threshold_stability_std
+    matrix["threshold_stability_source"] = str(selected.get("profile", "selected_final_profile"))
+    matrix["calibration_curve_quality"] = np.select(
+        [
+            matrix["calibration_method"].eq("isotonic") & (matrix["brier_score"] < none["brier_score"]),
+            matrix["calibration_method"].eq("sigmoid") & (matrix["brier_score"] < none["brier_score"]),
+        ],
+        [
+            "best_master_brier_but_panel_loss_degrades",
+            "improved_master_brier_with_panel_loss_tradeoff",
+        ],
+        default="baseline_uncalibrated_curve",
+    )
     matrix["decision"] = "reported_only"
     matrix.loc[matrix["calibration_method"].eq("none"), "decision"] = "selected_for_final_decision_model"
     matrix.loc[
@@ -1235,6 +1268,10 @@ def calibration_decision_review_outputs() -> pd.DataFrame:
         "Isotonic calibration improved MASTER Brier score, but the final competition objective prioritizes F1-macro, MCC, PR-AUC, and panel-unique generalization. Calibration is therefore reported only and not used in the final selected decision model.",
         "",
         matrix[["calibration_method", "brier_score", "log_loss", "f1_macro", "mcc", "panel_f1_macro", "panel_mcc", "decision"]].to_markdown(index=False),
+        "",
+        "Threshold stability is tracked separately from calibration because the selected final profile uses fold-level profile thresholds and conservative regularization. Calibration did not provide enough panel-generalization evidence to replace the uncalibrated final decision scores.",
+        "",
+        matrix[["calibration_method", "threshold_stability_std", "threshold_stability_source", "calibration_curve_quality", "rationale"]].to_markdown(index=False),
     ]
     Path("reports/calibration_decision_review.md").write_text("\n".join(text) + "\n", encoding="utf-8")
     return matrix
@@ -1468,14 +1505,26 @@ Calibration remains reported-only: it improves probability loss on MASTER, but f
 
 {strength}
 """
-    if "## Final Audit Addendum" not in existing:
-        perf_path.write_text(existing.rstrip() + "\n" + audit_section, encoding="utf-8")
+    base = existing.split("## Final Audit Addendum")[0].rstrip()
+    perf_path.write_text(base + "\n" + audit_section, encoding="utf-8")
 
     summary_path = Path("reports/final_model_report_summary.md")
     summary = summary_path.read_text(encoding="utf-8") if summary_path.exists() else ""
     line = "\nPhase 11 audit outputs are available under `reports/tables`, `reports/figures`, and `reports/*_interpretation.md`, including final metric verification, calibration decision review, panel-specific interpretation, final feature interpretation, and model strength statement.\n"
     if "Phase 11 audit outputs" not in summary:
         summary_path.write_text(summary.rstrip() + line, encoding="utf-8")
+
+    readme_path = Path("README.md")
+    if readme_path.exists():
+        readme = readme_path.read_text(encoding="utf-8")
+        readme_section = f"""
+
+## Phase 11 Final Audit Status
+
+The final selected profile is `{selected['profile']}` with threshold strategy `{selected['threshold_strategy']}` and threshold {float(selected['threshold']):.3f}. Verified metrics are MASTER ROC-AUC {float(selected['roc_auc']):.4f}, PR-AUC {float(selected['pr_auc']):.4f}, F1-macro {float(selected['f1_macro']):.4f}, MCC {float(selected['mcc']):.4f}; panel-unique ROC-AUC {float(selected['panel_roc_auc']):.4f}, PR-AUC {float(selected['panel_pr_auc']):.4f}, F1-macro {float(selected['panel_f1_macro']):.4f}, MCC {float(selected['panel_mcc']):.4f}. Calibration is reported only; the uncalibrated final decision model is retained because selection prioritizes decision metrics, panel behavior, overfitting gap, and threshold stability. The model is moderate-to-good, conservatively reported as moderate.
+"""
+        readme_base = readme.split("## Phase 11 Final Audit Status")[0].rstrip()
+        readme_path.write_text(readme_base + readme_section, encoding="utf-8")
 def run_phase10_improvements(prepared: PreparedData, base_params: dict[str, object], mode: str = "evaluate") -> dict[str, object]:
     TABLES_DIR.mkdir(parents=True, exist_ok=True)
     FIGURES_DIR.mkdir(parents=True, exist_ok=True)
@@ -1486,15 +1535,11 @@ def run_phase10_improvements(prepared: PreparedData, base_params: dict[str, obje
     calibration = calibration_outputs()
     gaps, profiles = overfitting_and_lgbm_profile_outputs(prepared, base_params, mode)
     feature_ablation_outputs()
-    selection_seed = advanced[
-        advanced["model_name"].eq("lightgbm")
-        & advanced["evaluation_split"].eq("MASTER_CV")
-        & advanced["threshold_strategy"].eq("f1_macro_opt")
-    ].iloc[0]
-    panel_specific_error_outputs(prepared, float(selection_seed["threshold"]))
     selection = final_selection_outputs(advanced, stability, calibration, profiles, gaps)
     final_artifacts_and_report(prepared, selection, advanced, calibration, profiles)
     export_final_prediction_files(prepared)
+    final_threshold = float(selection[selection["selected_as_final"]]["threshold"].iloc[0])
+    panel_specific_error_outputs(prepared, final_threshold)
     final_metric_verification_audit()
     before_after_comparison_outputs()
     calibration_decision_review_outputs()

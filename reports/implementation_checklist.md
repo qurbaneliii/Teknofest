@@ -7,6 +7,7 @@ Source instructions reviewed:
 - `sartname.pdf` / original `şartname.pdf`
 - `2026_PDR_Sablon_Universite_TR.docx` / original PDR template
 - `PHASE 9.pdf`
+- `Model Performance Improvement Plan.pdf`
 
 ## Completed Requirements
 
@@ -32,6 +33,9 @@ Source instructions reviewed:
 - [x] Generated PHASE 9.5 threshold optimization plot with default, F1-optimal, and Youden-J thresholds.
 - [x] Generated PHASE 9.5 model comparison, top-30 feature importance, class distribution, missingness-group, and error-analysis plots.
 - [x] Exported `reports/tables/all_evaluation_metrics.csv` with the required metric columns.
+- [x] Added model performance improvement modules under `src/metrics.py`, `src/thresholding.py`, `src/calibration.py`, `src/ensembling.py`, `src/model_selection.py`, `src/optimization.py`, `src/error_analysis.py`, and `src/train_improved.py`.
+- [x] Added `scripts/run_model_performance_improvement.py`.
+- [x] Generated `reports/model_performance_audit.md` and `reports/model_performance_improvement_report.md`.
 - [x] Exported main model cross-validation results to `reports/tables/main_model_cv_results.csv`.
 - [x] Exported panel generalization and bootstrap confidence interval tables.
 - [x] Exported panel error analysis to `reports/tables/error_analysis.csv`.
@@ -48,14 +52,16 @@ Source instructions reviewed:
 - [x] Added smoke and pytest verification paths.
 - [x] Updated README with pipeline, notebooks, and test commands.
 - [x] Generated `reports/final_model_report_summary.md`.
+- [x] Added Phase 10/11 threshold stability, calibration decision, final metric verification, panel interpretation, and model strength audit outputs.
 
 ## Verification
 
 - `python run_pipeline.py --mode smoke` completed successfully.
 - `python run_pipeline.py --mode full` completed successfully.
 - `python scripts/run_phase9_outputs.py` completed successfully.
+- `python scripts/run_model_performance_improvement.py --reports-only` completed successfully.
 - `python scripts/run_optuna_lgbm_study.py --data-dir teknofest2026_artificialintelligenceinhealtcare-main --n-trials 50 --max-estimators 3000 --timeout-seconds 2400` completed successfully.
-- `python -m pytest tests` completed successfully with 5 passing tests.
+- `python -m pytest tests` completed successfully with 6 passing tests.
 
 ## Remaining Limitations
 
