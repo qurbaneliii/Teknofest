@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from pathlib import Path
+from typing import Any
 
 import joblib
 import lightgbm as lgb
@@ -22,6 +23,7 @@ from sklearn.metrics import (
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 
+from medical_metrics import compute_medical_metrics
 from teknofest.data_prep import PreparedData
 from teknofest.features import FeatureEngineer, detect_binary_al_cols
 from teknofest.validation import (
@@ -344,6 +346,270 @@ def optimize_lgbm_resumable(
     trials = study.trials_dataframe(attrs=("number", "value", "params", "state"))
     trials = trials.rename(columns={"number": "trial", "value": "mean_auc"})
     return dict(study.best_params), trials
+
+
+def _medical_fold_cache(prepared: PreparedData) -> list[dict[str, Any]]:
+    """Build fold-local feature matrices once for a leakage-safe tuning run."""
+    folds = contamination_aware_folds(prepared.master["Label"], prepared.master_shared_mask)
+    cache: list[dict[str, Any]] = []
+    for fold in folds:
+        train_df, val_df = fold_engineered_data(prepared, fold.train_idx, fold.val_idx)
+        x_train, x_val = align_numeric(train_df, val_df)
+        cache.append(
+            {
+                "fold": fold.fold,
+                "train_idx": fold.train_idx,
+                "val_idx": fold.val_idx,
+                "x_train": x_train,
+                "y_train": train_df["Label"].astype(int),
+                "x_val": x_val,
+                "y_val": val_df["Label"].astype(int),
+            }
+        )
+    return cache
+
+
+def _medical_search_params(trial: optuna.Trial, max_estimators: int) -> dict[str, object]:
+    if max_estimators < 600:
+        raise ValueError("max_estimators must be at least 600 for the controlled medical search space.")
+    return {
+        "n_estimators": trial.suggest_int("n_estimators", 600, min(2000, max_estimators), step=50),
+        "learning_rate": trial.suggest_float("learning_rate", 0.01, 0.06),
+        "num_leaves": trial.suggest_int("num_leaves", 15, 127),
+        "max_depth": trial.suggest_int("max_depth", 3, 8),
+        "min_child_samples": trial.suggest_int("min_child_samples", 30, 150),
+        "subsample": trial.suggest_float("subsample", 0.65, 0.95),
+        "subsample_freq": 1,
+        "colsample_bytree": trial.suggest_float("colsample_bytree", 0.55, 0.95),
+        "reg_alpha": trial.suggest_float("reg_alpha", 0.01, 10.0, log=True),
+        "reg_lambda": trial.suggest_float("reg_lambda", 0.5, 15.0, log=True),
+        "min_split_gain": trial.suggest_float("min_split_gain", 0.0, 0.1),
+        "scale_pos_weight": trial.suggest_float("scale_pos_weight", 0.30, 0.70),
+    }
+
+
+def _mean_metric_rows(rows: list[dict[str, float | int]]) -> dict[str, float]:
+    if not rows:
+        raise ValueError("At least one fold metric row is required.")
+    frame = pd.DataFrame(rows)
+    values: dict[str, float] = {}
+    for column in (
+        "roc_auc",
+        "pr_auc",
+        "f1_macro",
+        "mcc",
+        "balanced_accuracy",
+        "pathogenic_recall",
+        "specificity",
+        "medical_utility_score",
+    ):
+        numeric = pd.to_numeric(frame[column], errors="coerce")
+        values[f"mean_{column}"] = float(numeric.mean())
+        values[f"std_{column}"] = float(numeric.std(ddof=1)) if len(numeric) > 1 else 0.0
+    return values
+
+
+def medical_trials_dataframe(study: optuna.Study) -> pd.DataFrame:
+    """Expose all durable trial attributes saved in the Optuna RDB storage."""
+    rows: list[dict[str, object]] = []
+    for trial in study.trials:
+        row: dict[str, object] = {
+            "trial": trial.number,
+            "state": trial.state.name,
+            "medical_utility_score": trial.value if trial.value is not None else np.nan,
+        }
+        row.update({f"param_{key}": value for key, value in trial.params.items()})
+        row.update(trial.user_attrs)
+        rows.append(row)
+    return pd.DataFrame(rows).sort_values("trial").reset_index(drop=True) if rows else pd.DataFrame()
+
+
+def optimize_lgbm_medical_resumable(
+    prepared: PreparedData,
+    n_trials: int,
+    storage_url: str,
+    study_name: str,
+    max_estimators: int = 2000,
+    timeout_seconds: int | None = None,
+    resume: bool = True,
+) -> tuple[dict[str, object], pd.DataFrame, dict[str, int]]:
+    """Run or resume a medical-utility Optuna study using contamination-aware folds.
+
+    Feature engineering is fit only on each training fold. Fold thresholds are
+    optimized only against their own held-out fold and are stored for stability
+    review; panel labels are never read during tuning.
+    """
+    fold_cache = _medical_fold_cache(prepared)
+    sampler = optuna.samplers.TPESampler(seed=42, multivariate=True)
+    pruner = optuna.pruners.MedianPruner(n_startup_trials=10, n_warmup_steps=2)
+    optuna.logging.set_verbosity(optuna.logging.WARNING)
+    study = optuna.create_study(
+        direction="maximize",
+        sampler=sampler,
+        pruner=pruner,
+        storage=storage_url,
+        study_name=study_name,
+        load_if_exists=resume,
+    )
+    before = {
+        "complete": sum(t.state == optuna.trial.TrialState.COMPLETE for t in study.trials),
+        "pruned": sum(t.state == optuna.trial.TrialState.PRUNED for t in study.trials),
+        "failed": sum(t.state == optuna.trial.TrialState.FAIL for t in study.trials),
+    }
+
+    def objective(trial: optuna.Trial) -> float:
+        params = _medical_search_params(trial, max_estimators)
+        fold_metrics: list[dict[str, float | int]] = []
+        thresholds: list[float] = []
+        best_iterations: list[int] = []
+        for step, fold in enumerate(fold_cache):
+            model = make_lgbm(params)
+            model.fit(
+                fold["x_train"],
+                fold["y_train"],
+                eval_set=[(fold["x_val"], fold["y_val"])],
+                eval_metric="auc",
+                callbacks=[lgb.early_stopping(100, verbose=False)],
+            )
+            probability = model.predict_proba(fold["x_val"])[:, 1]
+            threshold, _ = best_f1_macro_threshold(fold["y_val"], probability)
+            metrics = compute_medical_metrics(fold["y_val"], probability, threshold)
+            fold_metrics.append(metrics)
+            thresholds.append(float(threshold))
+            best_iterations.append(int(model.best_iteration_ or params["n_estimators"]))
+            current = _mean_metric_rows(fold_metrics)
+            trial.report(current["mean_medical_utility_score"], step)
+            trial.set_user_attr(f"fold_{int(fold['fold'])}_threshold", float(threshold))
+            trial.set_user_attr(f"fold_{int(fold['fold'])}_medical_utility_score", current["mean_medical_utility_score"])
+            if trial.should_prune():
+                raise optuna.TrialPruned()
+
+        summary = _mean_metric_rows(fold_metrics)
+        for key, value in summary.items():
+            trial.set_user_attr(key, value)
+        trial.set_user_attr("threshold_mean", float(np.mean(thresholds)))
+        trial.set_user_attr("threshold_median", float(np.median(thresholds)))
+        trial.set_user_attr("threshold_std", float(np.std(thresholds, ddof=1)))
+        trial.set_user_attr("mean_best_iteration", float(np.mean(best_iterations)))
+        return summary["mean_medical_utility_score"]
+
+    study.optimize(
+        objective,
+        n_trials=n_trials,
+        timeout=timeout_seconds,
+        show_progress_bar=True,
+        gc_after_trial=True,
+    )
+    after = {
+        "complete": sum(t.state == optuna.trial.TrialState.COMPLETE for t in study.trials),
+        "pruned": sum(t.state == optuna.trial.TrialState.PRUNED for t in study.trials),
+        "failed": sum(t.state == optuna.trial.TrialState.FAIL for t in study.trials),
+    }
+    delta = {f"new_{key}": after[key] - before[key] for key in before}
+    if not after["complete"]:
+        raise RuntimeError("Medical Optuna study has no completed trials.")
+    return dict(study.best_params), medical_trials_dataframe(study), {**before, **after, **delta}
+
+
+def evaluate_lgbm_medical_candidate(
+    prepared: PreparedData,
+    params: dict[str, object],
+) -> dict[str, object]:
+    """Create candidate-only OOF and panel predictions; never writes a final model."""
+    fold_cache = _medical_fold_cache(prepared)
+    oof_frames: list[pd.DataFrame] = []
+    fold_rows: list[dict[str, float | int]] = []
+    gap_rows: list[dict[str, float]] = []
+    thresholds: list[float] = []
+    best_iterations: list[int] = []
+    for fold in fold_cache:
+        model = make_lgbm(params)
+        model.fit(
+            fold["x_train"],
+            fold["y_train"],
+            eval_set=[(fold["x_val"], fold["y_val"])],
+            eval_metric="auc",
+            callbacks=[lgb.early_stopping(100, verbose=False)],
+        )
+        probability = model.predict_proba(fold["x_val"])[:, 1]
+        threshold, _ = best_f1_macro_threshold(fold["y_val"], probability)
+        val_metrics = compute_medical_metrics(fold["y_val"], probability, threshold)
+        train_probability = model.predict_proba(fold["x_train"])[:, 1]
+        train_metrics = compute_medical_metrics(fold["y_train"], train_probability, threshold)
+        fold_rows.append({"fold": int(fold["fold"]), **val_metrics})
+        gap_rows.append(
+            {
+                "fold": int(fold["fold"]),
+                "train_roc_auc": float(train_metrics["roc_auc"]),
+                "validation_roc_auc": float(val_metrics["roc_auc"]),
+                "roc_auc_gap": float(train_metrics["roc_auc"] - val_metrics["roc_auc"]),
+            }
+        )
+        thresholds.append(float(threshold))
+        best_iterations.append(int(model.best_iteration_ or params["n_estimators"]))
+        raw = prepared.master.iloc[fold["val_idx"]]
+        oof_frames.append(
+            pd.DataFrame(
+                {
+                    "fold": int(fold["fold"]),
+                    "row_index": fold["val_idx"],
+                    "Variant_ID": raw["Variant_ID"].to_numpy(),
+                    "Label": fold["y_val"].to_numpy(),
+                    "score": probability,
+                    "fold_threshold": float(threshold),
+                }
+            )
+        )
+
+    threshold = float(np.median(thresholds))
+    oof = pd.concat(oof_frames, ignore_index=True).sort_values("row_index").reset_index(drop=True)
+    oof["threshold"] = threshold
+    oof["prediction"] = (oof["score"] >= threshold).astype(int)
+    oof_metrics = compute_medical_metrics(oof["Label"], oof["score"], threshold)
+
+    flags = detect_binary_al_cols(prepared.master, prepared.al_cols)
+    engineer = FeatureEngineer(prepared.al_cols, prepared.al_raw, flags)
+    master = engineer.fit_transform(prepared.master.copy())
+    x_master = master[model_columns(master)]
+    final_params = dict(params)
+    final_params["n_estimators"] = max(1, int(round(float(np.mean(best_iterations)))))
+    final_model = make_lgbm(final_params)
+    final_model.fit(x_master, master["Label"].astype(int))
+    panel_frames: list[pd.DataFrame] = []
+    for dataset, raw in (
+        ("KANSER_unique", prepared.kanser_unique),
+        ("PAH_unique", prepared.pah_unique),
+        ("CFTR_unique", prepared.cftr_unique),
+    ):
+        transformed = engineer.transform(raw.copy())
+        probability = final_model.predict_proba(transformed.reindex(columns=x_master.columns))[:, 1]
+        panel_frames.append(
+            pd.DataFrame(
+                {
+                    "dataset": dataset,
+                    "Variant_ID": raw["Variant_ID"].to_numpy(),
+                    "Label": raw["Label"].to_numpy(dtype=int),
+                    "score": probability,
+                }
+            )
+        )
+    panel = pd.concat(panel_frames, ignore_index=True)
+    panel["threshold"] = threshold
+    panel["prediction"] = (panel["score"] >= threshold).astype(int)
+    panel_metrics = compute_medical_metrics(panel["Label"], panel["score"], threshold)
+    return {
+        "oof_predictions": oof,
+        "panel_predictions": panel,
+        "fold_metrics": pd.DataFrame(fold_rows),
+        "overfitting_gaps": pd.DataFrame(gap_rows),
+        "oof_metrics": oof_metrics,
+        "panel_metrics": panel_metrics,
+        "threshold": threshold,
+        "threshold_stability": float(np.std(thresholds, ddof=1)),
+        "mean_roc_auc_gap": float(pd.DataFrame(gap_rows)["roc_auc_gap"].mean()),
+        "mean_best_iteration": float(np.mean(best_iterations)),
+        "effective_full_fit_params": final_params,
+    }
 
 
 def fit_final_lgbm(

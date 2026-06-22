@@ -1,0 +1,15 @@
+dataset,label,count
+MASTER,Benign,782
+MASTER,Pathogenic,2149
+KANSER,Benign,120
+KANSER,Pathogenic,268
+PAH,Benign,62
+PAH,Pathogenic,310
+CFTR,Benign,21
+CFTR,Pathogenic,90
+KANSER_unique,Benign,97
+KANSER_unique,Pathogenic,45
+PAH_unique,Benign,49
+PAH_unique,Pathogenic,68
+CFTR_unique,Benign,17
+CFTR_unique,Pathogenic,17

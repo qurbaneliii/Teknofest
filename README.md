@@ -202,24 +202,3 @@ using existing OOF and panel predictions.
 ## Phase 11 Final Audit Status
 
 The final selected profile is `conservative_regularized` with threshold strategy `profile_f1_macro_opt` and threshold 0.471. Verified metrics are MASTER ROC-AUC 0.8475, PR-AUC 0.9025, F1-macro 0.7764, MCC 0.5548; panel-unique ROC-AUC 0.8725, PR-AUC 0.8251, F1-macro 0.7708, MCC 0.5825. Calibration is reported only; the uncalibrated final decision model is retained because selection prioritizes decision metrics, panel behavior, overfitting gap, and threshold stability. The model is moderate-to-good, conservatively reported as moderate.
-
-## Run Final Competition Workflow
-
-The final competition layer keeps the Phase 10 selection as a preserved benchmark,
-then evaluates a fold-safe model zoo, OOF ensembles, advanced label-free biological
-features, medical thresholds, calibration diagnostics, repeated validation, and
-submission/report outputs.
-
-```powershell
-python scripts/run_final_model_zoo.py --data-dir teknofest2026_artificialintelligenceinhealtcare-main
-python scripts/run_final_ensemble.py
-python scripts/run_final_competition_pipeline.py --data-dir teknofest2026_artificialintelligenceinhealtcare-main
-python scripts/generate_final_submission.py --data-dir teknofest2026_artificialintelligenceinhealtcare-main
-python scripts/generate_final_report_assets.py --data-dir teknofest2026_artificialintelligenceinhealtcare-main
-```
-
-The full workflow writes the new OOF prediction matrices under
-`artifacts/predictions`, saved fold/full models under `artifacts/models/model_zoo`,
-the final selection manifest at `artifacts/metrics/final_model_decision.json`, and
-report-ready assets under `reports/final_report_assets`. It never uses `Variant_ID`
-as a feature or uses labels during inference.

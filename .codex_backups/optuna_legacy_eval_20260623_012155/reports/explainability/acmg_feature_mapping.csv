@@ -1,0 +1,8 @@
+feature,shap_direction,acmg_criterion,clinical_meaning
+max_AF,Negative when high,BA1,Allele frequency above benign threshold.
+n_pops,Positive when zero,PM2,Absent from population databases.
+EK_7,Positive when high,PP3/BP4,Highly conserved position supports pathogenicity.
+EK_9,Positive when high,PP3/BP4,Evolutionary model predicts pathogenic effect.
+cat1_multipop,Positive when true,PM2 strong,Rare across multiple population sources.
+cat6_segdup,Negative when true,BP7 proxy,Low-confidence segmental duplication region.
+aa_involves_G,Positive when true,PS1/PM5,Glycine substitutions can disrupt structure.

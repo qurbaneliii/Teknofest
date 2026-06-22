@@ -1,0 +1,86 @@
+ablation,description,fold,threshold_name,threshold,CV_AUC,CV_F1macro
+ABL-01_EK_cols_only,EK raw columns only,0,default_0.5,0.5,0.7465859123964147,0.4080604534005038
+ABL-01_EK_cols_only,EK raw columns only,0,f1_macro_opt,0.658916927911302,0.7465859123964147,0.6737432752935733
+ABL-02_AL_cols_only,AL raw columns only,0,default_0.5,0.5,0.8098046676813802,0.5015906680805938
+ABL-02_AL_cols_only,AL raw columns only,0,f1_macro_opt,0.6373001472312979,0.8098046676813802,0.7545085396880669
+ABL-03_engineered_only_no_raw_AL_EK,"Engineered features only, excluding raw AL/EK",0,default_0.5,0.5,0.8339463893116863,0.5433937823834196
+ABL-03_engineered_only_no_raw_AL_EK,"Engineered features only, excluding raw AL/EK",0,f1_macro_opt,0.6540506916996933,0.8339463893116863,0.7730355087950025
+ABL-04_all_zero_impute_no_miss_flags,"All numeric features, zero imputation, missingness flags removed",0,default_0.5,0.5,0.8510591070522577,0.4696821036106751
+ABL-04_all_zero_impute_no_miss_flags,"All numeric features, zero imputation, missingness flags removed",0,f1_macro_opt,0.6649122293355013,0.8510591070522577,0.7623814435074521
+ABL-05_all_with_miss_flags,Full proposed feature set,0,default_0.5,0.5,0.8649374260104853,0.5138609249038697
+ABL-05_all_with_miss_flags,Full proposed feature set,0,f1_macro_opt,0.667100830053867,0.8649374260104853,0.7759453099642972
+ABL-06_no_EK_interactions,Full feature set without EK interaction terms,0,default_0.5,0.5,0.8637007441231186,0.506438954291715
+ABL-06_no_EK_interactions,Full feature set without EK interaction terms,0,f1_macro_opt,0.6340051717875408,0.8637007441231186,0.7838769189857008
+ABL-07_no_AA_chemistry,Full feature set without amino-acid chemistry features,0,default_0.5,0.5,0.8609948418738372,0.5563281375912325
+ABL-07_no_AA_chemistry,Full feature set without amino-acid chemistry features,0,f1_macro_opt,0.6338324677368082,0.8609948418738372,0.7713653952459922
+ABL-08_no_CAT1_decomposition,Full feature set without CAT_1 decomposition features,0,default_0.5,0.5,0.8652333840690004,0.5332160312805474
+ABL-08_no_CAT1_decomposition,Full feature set without CAT_1 decomposition features,0,f1_macro_opt,0.6213670402481791,0.8652333840690004,0.7819147449336128
+ABL-09_single_LGBM_vs_extra_trees,Single LightGBM compared with ExtraTrees baseline,0,extra_trees_default_0.5,0.5,0.8479092677152038,0.7644681939748168
+ABL-01_EK_cols_only,EK raw columns only,1,default_0.5,0.5,0.7326636904761905,0.40660736975857686
+ABL-01_EK_cols_only,EK raw columns only,1,f1_macro_opt,0.6426545199542105,0.7326636904761905,0.6564286192012265
+ABL-02_AL_cols_only,AL raw columns only,1,default_0.5,0.5,0.7877338435374149,0.48837492391965914
+ABL-02_AL_cols_only,AL raw columns only,1,f1_macro_opt,0.6183390910530282,0.7877338435374149,0.7601753212630774
+ABL-03_engineered_only_no_raw_AL_EK,"Engineered features only, excluding raw AL/EK",1,default_0.5,0.5,0.8436649659863945,0.5192429521697814
+ABL-03_engineered_only_no_raw_AL_EK,"Engineered features only, excluding raw AL/EK",1,f1_macro_opt,0.6239287070483464,0.8436649659863945,0.7666166916541729
+ABL-04_all_zero_impute_no_miss_flags,"All numeric features, zero imputation, missingness flags removed",1,default_0.5,0.5,0.8471088435374149,0.44210189796742494
+ABL-04_all_zero_impute_no_miss_flags,"All numeric features, zero imputation, missingness flags removed",1,f1_macro_opt,0.6483690515318851,0.8471088435374149,0.7769572724934788
+ABL-05_all_with_miss_flags,Full proposed feature set,1,default_0.5,0.5,0.8536139455782312,0.46239595842477954
+ABL-05_all_with_miss_flags,Full proposed feature set,1,f1_macro_opt,0.6271405129066185,0.8536139455782312,0.777105829107918
+ABL-06_no_EK_interactions,Full feature set without EK interaction terms,1,default_0.5,0.5,0.8537627551020408,0.46900336167688356
+ABL-06_no_EK_interactions,Full feature set without EK interaction terms,1,f1_macro_opt,0.6352392672704302,0.8537627551020408,0.7738725351054416
+ABL-07_no_AA_chemistry,Full feature set without amino-acid chemistry features,1,default_0.5,0.5,0.8527742346938776,0.47553467935633537
+ABL-07_no_AA_chemistry,Full feature set without amino-acid chemistry features,1,f1_macro_opt,0.6206982378942749,0.8527742346938776,0.7686094210914454
+ABL-08_no_CAT1_decomposition,Full feature set without CAT_1 decomposition features,1,default_0.5,0.5,0.8539434523809524,0.46239595842477954
+ABL-08_no_CAT1_decomposition,Full feature set without CAT_1 decomposition features,1,f1_macro_opt,0.6095632203639568,0.8539434523809524,0.7739905973451328
+ABL-09_single_LGBM_vs_extra_trees,Single LightGBM compared with ExtraTrees baseline,1,extra_trees_default_0.5,0.5,0.8193239795918368,0.7319331562994555
+ABL-01_EK_cols_only,EK raw columns only,2,default_0.5,0.5,0.7023024202184622,0.40811153358681873
+ABL-01_EK_cols_only,EK raw columns only,2,f1_macro_opt,0.6753826618853295,0.7023024202184622,0.6483797150660663
+ABL-02_AL_cols_only,AL raw columns only,2,default_0.5,0.5,0.8328550010708933,0.5565995457756374
+ABL-02_AL_cols_only,AL raw columns only,2,f1_macro_opt,0.6855519692418199,0.8328550010708933,0.7440963606286187
+ABL-03_engineered_only_no_raw_AL_EK,"Engineered features only, excluding raw AL/EK",2,default_0.5,0.5,0.8441957592632255,0.5252157465421444
+ABL-03_engineered_only_no_raw_AL_EK,"Engineered features only, excluding raw AL/EK",2,f1_macro_opt,0.6272401379839257,0.8441957592632255,0.771770037320064
+ABL-04_all_zero_impute_no_miss_flags,"All numeric features, zero imputation, missingness flags removed",2,default_0.5,0.5,0.8290533304776184,0.48714470284237726
+ABL-04_all_zero_impute_no_miss_flags,"All numeric features, zero imputation, missingness flags removed",2,f1_macro_opt,0.6295215176355944,0.8290533304776184,0.7603525211958947
+ABL-05_all_with_miss_flags,Full proposed feature set,2,default_0.5,0.5,0.8467551938316557,0.4934232200107671
+ABL-05_all_with_miss_flags,Full proposed feature set,2,f1_macro_opt,0.6189329888716427,0.8467551938316557,0.7697721464473319
+ABL-06_no_EK_interactions,Full feature set without EK interaction terms,2,default_0.5,0.5,0.847911758406511,0.47553467935633537
+ABL-06_no_EK_interactions,Full feature set without EK interaction terms,2,f1_macro_opt,0.6125186038056585,0.847911758406511,0.7761469984021914
+ABL-07_no_AA_chemistry,Full feature set without amino-acid chemistry features,2,default_0.5,0.5,0.8394838295138146,0.5340294697760761
+ABL-07_no_AA_chemistry,Full feature set without amino-acid chemistry features,2,f1_macro_opt,0.6251943472571888,0.8394838295138146,0.7655582818625377
+ABL-08_no_CAT1_decomposition,Full feature set without CAT_1 decomposition features,2,default_0.5,0.5,0.8463589633754552,0.5057729186062241
+ABL-08_no_CAT1_decomposition,Full feature set without CAT_1 decomposition features,2,f1_macro_opt,0.6161764874897979,0.8463589633754552,0.7634617982080951
+ABL-09_single_LGBM_vs_extra_trees,Single LightGBM compared with ExtraTrees baseline,2,extra_trees_default_0.5,0.5,0.8352109659455987,0.7331249159607369
+ABL-01_EK_cols_only,EK raw columns only,3,default_0.5,0.5,0.7641135620915033,0.403530895334174
+ABL-01_EK_cols_only,EK raw columns only,3,f1_macro_opt,0.6411231322306169,0.7641135620915033,0.700632911392405
+ABL-02_AL_cols_only,AL raw columns only,3,default_0.5,0.5,0.8101000816993463,0.4861213122781246
+ABL-02_AL_cols_only,AL raw columns only,3,f1_macro_opt,0.6701798251705022,0.8101000816993463,0.7616613878491219
+ABL-03_engineered_only_no_raw_AL_EK,"Engineered features only, excluding raw AL/EK",3,default_0.5,0.5,0.8178410947712419,0.547171453437772
+ABL-03_engineered_only_no_raw_AL_EK,"Engineered features only, excluding raw AL/EK",3,f1_macro_opt,0.6086995135123217,0.8178410947712419,0.754352876862102
+ABL-04_all_zero_impute_no_miss_flags,"All numeric features, zero imputation, missingness flags removed",3,default_0.5,0.5,0.8272671568627452,0.4751173708920188
+ABL-04_all_zero_impute_no_miss_flags,"All numeric features, zero imputation, missingness flags removed",3,f1_macro_opt,0.6882353294362553,0.8272671568627452,0.7507264455177949
+ABL-05_all_with_miss_flags,Full proposed feature set,3,default_0.5,0.5,0.8325674019607844,0.45733275309569965
+ABL-05_all_with_miss_flags,Full proposed feature set,3,f1_macro_opt,0.6450186248125753,0.8325674019607844,0.7524856096284668
+ABL-06_no_EK_interactions,Full feature set without EK interaction terms,3,default_0.5,0.5,0.8358047385620915,0.4885696632684584
+ABL-06_no_EK_interactions,Full feature set without EK interaction terms,3,f1_macro_opt,0.6222664136959261,0.8358047385620915,0.7585266770941954
+ABL-07_no_AA_chemistry,Full feature set without amino-acid chemistry features,3,default_0.5,0.5,0.8392258986928105,0.48245838668373875
+ABL-07_no_AA_chemistry,Full feature set without amino-acid chemistry features,3,f1_macro_opt,0.6623622084256414,0.8392258986928105,0.7753413813576093
+ABL-08_no_CAT1_decomposition,Full feature set without CAT_1 decomposition features,3,default_0.5,0.5,0.8384395424836601,0.47003423986711484
+ABL-08_no_CAT1_decomposition,Full feature set without CAT_1 decomposition features,3,f1_macro_opt,0.6882758972114152,0.8384395424836601,0.7658415841584159
+ABL-09_single_LGBM_vs_extra_trees,Single LightGBM compared with ExtraTrees baseline,3,extra_trees_default_0.5,0.5,0.8487132352941176,0.7463146658335286
+ABL-01_EK_cols_only,EK raw columns only,4,default_0.5,0.5,0.6780030565461029,0.40574282147315854
+ABL-01_EK_cols_only,EK raw columns only,4,f1_macro_opt,0.6410918950687142,0.6780030565461029,0.6263530776422825
+ABL-02_AL_cols_only,AL raw columns only,4,default_0.5,0.5,0.7852470708099847,0.5157312925170068
+ABL-02_AL_cols_only,AL raw columns only,4,f1_macro_opt,0.6239676443138414,0.7852470708099847,0.7168193247126438
+ABL-03_engineered_only_no_raw_AL_EK,"Engineered features only, excluding raw AL/EK",4,default_0.5,0.5,0.7958532857870606,0.5025592127846219
+ABL-03_engineered_only_no_raw_AL_EK,"Engineered features only, excluding raw AL/EK",4,f1_macro_opt,0.6728372565629113,0.7958532857870606,0.7385270705240639
+ABL-04_all_zero_impute_no_miss_flags,"All numeric features, zero imputation, missingness flags removed",4,default_0.5,0.5,0.7724910850738665,0.45157828282828283
+ABL-04_all_zero_impute_no_miss_flags,"All numeric features, zero imputation, missingness flags removed",4,f1_macro_opt,0.6313245473275979,0.7724910850738665,0.7091734310901632
+ABL-05_all_with_miss_flags,Full proposed feature set,4,default_0.5,0.5,0.7964034640855834,0.4590909090909091
+ABL-05_all_with_miss_flags,Full proposed feature set,4,f1_macro_opt,0.6682460559083012,0.7964034640855834,0.748827392120075
+ABL-06_no_EK_interactions,Full feature set without EK interaction terms,4,default_0.5,0.5,0.8025369332654102,0.46550871214203265
+ABL-06_no_EK_interactions,Full feature set without EK interaction terms,4,f1_macro_opt,0.6723283544212695,0.8025369332654102,0.741002720559658
+ABL-07_no_AA_chemistry,Full feature set without amino-acid chemistry features,4,default_0.5,0.5,0.7930005094243504,0.5130434782608696
+ABL-07_no_AA_chemistry,Full feature set without amino-acid chemistry features,4,f1_macro_opt,0.6605066240668661,0.7930005094243504,0.7336913953228152
+ABL-08_no_CAT1_decomposition,Full feature set without CAT_1 decomposition features,4,default_0.5,0.5,0.796729495669893,0.4666035353535354
+ABL-08_no_CAT1_decomposition,Full feature set without CAT_1 decomposition features,4,f1_macro_opt,0.6105072599905055,0.796729495669893,0.742343967850406
+ABL-09_single_LGBM_vs_extra_trees,Single LightGBM compared with ExtraTrees baseline,4,extra_trees_default_0.5,0.5,0.7987773815588386,0.7322221064694239
