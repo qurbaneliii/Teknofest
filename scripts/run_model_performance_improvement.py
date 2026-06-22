@@ -189,6 +189,8 @@ def main() -> None:
     parser.add_argument("--mode", choices=["evaluate", "full", "tune"], default="evaluate")
     parser.add_argument("--refresh-phase9", action="store_true")
     parser.add_argument("--reports-only", action="store_true")
+    parser.add_argument("--competition-final", action="store_true", help="Run the complete final model zoo, ensemble, selection, inference, and report workflow.")
+    parser.add_argument("--skip-repeated-validation", action="store_true", help="Skip the repeated-seed validation stage only when iterating locally.")
     args = parser.parse_args()
 
     if args.reports_only:
@@ -200,6 +202,15 @@ def main() -> None:
 
     data_dir = args.data_dir or discover_data_dir(PROJECT_ROOT)
     prepared = prepare_data(data_dir)
+    if args.competition_final:
+        from final_competition_pipeline import run_final_competition_pipeline
+
+        result = run_final_competition_pipeline(prepared, not args.skip_repeated_validation)
+        print("Final competition workflow complete.")
+        print(f"Selected candidate: {result['selected']['candidate_id']}")
+        print(f"Submission: {result['submission_path']}")
+        print(f"Report assets: {result['report_assets']}")
+        return
     if args.refresh_phase9 or not (TABLES_DIR / "all_evaluation_metrics.csv").exists():
         generate_phase9_outputs(prepared)
     result = run_phase10_improvements(prepared, load_params(), mode=args.mode)

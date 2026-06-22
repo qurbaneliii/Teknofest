@@ -53,6 +53,9 @@ Source instructions reviewed:
 - [x] Updated README with pipeline, notebooks, and test commands.
 - [x] Generated `reports/final_model_report_summary.md`.
 - [x] Added Phase 10/11 threshold stability, calibration decision, final metric verification, panel interpretation, and model strength audit outputs.
+- [x] Added final competition modules for medical metrics, advanced bio-features, feature safety selection, model zoo, repeated validation, thresholding, calibration, OOF ensembling, error analysis, final selection, inference, and report assets.
+- [x] Added final workflow entrypoints under `scripts/run_final_model_zoo.py`, `scripts/run_final_ensemble.py`, `scripts/run_final_competition_pipeline.py`, `scripts/generate_final_submission.py`, and `scripts/generate_final_report_assets.py`.
+- [x] Added targeted tests for medical metrics, advanced biological features, Variant_ID exclusion, fold-safe target encoding, inference schema, thresholding, and ensemble weights.
 
 ## Verification
 
@@ -62,6 +65,7 @@ Source instructions reviewed:
 - `python scripts/run_model_performance_improvement.py --reports-only` completed successfully.
 - `python scripts/run_optuna_lgbm_study.py --data-dir teknofest2026_artificialintelligenceinhealtcare-main --n-trials 50 --max-estimators 3000 --timeout-seconds 2400` completed successfully.
 - `python -m pytest tests` completed successfully with 6 passing tests.
+- [ ] The new final competition workflow still requires a full local execution before its output metrics can replace the preserved Phase 10 benchmark.
 
 ## Remaining Limitations
 
