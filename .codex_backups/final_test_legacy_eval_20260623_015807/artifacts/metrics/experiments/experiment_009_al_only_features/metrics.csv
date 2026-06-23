@@ -1,0 +1,2 @@
+experiment_id,model_name,cv_roc_auc_mean,cv_roc_auc_std,cv_pr_auc_mean,cv_f1_macro_mean,cv_mcc_mean,panel_unique_roc_auc,panel_unique_pr_auc,panel_unique_f1_macro,panel_unique_mcc,overfitting_gap,selected_threshold,diagnosis,selected_as_final,reason
+experiment_009_al_only_features,ABL-02_AL_cols_only,0.8051481329598038,,,0.7474521868283057,,,,,,,,Feature selection ablation,False,Compare delta against full proposed model.

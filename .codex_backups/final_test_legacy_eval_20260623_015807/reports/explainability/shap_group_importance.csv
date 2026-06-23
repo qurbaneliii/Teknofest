@@ -1,0 +1,6 @@
+group,features_present,mean_abs_shap
+Amino Acid Chemistry,7,2.0932439402675604
+Computational Evidence,9,1.859251034281178
+Conservation/Evolution,5,1.8253231344171634
+Population Frequency,11,0.6159208129216377
+Missingness,5,0.00808683863647137

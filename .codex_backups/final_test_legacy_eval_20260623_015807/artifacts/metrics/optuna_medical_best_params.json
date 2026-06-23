@@ -1,0 +1,75 @@
+{
+  "best_medical_utility_score": 0.7873227003933712,
+  "best_params": {
+    "colsample_bytree": 0.5865857808774373,
+    "learning_rate": 0.02723317124110314,
+    "max_depth": 8,
+    "min_child_samples": 105,
+    "min_split_gain": 0.07649420721400307,
+    "n_estimators": 1150,
+    "num_leaves": 24,
+    "reg_alpha": 0.010269883693999423,
+    "reg_lambda": 1.7260735570455419,
+    "scale_pos_weight": 0.3662203933390258,
+    "subsample": 0.690107305692775
+  },
+  "candidate_oof_prediction_path": "C:\\Users\\qurba\\OneDrive\\Documents\\Teknofest\\artifacts\\predictions\\optuna_medical_candidate_oof_predictions.csv",
+  "candidate_panel_prediction_path": "C:\\Users\\qurba\\OneDrive\\Documents\\Teknofest\\artifacts\\predictions\\optuna_medical_candidate_panel_predictions.csv",
+  "candidate_status": "rejected",
+  "effective_full_fit_params": {
+    "colsample_bytree": 0.5865857808774373,
+    "learning_rate": 0.02723317124110314,
+    "max_depth": 8,
+    "min_child_samples": 105,
+    "min_split_gain": 0.07649420721400307,
+    "n_estimators": 79,
+    "num_leaves": 24,
+    "reg_alpha": 0.010269883693999423,
+    "reg_lambda": 1.7260735570455419,
+    "scale_pos_weight": 0.3662203933390258,
+    "subsample": 0.690107305692775
+  },
+  "final_model_changed": false,
+  "historical_audit": {
+    "best_beats_reference_roc_auc_only": true,
+    "best_params": {
+      "colsample_bytree": 0.5226151289739701,
+      "learning_rate": 0.05708648849187495,
+      "min_child_samples": 49,
+      "num_leaves": 168,
+      "reg_alpha": 0.001624278333633632,
+      "reg_lambda": 0.4253266135925832,
+      "scale_pos_weight": 0.4950848528129137,
+      "subsample": 0.9582121364960954
+    },
+    "best_score": 0.8552739523140799,
+    "best_trial": 44,
+    "completed_trials": 101,
+    "exists": true,
+    "failed_trials": 0,
+    "pruned_trials": 0,
+    "resume_recommendation": "Preserve the 101-trial AUC-only history and use a separate medical-utility study in the same SQLite store. Its AUC alone cannot establish a safe final-model improvement.",
+    "running_trials": 0,
+    "study_name": "teknofest_lgbm",
+    "timeout_result_loss_detected": false
+  },
+  "objective": "medical_utility",
+  "rejection_reasons": [
+    "fewer than two required metrics improved",
+    "panel f1_macro worsened",
+    "threshold stability worsened"
+  ],
+  "required_metric_improvements": [
+    "panel MCC"
+  ],
+  "storage_path": "C:\\Users\\qurba\\OneDrive\\Documents\\Teknofest\\reports\\master_prompt\\optuna_lgbm_study.sqlite3",
+  "study_name": "teknofest_lgbm_medical_utility",
+  "trial_stats": {
+    "complete": 40,
+    "failed": 0,
+    "new_complete": 40,
+    "new_failed": 0,
+    "new_pruned": 10,
+    "pruned": 10
+  }
+}
