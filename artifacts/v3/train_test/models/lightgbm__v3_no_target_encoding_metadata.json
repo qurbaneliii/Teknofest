@@ -1,0 +1,7 @@
+{
+  "model_id": "lightgbm",
+  "feature_set": "v3_no_target_encoding",
+  "feature_count": 352,
+  "trained_on": "MASTER train only",
+  "random_state": 42
+}

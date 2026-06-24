@@ -17,8 +17,10 @@ from final_inference import generate_final_submission
 def main() -> None:
     parser = argparse.ArgumentParser(description="Generate a TEKNOFEST final-model submission CSV without using labels.")
     parser.add_argument("--data-dir", type=Path, default=None, help="Organizer data directory, used when --input-csv is omitted.")
-    parser.add_argument("--input-csv", type=Path, default=None, help="Raw organizer-format inference CSV.")
+    parser.add_argument("--input-csv", "--input", dest="input_csv", type=Path, default=None, help="Raw organizer-format inference CSV.")
     parser.add_argument("--output", type=Path, default=PROJECT_ROOT / "artifacts" / "predictions" / "final_submission_predictions.csv")
+    parser.add_argument("--decision", type=Path, default=None, help="Decision JSON; audited decision is used by default when present.")
+    parser.add_argument("--basic-submission", action="store_true", help="Write Variant_ID and predicted_label only after organizer-template confirmation.")
     args = parser.parse_args()
     if args.input_csv is not None:
         input_path = args.input_csv
@@ -29,7 +31,7 @@ def main() -> None:
         if not candidates:
             raise FileNotFoundError("Provide --input-csv or --data-dir containing organizer-format CSV data.")
         input_path = candidates[0]
-    output, destination = generate_final_submission(pd.read_csv(input_path), args.output)
+    output, destination = generate_final_submission(pd.read_csv(input_path), args.output, args.decision, basic_submission=args.basic_submission)
     print(f"Submission written to: {destination.resolve()}")
     print(f"Rows: {len(output)}; source labels, if present, were ignored.")
 

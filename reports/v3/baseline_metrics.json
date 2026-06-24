@@ -1,0 +1,20 @@
+{
+  "verification_source": "artifacts/metrics/final_metrics.json and final_model_decision.json",
+  "model_id": "lightgbm_conservative_regularized",
+  "threshold": 0.471,
+  "threshold_strategy": "profile_f1_macro_opt",
+  "calibration": "none",
+  "ensemble_replaced_lightgbm": false,
+  "master_cv": {
+    "roc_auc": 0.8475357256,
+    "pr_auc": 0.9024943418,
+    "f1_macro": 0.7763927374,
+    "mcc": 0.5547540954
+  },
+  "panel_unique_combined": {
+    "roc_auc": 0.8725342143,
+    "pr_auc": 0.8250992446,
+    "f1_macro": 0.7708077942,
+    "mcc": 0.5824989834
+  }
+}

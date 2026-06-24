@@ -1,0 +1,10 @@
+{
+  "model_id": "audited_master_only_lgbm",
+  "artifact_path": "artifacts/models/audited_master_only_lgbm/full_model.joblib",
+  "decision_path": "artifacts/metrics/audited_final_model_decision.json",
+  "seed": 42,
+  "training_population": "MASTER variants with no Variant_ID overlap with KANSER, PAH, or CFTR",
+  "validation": "5-fold stratified OOF, fold-local feature fitting",
+  "threshold_strategy": "median_of_per_fold_f1_macro_thresholds",
+  "calibration": "none"
+}

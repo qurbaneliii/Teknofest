@@ -1,0 +1,11 @@
+dataset,duplicate_full_rows,duplicate_variant_id,constant_columns,high_cardinality_columns,left_dataset,right_dataset,shared_variant_ids,left_only_variant_ids,right_only_variant_ids
+MASTER,0.0,0.0,0.0,69.0,,,,,
+KANSER,0.0,0.0,0.0,43.0,,,,,
+PAH,0.0,0.0,1.0,75.0,,,,,
+CFTR,0.0,0.0,0.0,107.0,,,,,
+,,,,,MASTER,KANSER,246.0,2685.0,142.0
+,,,,,MASTER,PAH,255.0,2676.0,117.0
+,,,,,MASTER,CFTR,77.0,2854.0,34.0
+,,,,,KANSER,PAH,0.0,388.0,372.0
+,,,,,KANSER,CFTR,0.0,388.0,111.0
+,,,,,PAH,CFTR,0.0,372.0,111.0

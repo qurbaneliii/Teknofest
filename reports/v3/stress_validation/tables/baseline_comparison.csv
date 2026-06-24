@@ -1,0 +1,2 @@
+candidate,protocol_note,master_f1_macro_mean,baseline_master_f1_macro,master_mcc_mean,baseline_master_mcc,panel_f1_macro_mean,baseline_panel_f1_macro,panel_mcc_mean,baseline_panel_mcc,directional_result
+hist_gradient_boosting__v3_safe_minimal,Repeated stratified CV/panels differs from protected contamination-aware OOF and panel-unique protocol.,0.765615134979688,0.7764,0.5397478302786852,0.5548,0.7994780130294863,0.7708,0.607382973135391,0.5825,candidate does not establish improvement over protected baseline

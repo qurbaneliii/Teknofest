@@ -1,0 +1,4 @@
+candidate,evaluation,master_f1_macro,master_mcc,panel_combined_f1_macro,panel_combined_mcc,decision,reason
+hist_gradient_boosting__v3_safe_minimal,repeated contamination-aware stress validation,0.765615134979688,0.5397478302786852,0.7994780130294863,0.607382973135391,reject_candidate,MASTER F1/MCC below protected baseline; PAH/worst-panel weakness; threshold instability; protocol non-identical.
+extratrees__v3_no_target_encoding,local holdout,0.7498530535472874,0.4998098841113716,0.781892446633826,0.5781317344079671,reject_candidate,Weaker than protected baseline and internal split is not replacement evidence.
+all_other_v3_local_candidates,local holdout,,,,,exploratory/rejected,No robust replacement gate passed; preserved as evidence only.

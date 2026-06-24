@@ -1,0 +1,7 @@
+{
+  "model_id": "extratrees",
+  "feature_set": "v3_frequency_heavy",
+  "feature_count": 363,
+  "trained_on": "MASTER train only",
+  "random_state": 42
+}

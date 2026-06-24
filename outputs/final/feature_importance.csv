@@ -1,0 +1,412 @@
+feature,importance,feature_group
+source_row_index,362,interaction
+aa_change_te,267,AA / amino-acid
+EK_1,251,EK / computational
+EK_8,221,EK / computational
+EK7xEK9,219,EK / computational
+EK_7,196,EK / computational
+EK_9,185,EK / computational
+EK_2,182,EK / computational
+AL_10,169,AL / population frequency
+EK7_minus_EK9,155,EK / computational
+AL_9,150,AL / population frequency
+EK2xEK4,145,EK / computational
+EK_3,142,EK / computational
+EK_5,140,EK / computational
+AL_14,135,AL / population frequency
+AL_12,130,AL / population frequency
+EK4xEK6,130,EK / computational
+AL_11,126,AL / population frequency
+AL_26,124,AL / population frequency
+AL_15,119,AL / population frequency
+miss_pc7,112,missingness
+min_AF_nz,112,AL / population frequency
+AL_8,107,AL / population frequency
+EK_6,106,EK / computational
+EK_4,93,EK / computational
+AL_7,89,AL / population frequency
+AL_16,82,AL / population frequency
+AL_13,81,AL / population frequency
+AL_327,79,AL / population frequency
+AL_22,74,AL / population frequency
+AL_319,73,AL / population frequency
+AL_186,73,AL / population frequency
+max_prob_EK,72,interaction
+AL_298,69,AL / population frequency
+max_AF,69,AL / population frequency
+cat1_te,68,CAT / metadata
+AL_91,64,AL / population frequency
+AL_23,60,AL / population frequency
+AL_20,60,AL / population frequency
+miss_pc3,59,missingness
+AL_306,59,AL / population frequency
+AL_145,59,AL / population frequency
+AL_151,58,AL / population frequency
+AL_40,57,AL / population frequency
+AL_58,55,AL / population frequency
+miss_pc4,55,missingness
+miss_pc8,53,missingness
+AL_178,52,AL / population frequency
+AL_315,52,AL / population frequency
+AL_25,51,AL / population frequency
+AL_148,50,AL / population frequency
+AL_331,50,AL / population frequency
+AL_323,49,AL / population frequency
+AL_52,48,AL / population frequency
+AL_18,47,AL / population frequency
+AL_133,45,AL / population frequency
+AL_287,45,AL / population frequency
+AL_296,44,AL / population frequency
+AL_311,44,AL / population frequency
+aa_involves_R,43,AA / amino-acid
+AL_181,43,AL / population frequency
+AL_73,42,AL / population frequency
+AL_166,41,AL / population frequency
+AL_219,40,AL / population frequency
+miss_pc10,40,missingness
+AL_136,38,AL / population frequency
+AL_226,38,AL / population frequency
+AL_97,37,AL / population frequency
+AL_184,37,AL / population frequency
+AL_46,35,AL / population frequency
+AL_24,35,AL / population frequency
+AL_255,35,AL / population frequency
+AL_194,34,AL / population frequency
+AL_211,33,AL / population frequency
+AL_43,33,AL / population frequency
+AL_55,32,AL / population frequency
+AL_251,31,AL / population frequency
+AL_19,31,AL / population frequency
+frac_flags,31,other
+log_min_AF,30,AL / population frequency
+AL_64,29,AL / population frequency
+AL_49,29,AL / population frequency
+AL_106,29,AL / population frequency
+AL_112,28,AL / population frequency
+log_max_AF,28,AL / population frequency
+AL_17,28,AL / population frequency
+miss_pc1,27,missingness
+AL_238,27,AL / population frequency
+AL_207,27,AL / population frequency
+AL_172,27,AL / population frequency
+AL_21,27,AL / population frequency
+miss_pc6,27,missingness
+AL_275,26,AL / population frequency
+AL_247,26,AL / population frequency
+AL_115,26,AL / population frequency
+AL_283,26,AL / population frequency
+AL_85,25,AL / population frequency
+miss_pc2,25,missingness
+AL_82,25,AL / population frequency
+AL_61,25,AL / population frequency
+AL_142,25,AL / population frequency
+aa_from_special,25,AA / amino-acid
+miss_pc9,25,missingness
+miss_pc5,24,missingness
+AL_109,22,AL / population frequency
+AL_124,22,AL / population frequency
+AL_130,22,AL / population frequency
+AL_188,22,AL / population frequency
+AL_199,22,AL / population frequency
+AL_224,21,AL / population frequency
+AL_154,21,AL / population frequency
+AL_67,20,AL / population frequency
+aa_involves_G,20,AA / amino-acid
+AL_163,20,AL / population frequency
+AL_103,20,AL / population frequency
+AL_291,19,AL / population frequency
+AL_169,19,AL / population frequency
+AL_79,19,AL / population frequency
+n_nonmiss_AL,18,other
+AL_215,18,AL / population frequency
+AL_302,18,AL / population frequency
+AL_139,18,AL / population frequency
+AL_230,17,AL / population frequency
+AL_100,17,AL / population frequency
+AL_54,17,AL / population frequency
+AL_118,16,AL / population frequency
+AL_157,16,AL / population frequency
+AL_239,16,AL / population frequency
+AL_160,15,AL / population frequency
+AL_218,15,AL / population frequency
+cat1_NFE,15,CAT / metadata
+AL_70,14,AL / population frequency
+AL_177,13,AL / population frequency
+AL_271,13,AL / population frequency
+cat1_gnomADe,13,CAT / metadata
+AL_94,13,AL / population frequency
+sum_flags,13,other
+AL_304,13,AL / population frequency
+AL_175,12,AL / population frequency
+AL_83,11,AL / population frequency
+AL_76,11,AL / population frequency
+cat1_gnomADg,11,CAT / metadata
+AL_235,11,AL / population frequency
+AL_121,11,AL / population frequency
+AL_297,10,AL / population frequency
+AL_262,10,AL / population frequency
+AL_147,10,AL / population frequency
+n_EK_path,10,other
+AL_45,10,AL / population frequency
+AL_105,9,AL / population frequency
+AL_301,9,AL / population frequency
+AL_42,9,AL / population frequency
+EK_net_evidence,9,EK / computational
+AL_111,9,AL / population frequency
+aa_involves_C,8,AA / amino-acid
+AL_279,8,AL / population frequency
+AL_88,8,AL / population frequency
+AL_39,8,AL / population frequency
+AL_260,8,AL / population frequency
+AL_223,8,AL / population frequency
+AL_205,8,AL / population frequency
+AL_243,8,AL / population frequency
+AL_305,8,AL / population frequency
+AL_202,8,AL / population frequency
+AL_60,7,AL / population frequency
+AL_127,7,AL / population frequency
+AL_246,7,AL / population frequency
+AL_84,7,AL / population frequency
+AL_330,7,AL / population frequency
+AL_93,7,AL / population frequency
+aa_class_changed,7,AA / amino-acid
+AL_325,7,AL / population frequency
+AL_50,6,AL / population frequency
+AL_96,6,AL / population frequency
+AL_77,6,AL / population frequency
+AL_1,6,AL / population frequency
+AL_117,6,AL / population frequency
+AL_266,6,AL / population frequency
+AL_48,6,AL / population frequency
+AL_234,5,AL / population frequency
+AL_138,5,AL / population frequency
+AL_318,5,AL / population frequency
+AL_190,5,AL / population frequency
+AL_206,5,AL / population frequency
+blosum62_approx,5,AA / amino-acid
+AL_81,5,AL / population frequency
+AL_321,5,AL / population frequency
+AL_68,5,AL / population frequency
+AL_5,5,AL / population frequency
+n_EK_ben,4,other
+AL_123,4,AL / population frequency
+AL_313,4,AL / population frequency
+AL_254,4,AL / population frequency
+AL_168,4,AL / population frequency
+AL_51,3,AL / population frequency
+AL_201,3,AL / population frequency
+AL_203,3,AL / population frequency
+AL_156,3,AL / population frequency
+AL_264,3,AL / population frequency
+AL_120,3,AL / population frequency
+AL_300,3,AL / population frequency
+AL_90,3,AL / population frequency
+AL_71,3,AL / population frequency
+AL_63,3,AL / population frequency
+AL_196,3,AL / population frequency
+AL_162,3,AL / population frequency
+AL_317,3,AL / population frequency
+cat1_AFR,2,CAT / metadata
+AL_2,2,AL / population frequency
+n_valid_flags,2,other
+BA1_flag,2,AL / population frequency
+AL_59,2,AL / population frequency
+AL_87,2,AL / population frequency
+AL_171,2,AL / population frequency
+AL_180,2,AL / population frequency
+AL_153,2,AL / population frequency
+AL_295,2,AL / population frequency
+AL_308,2,AL / population frequency
+AL_135,2,AL / population frequency
+AL_129,2,AL / population frequency
+AL_314,2,AL / population frequency
+AL_290,2,AL / population frequency
+AL_282,2,AL / population frequency
+AL_242,2,AL / population frequency
+AL_249,2,AL / population frequency
+AL_277,2,AL / population frequency
+AL_222,2,AL / population frequency
+AL_221,1,AL / population frequency
+AL_257,1,AL / population frequency
+AL_258,1,AL / population frequency
+AL_193,1,AL / population frequency
+AL_253,1,AL / population frequency
+AL_209,1,AL / population frequency
+AL_250,1,AL / population frequency
+AL_213,1,AL / population frequency
+AL_329,1,AL / population frequency
+AL_333,1,AL / population frequency
+AL_334,1,AL / population frequency
+AL_72,1,AL / population frequency
+miss_EK3,1,missingness
+npops_tier_10,1,other
+AL_3,1,AL / population frequency
+AL_310,1,AL / population frequency
+AL_159,1,AL / population frequency
+AL_285,1,AL / population frequency
+AL_150,1,AL / population frequency
+AL_293,1,AL / population frequency
+AL_286,1,AL / population frequency
+AL_174,1,AL / population frequency
+AL_165,1,AL / population frequency
+AL_268,1,AL / population frequency
+AL_233,0,AL / population frequency
+AL_232,0,AL / population frequency
+AL_231,0,AL / population frequency
+AL_229,0,AL / population frequency
+AL_228,0,AL / population frequency
+AL_227,0,AL / population frequency
+AL_225,0,AL / population frequency
+AL_236,0,AL / population frequency
+AL_200,0,AL / population frequency
+AL_198,0,AL / population frequency
+AL_245,0,AL / population frequency
+AL_204,0,AL / population frequency
+AL_244,0,AL / population frequency
+AL_237,0,AL / population frequency
+AL_240,0,AL / population frequency
+AL_241,0,AL / population frequency
+cat6_lcr,0,CAT / metadata
+geno_consistent,0,CAT / metadata
+aa_involves_P,0,AA / amino-acid
+geno_missing,0,CAT / metadata
+AL_214,0,AL / population frequency
+AL_216,0,AL / population frequency
+AL_217,0,AL / population frequency
+aa_to_special,0,AA / amino-acid
+AL_220,0,AL / population frequency
+cat2_AllofUs_EUR,0,CAT / metadata
+cat2_AllofUs_OTH,0,CAT / metadata
+cat2_AllofUs_MID,0,CAT / metadata
+cat2_missing,0,CAT / metadata
+cat6_has_filter,0,CAT / metadata
+cat6_segdup,0,CAT / metadata
+cat2_AllofUs_SAS,0,CAT / metadata
+AL_197,0,AL / population frequency
+AL_195,0,AL / population frequency
+AL_192,0,AL / population frequency
+AL_191,0,AL / population frequency
+AL_187,0,AL / population frequency
+AL_189,0,AL / population frequency
+AL_183,0,AL / population frequency
+AL_182,0,AL / population frequency
+AL_252,0,AL / population frequency
+AL_261,0,AL / population frequency
+AL_259,0,AL / population frequency
+AL_256,0,AL / population frequency
+AL_210,0,AL / population frequency
+AL_208,0,AL / population frequency
+AL_212,0,AL / population frequency
+AL_248,0,AL / population frequency
+AL_176,0,AL / population frequency
+AL_173,0,AL / population frequency
+AL_170,0,AL / population frequency
+AL_167,0,AL / population frequency
+AL_281,0,AL / population frequency
+AL_280,0,AL / population frequency
+AL_179,0,AL / population frequency
+AL_278,0,AL / population frequency
+AL_288,0,AL / population frequency
+AL_272,0,AL / population frequency
+AL_273,0,AL / population frequency
+AL_274,0,AL / population frequency
+AL_269,0,AL / population frequency
+AL_270,0,AL / population frequency
+AL_276,0,AL / population frequency
+AL_263,0,AL / population frequency
+AL_158,0,AL / population frequency
+AL_155,0,AL / population frequency
+AL_164,0,AL / population frequency
+AL_161,0,AL / population frequency
+AL_299,0,AL / population frequency
+AL_303,0,AL / population frequency
+AL_307,0,AL / population frequency
+AL_294,0,AL / population frequency
+AL_134,0,AL / population frequency
+AL_137,0,AL / population frequency
+AL_140,0,AL / population frequency
+AL_141,0,AL / population frequency
+AL_143,0,AL / population frequency
+AL_144,0,AL / population frequency
+AL_146,0,AL / population frequency
+AL_309,0,AL / population frequency
+AL_119,0,AL / population frequency
+AL_122,0,AL / population frequency
+AL_126,0,AL / population frequency
+AL_125,0,AL / population frequency
+AL_128,0,AL / population frequency
+AL_131,0,AL / population frequency
+AL_132,0,AL / population frequency
+AL_312,0,AL / population frequency
+AL_316,0,AL / population frequency
+AL_284,0,AL / population frequency
+AL_292,0,AL / population frequency
+AL_289,0,AL / population frequency
+AL_149,0,AL / population frequency
+AL_152,0,AL / population frequency
+AL_265,0,AL / population frequency
+AL_267,0,AL / population frequency
+AL_107,0,AL / population frequency
+AL_104,0,AL / population frequency
+AL_102,0,AL / population frequency
+AL_101,0,AL / population frequency
+AL_324,0,AL / population frequency
+AL_322,0,AL / population frequency
+AL_320,0,AL / population frequency
+AL_116,0,AL / population frequency
+AL_328,0,AL / population frequency
+AL_326,0,AL / population frequency
+AL_332,0,AL / population frequency
+miss_AL1_6,0,missingness
+AL_89,0,AL / population frequency
+AL_92,0,AL / population frequency
+AL_114,0,AL / population frequency
+AL_108,0,AL / population frequency
+AL_98,0,AL / population frequency
+AL_95,0,AL / population frequency
+AL_74,0,AL / population frequency
+AL_99,0,AL / population frequency
+AL_78,0,AL / population frequency
+AL_80,0,AL / population frequency
+AL_86,0,AL / population frequency
+AL_75,0,AL / population frequency
+miss_AL7_15,0,missingness
+miss_AL16_25,0,missingness
+miss_AL27_38,0,missingness
+n_pops,0,AL / population frequency
+AL_56,0,AL / population frequency
+AL_57,0,AL / population frequency
+AL_113,0,AL / population frequency
+AL_110,0,AL / population frequency
+AL_65,0,AL / population frequency
+AL_62,0,AL / population frequency
+AL_41,0,AL / population frequency
+AL_66,0,AL / population frequency
+AL_47,0,AL / population frequency
+AL_53,0,AL / population frequency
+BS1_flag,0,AL / population frequency
+AL_69,0,AL / population frequency
+PM2_flag,0,AL / population frequency
+BS2_proxy,0,AL / population frequency
+n_pops_squared,0,interaction
+npops_tier_0,0,other
+npops_tier_26,0,other
+AL_27,0,AL / population frequency
+AL_28,0,AL / population frequency
+AL_44,0,AL / population frequency
+AL_29,0,AL / population frequency
+AL_30,0,AL / population frequency
+AL_32,0,AL / population frequency
+AL_31,0,AL / population frequency
+AL_34,0,AL / population frequency
+AL_35,0,AL / population frequency
+AL_36,0,AL / population frequency
+AL_33,0,AL / population frequency
+AL_37,0,AL / population frequency
+AL_38,0,AL / population frequency
+cat2_AllofUs_AFR,0,CAT / metadata
+cat1_multipop,0,CAT / metadata
+cat2_AllofUs_AMR,0,CAT / metadata
+cat2_AllofUs_EAS,0,CAT / metadata
+AL_6,0,AL / population frequency
+AL_4,0,AL / population frequency

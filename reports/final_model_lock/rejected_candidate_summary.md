@@ -1,0 +1,9 @@
+# Rejected Candidate Summary
+
+Strong panel or KANSER behavior alone is not enough to replace the final model. MASTER decision metrics and robust gates remain decisive. V3 work is preserved as evidence but not promoted.
+
+| candidate                               | evaluation                                     |   master_f1_macro |   master_mcc |   panel_combined_f1_macro |   panel_combined_mcc | decision             | reason                                                                                                           |
+|:----------------------------------------|:-----------------------------------------------|------------------:|-------------:|--------------------------:|---------------------:|:---------------------|:-----------------------------------------------------------------------------------------------------------------|
+| hist_gradient_boosting__v3_safe_minimal | repeated contamination-aware stress validation |          0.765615 |     0.539748 |                  0.799478 |             0.607383 | reject_candidate     | MASTER F1/MCC below protected baseline; PAH/worst-panel weakness; threshold instability; protocol non-identical. |
+| extratrees__v3_no_target_encoding       | local holdout                                  |          0.749853 |     0.49981  |                  0.781892 |             0.578132 | reject_candidate     | Weaker than protected baseline and internal split is not replacement evidence.                                   |
+| all_other_v3_local_candidates           | local holdout                                  |        nan        |   nan        |                nan        |           nan        | exploratory/rejected | No robust replacement gate passed; preserved as evidence only.                                                   |

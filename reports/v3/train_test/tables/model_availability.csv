@@ -1,0 +1,7 @@
+model_family,available,status,reason
+logistic_regression,True,available,
+extratrees,True,available,
+hist_gradient_boosting,True,available,
+lightgbm,True,available,
+xgboost,True,available,
+catboost,True,available,
