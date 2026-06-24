@@ -1,0 +1,4 @@
+dataset,n,accuracy_at_saved_threshold
+CFTR_unique,34,0.8823529411764706
+KANSER_unique,142,0.7183098591549296
+PAH_unique,117,0.7692307692307693

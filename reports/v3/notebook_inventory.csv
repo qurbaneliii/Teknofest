@@ -1,0 +1,14 @@
+file_path,purpose,execution_status,outputs_present,duplicates_script_logic,active_or_legacy_status,safe_to_archive_later,notes
+notebooks/01_data_understanding.ipynb,notebook,unknown,no,unknown,legacy_useful,maybe,inspect before archival
+notebooks/02_feature_engineering_and_validation.ipynb,notebook,unknown,no,unknown,legacy_useful,maybe,inspect before archival
+notebooks/03_model_training_and_evaluation.ipynb,notebook,unknown,no,unknown,legacy_useful,maybe,inspect before archival
+notebooks/04_explainability_and_report_outputs.ipynb,notebook,unknown,no,unknown,legacy_useful,maybe,inspect before archival
+teknofest2026_artificialintelligenceinhealtcare-main/EDA_Genomics_Competition.ipynb,notebook,unknown,no,unknown,protected_final,no,inspect before archival
+.codex_backups/final_test_legacy_eval_20260623_015807/reports/eda/TEKNOFEST2026_EDA.ipynb,notebook,unknown,no,unknown,safe_delete_candidate,yes,inspect before archival
+.codex_backups/final_test_legacy_eval_20260623_015807/reports/eda/TEKNOFEST2026_EDA_EXECUTED.ipynb,notebook,unknown,yes,unknown,safe_delete_candidate,yes,inspect before archival
+.codex_backups/optuna_legacy_eval_20260623_012155/reports/eda/TEKNOFEST2026_EDA.ipynb,notebook,unknown,no,unknown,safe_delete_candidate,yes,inspect before archival
+.codex_backups/optuna_legacy_eval_20260623_012155/reports/eda/TEKNOFEST2026_EDA_EXECUTED.ipynb,notebook,unknown,yes,unknown,safe_delete_candidate,yes,inspect before archival
+.codex_backups/v3_baseline_freeze_20260624_150902/reports/eda/TEKNOFEST2026_EDA.ipynb,notebook,unknown,no,unknown,safe_delete_candidate,yes,inspect before archival
+.codex_backups/v3_baseline_freeze_20260624_150902/reports/eda/TEKNOFEST2026_EDA_EXECUTED.ipynb,notebook,unknown,yes,unknown,safe_delete_candidate,yes,inspect before archival
+reports/eda/TEKNOFEST2026_EDA.ipynb,notebook,unknown,no,unknown,legacy_useful,maybe,inspect before archival
+reports/eda/TEKNOFEST2026_EDA_EXECUTED.ipynb,notebook,unknown,yes,unknown,legacy_useful,maybe,inspect before archival

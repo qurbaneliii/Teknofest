@@ -1,0 +1,5 @@
+dataset,rows,columns,schema_identical_to_master,duplicate_variant_id,pathogenic_rate,pathogenic,benign
+MASTER,2931,353,True,0,0.7331968611395429,2149,782
+KANSER,388,353,True,0,0.6907216494845361,268,120
+PAH,372,353,True,0,0.8333333333333334,310,62
+CFTR,111,353,True,0,0.8108108108108109,90,21

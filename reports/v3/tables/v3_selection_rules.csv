@@ -1,0 +1,3 @@
+rule,requirement
+replacement,score improves plus two primary improvements and no safety regression
+blocked,ROC-only panel/KANSER/stability/overfitting/leakage/reproducibility failures

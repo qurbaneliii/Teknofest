@@ -1,0 +1,6 @@
+feature_group,count,source
+AL_frequency,339,sample_real_data
+AA_substitution,3,sample_real_data
+baseline_raw,7,sample_real_data
+missingness,2,sample_real_data
+EK_conservation,14,sample_real_data
