@@ -1,0 +1,19 @@
+ablation,description,threshold_name,CV_AUC,CV_F1macro,vs_Full_delta_AUC,vs_Full_delta_F1,Conclusion
+ABL-01_EK_cols_only,EK raw columns only,default_0.5,0.7247337283457347,0.4064106147106464,-0.11412175794761314,-0.3584166427429714,Compare delta against full proposed model.
+ABL-01_EK_cols_only,EK raw columns only,f1_macro_opt,0.7247337283457347,0.6611075197191107,-0.11412175794761314,-0.10371973773450704,Compare delta against full proposed model.
+ABL-02_AL_cols_only,AL raw columns only,default_0.5,0.8051481329598038,0.5096835485142044,-0.03370735333354402,-0.2551437089394134,Compare delta against full proposed model.
+ABL-02_AL_cols_only,AL raw columns only,f1_macro_opt,0.8051481329598038,0.7474521868283057,-0.03370735333354402,-0.017375070625312072,Compare delta against full proposed model.
+ABL-03_engineered_only_no_raw_AL_EK,"Engineered features only, excluding raw AL/EK",default_0.5,0.8271002990239218,0.5275166294635479,-0.011755187269426037,-0.23731062799006986,Compare delta against full proposed model.
+ABL-03_engineered_only_no_raw_AL_EK,"Engineered features only, excluding raw AL/EK",f1_macro_opt,0.8271002990239218,0.760860437031081,-0.011755187269426037,-0.003966820422536821,Compare delta against full proposed model.
+ABL-04_all_zero_impute_no_miss_flags,"All numeric features, zero imputation, missingness flags removed",default_0.5,0.8253959046007806,0.46512487162815574,-0.013459581692567224,-0.29970238582546205,Compare delta against full proposed model.
+ABL-04_all_zero_impute_no_miss_flags,"All numeric features, zero imputation, missingness flags removed",f1_macro_opt,0.8253959046007806,0.7519182227609568,-0.013459581692567224,-0.012909034692661026,Compare delta against full proposed model.
+ABL-05_all_with_miss_flags,Full proposed feature set,default_0.5,0.838855486293348,0.477220753105205,2.220446049250313e-16,-0.2876065043484128,Full proposed feature set reference.
+ABL-05_all_with_miss_flags,Full proposed feature set,f1_macro_opt,0.838855486293348,0.7648272574536178,2.220446049250313e-16,0.0,Full proposed feature set reference.
+ABL-06_no_EK_interactions,Full feature set without EK interaction terms,default_0.5,0.8407433858918344,0.481011074147085,0.0018878995984865643,-0.2838161833065328,Compare delta against full proposed model.
+ABL-06_no_EK_interactions,Full feature set without EK interaction terms,f1_macro_opt,0.8407433858918344,0.7666851700294375,0.0018878995984865643,0.0018579125758196868,Compare delta against full proposed model.
+ABL-07_no_AA_chemistry,Full feature set without amino-acid chemistry features,default_0.5,0.837095862839738,0.5122788303336504,-0.0017596234536098043,-0.2525484271199674,Compare delta against full proposed model.
+ABL-07_no_AA_chemistry,Full feature set without amino-acid chemistry features,f1_macro_opt,0.837095862839738,0.76291317497608,-0.0017596234536098043,-0.0019140824775377707,Compare delta against full proposed model.
+ABL-08_no_CAT1_decomposition,Full feature set without CAT_1 decomposition features,default_0.5,0.8401409675957922,0.4876045367064402,0.0012854813024443246,-0.2772227207471776,Compare delta against full proposed model.
+ABL-08_no_CAT1_decomposition,Full feature set without CAT_1 decomposition features,f1_macro_opt,0.8401409675957922,0.7655105384991325,0.0012854813024443246,0.0006832810455147387,Compare delta against full proposed model.
+ABL-09_single_LGBM_vs_extra_trees,Single LightGBM compared with ExtraTrees baseline,extra_trees_default_0.5,0.8299869660211192,0.7416126077075924,-0.00886852027222862,-0.023214649746025384,Compare delta against full proposed model.
+ABL-10_default_vs_optimized_threshold,Default 0.5 threshold vs optimized F1 threshold,comparison,0.838855486293348,0.7648272574536178,0.0,0.2876065043484128,F1 threshold optimization effect on full model.

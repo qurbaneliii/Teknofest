@@ -1,0 +1,7 @@
+feature_set,passed
+v3_safe_minimal,True
+v3_bio_full,True
+v3_no_target_encoding,True
+v3_panel_robust,True
+v3_frequency_heavy,True
+v3_aa_heavy,True

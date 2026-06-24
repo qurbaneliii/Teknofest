@@ -1,0 +1,2 @@
+master_rows,master_positive_rate,kanser_rows,kanser_positive_rate,cftr_rows,cftr_positive_rate,pah_rows,pah_positive_rate,protected_threshold,protected_oof_f1_macro,protected_oof_mcc
+2931,0.7331968611395429,388,0.6907216494845361,111,0.8108108108108109,372,0.8333333333333334,0.471,0.7763927374,0.5547540954
