@@ -1,0 +1,182 @@
+{
+  "model_id": "lightgbm_conservative_regularized",
+  "model_kind": "single_model",
+  "feature_set": "existing_phase10_engineered_features",
+  "artifact_path": "C:\\Users\\qurba\\OneDrive\\Documents\\Teknofest\\artifacts\\models\\final_model.pkl",
+  "threshold": 0.471,
+  "threshold_strategy": "profile_f1_macro_opt",
+  "threshold_source": "C:\\Users\\qurba\\OneDrive\\Documents\\Teknofest\\artifacts\\metrics\\final_threshold.json",
+  "calibration": "none",
+  "ensemble_replaced_lightgbm": false,
+  "selection_basis": "conservative hidden-test generalization gates over OOF utility, panel decision metrics, fold stability, calibration evidence, and error-audit availability",
+  "oof_metrics": {
+    "roc_auc": 0.8475357255793643,
+    "pr_auc": 0.9024943418220934,
+    "accuracy": 0.8121546961325967,
+    "balanced_accuracy": 0.769401654059607,
+    "precision": 0.8472964943553178,
+    "pathogenic_recall": 0.8851644941030415,
+    "specificity": 0.6536388140161725,
+    "f1": 0.8658166363084396,
+    "f1_macro": 0.7763927374176759,
+    "mcc": 0.5547540953901987,
+    "brier_score": 0.1405715721369887,
+    "log_loss": 0.444046794310047,
+    "ppv": 0.8472964943553178,
+    "npv": 0.7238805970149254,
+    "tn": 485,
+    "fp": 257,
+    "fn": 185,
+    "tp": 1426,
+    "medical_utility_score": 0.7746748187761071,
+    "clinical_safety_score": 0.7383349741276918
+  },
+  "panel_unique_combined_metrics": {
+    "roc_auc": 0.8725342142520056,
+    "pr_auc": 0.8250992446464279,
+    "accuracy": 0.7713310580204779,
+    "balanced_accuracy": 0.7866918357715904,
+    "precision": 0.6779661016949152,
+    "pathogenic_recall": 0.9230769230769232,
+    "specificity": 0.6503067484662577,
+    "f1": 0.7817589576547231,
+    "f1_macro": 0.7708077942395479,
+    "mcc": 0.5824989834450162,
+    "brier_score": 0.1632839201359639,
+    "log_loss": 0.5086850719385503,
+    "ppv": 0.6779661016949152,
+    "npv": 0.913793103448276,
+    "tn": 106,
+    "fp": 57,
+    "fn": 10,
+    "tp": 120,
+    "medical_utility_score": 0.7748983600931982,
+    "clinical_safety_score": 0.727627152315692
+  },
+  "fold_stability": {
+    "fold_medical_utility_score_std": 0.020432024255925267,
+    "fold_mcc_std": 0.035587224893662214,
+    "fold_f1_macro_std": 0.01704619602597112
+  },
+  "calibration_review": [
+    {
+      "calibration_method": "none",
+      "decision": "selected_for_final_decision_model",
+      "brier_score": 0.172731683795671,
+      "log_loss": 0.5241235223949027,
+      "f1_macro": 0.756388116391412,
+      "mcc": 0.5169367155703188,
+      "panel_f1_macro": 0.7565448396119323,
+      "panel_mcc": 0.5647066601372233
+    },
+    {
+      "calibration_method": "sigmoid",
+      "decision": "reported_only",
+      "brier_score": 0.1455166470529167,
+      "log_loss": 0.4583228955062539,
+      "f1_macro": 0.756388116391412,
+      "mcc": 0.5169367155703188,
+      "panel_f1_macro": 0.7565448396119323,
+      "panel_mcc": 0.5647066601372233
+    },
+    {
+      "calibration_method": "isotonic",
+      "decision": "rejected_for_panel_tradeoff",
+      "brier_score": 0.1416132547329061,
+      "log_loss": 0.4634702406357405,
+      "f1_macro": 0.7540847262328829,
+      "mcc": 0.5138436895648872,
+      "panel_f1_macro": 0.7565448396119323,
+      "panel_mcc": 0.5647066601372233
+    }
+  ],
+  "error_analysis": {
+    "false_negative_case_rows": 195,
+    "false_positive_case_rows": 314,
+    "error_group_summary_rows": 320,
+    "false_negative_cases_path": "C:\\Users\\qurba\\OneDrive\\Documents\\Teknofest\\reports\\tables\\final_false_negative_cases.csv",
+    "false_positive_cases_path": "C:\\Users\\qurba\\OneDrive\\Documents\\Teknofest\\reports\\tables\\final_false_positive_cases.csv",
+    "error_group_summary_path": "C:\\Users\\qurba\\OneDrive\\Documents\\Teknofest\\reports\\tables\\final_error_group_feature_summary.csv",
+    "matches_selected_oof_confusion_counts": false
+  },
+  "rejected_experiments": [
+    {
+      "candidate_id": "lightgbm_high_capacity_controlled",
+      "candidate_kind": "model_zoo",
+      "reason": "lower OOF MedicalUtilityScore; lower panel MedicalUtilityScore; lower panel F1-macro; lower panel MCC; fewer than two required metric improvements."
+    },
+    {
+      "candidate_id": "catboost",
+      "candidate_kind": "model_zoo",
+      "reason": "lower OOF MedicalUtilityScore; lower panel MedicalUtilityScore; lower panel F1-macro; lower panel MCC."
+    },
+    {
+      "candidate_id": "xgboost",
+      "candidate_kind": "model_zoo",
+      "reason": "lower OOF MedicalUtilityScore; lower panel MedicalUtilityScore; lower panel F1-macro; lower panel MCC."
+    },
+    {
+      "candidate_id": "extra_trees",
+      "candidate_kind": "model_zoo",
+      "reason": "lower OOF MedicalUtilityScore; lower panel MedicalUtilityScore; lower panel F1-macro; lower panel MCC; fewer than two required metric improvements."
+    },
+    {
+      "candidate_id": "elasticnet_logistic_regression",
+      "candidate_kind": "model_zoo",
+      "reason": "lower OOF MedicalUtilityScore; lower panel MedicalUtilityScore; lower panel MCC; fewer than two required metric improvements; less stable across folds."
+    },
+    {
+      "candidate_id": "simple_average",
+      "candidate_kind": "ensemble",
+      "reason": "lower OOF MedicalUtilityScore; lower panel F1-macro; lower panel MCC."
+    },
+    {
+      "candidate_id": "rank_average",
+      "candidate_kind": "ensemble",
+      "reason": "lower OOF MedicalUtilityScore."
+    },
+    {
+      "candidate_id": "weighted_average",
+      "candidate_kind": "ensemble",
+      "reason": "lower OOF MedicalUtilityScore; lower panel F1-macro; lower panel MCC."
+    },
+    {
+      "candidate_id": "mcc_weighted_average",
+      "candidate_kind": "ensemble",
+      "reason": "lower OOF MedicalUtilityScore; lower panel F1-macro; lower panel MCC."
+    },
+    {
+      "candidate_id": "medical_utility_weighted_average",
+      "candidate_kind": "ensemble",
+      "reason": "lower OOF MedicalUtilityScore; lower panel F1-macro; lower panel MCC."
+    },
+    {
+      "candidate_id": "logistic_stacking",
+      "candidate_kind": "ensemble",
+      "reason": "lower OOF MedicalUtilityScore; lower panel MedicalUtilityScore; lower panel F1-macro; lower panel MCC."
+    },
+    {
+      "candidate_id": "ridge_stacking",
+      "candidate_kind": "ensemble",
+      "reason": "lower OOF MedicalUtilityScore; lower panel MedicalUtilityScore; lower panel F1-macro; lower panel MCC."
+    },
+    {
+      "candidate_id": "elasticnet_stacking",
+      "candidate_kind": "ensemble",
+      "reason": "lower OOF MedicalUtilityScore; lower panel MedicalUtilityScore; lower panel F1-macro; lower panel MCC; fewer than two required metric improvements."
+    }
+  ],
+  "remaining_risks": [
+    "Hidden-test distribution shift may differ from MASTER and panel-unique data.",
+    "Probability calibration is not selected for the final decision threshold.",
+    "Panel-unique metrics are not prospective clinical validation."
+  ],
+  "source_threshold_artifact": {
+    "threshold": 0.471,
+    "threshold_strategy": "profile_f1_macro_opt",
+    "selected_profile": "conservative_regularized",
+    "selection_score": 0.7203934446376183,
+    "model_strength": "moderate",
+    "main_issue": "thresholding_and_calibration"
+  }
+}

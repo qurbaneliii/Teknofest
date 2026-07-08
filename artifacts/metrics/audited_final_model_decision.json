@@ -1,0 +1,11 @@
+{
+  "model_id": "audited_master_only_lgbm",
+  "model_kind": "single_model",
+  "artifact_path": "C:\\Users\\qurba\\OneDrive\\Documents\\Teknofest\\artifacts\\models\\audited_master_only_lgbm\\full_model.joblib",
+  "threshold": 0.4381502900787569,
+  "threshold_strategy": "median_of_per_fold_f1_macro_thresholds",
+  "calibration": "none",
+  "training_population": "MASTER variants not found in any supplied panel",
+  "validation_population": "5-fold stratified OOF on the same master-only population",
+  "warning": "OOF scores are model-selection evidence, not an independent final test result."
+}

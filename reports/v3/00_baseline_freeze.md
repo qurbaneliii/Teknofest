@@ -1,18 +1,17 @@
 # V3 Baseline Freeze
 
+- Timestamp (UTC): 2026-06-24T16:40:46.438326+00:00
 - Branch: `radical-v3-robust-genomics`
 - Commit: `e4aa54f14bc0d8066cb15e708939a3c72c797fb6`
 - Python: `3.12.0`
-- Protected model: `lightgbm_conservative_regularized`
+- Platform: `Windows-11-10.0.26200-SP0`
+- Worktree was already dirty before V3. Its changes are deliberately preserved and are listed by `git status --short`.
+
+## Protected baseline verified from saved artifacts
+
+- Model: `lightgbm_conservative_regularized`
 - Threshold: `0.471` (`profile_f1_macro_opt`)
-- Calibration: `none`
-- Ensemble replacement: `False`
+- MASTER CV: ROC-AUC 0.8475; PR-AUC 0.9025; F1-macro 0.7764; MCC 0.5548.
+- Panel-unique combined: ROC-AUC 0.8725; PR-AUC 0.8251; F1-macro 0.7708; MCC 0.5825.
 
-## Saved Prediction Metrics
-
-| evaluation_split            |   roc_auc |   pr_auc |   f1_macro |      mcc |   medical_utility_score |
-|:----------------------------|----------:|---------:|-----------:|---------:|------------------------:|
-| MASTER_CV_saved_predictions |  0.847536 | 0.902494 |   0.776393 | 0.554754 |                0.774675 |
-| panel_unique_combined       |  0.872534 | 0.825099 |   0.770808 | 0.582499 |                0.774898 |
-
-The V3 workstream is isolated from the protected baseline artifacts. Metrics above are sourced from saved prediction audits.
+The stored values exactly match the protected baseline supplied in the V3 brief. No model artifact was modified.

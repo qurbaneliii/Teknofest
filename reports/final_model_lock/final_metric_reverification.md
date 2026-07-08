@@ -1,0 +1,8 @@
+# Final Metric Reverification
+
+| split                 |   threshold | threshold_match   | confusion_match   |   recomputed_roc_auc |   reported_roc_auc |   abs_diff_roc_auc |   recomputed_pr_auc |   reported_pr_auc |   abs_diff_pr_auc |   recomputed_f1_macro |   reported_f1_macro |   abs_diff_f1_macro |   recomputed_mcc |   reported_mcc |   abs_diff_mcc | status   | feature_leakage_check   |
+|:----------------------|------------:|:------------------|:------------------|---------------------:|-------------------:|-------------------:|--------------------:|------------------:|------------------:|----------------------:|--------------------:|--------------------:|-----------------:|---------------:|---------------:|:---------|:------------------------|
+| MASTER_OOF            |       0.471 | True              | True              |             0.847536 |           0.847536 |                  0 |            0.902494 |          0.902494 |                 0 |              0.776393 |            0.776393 |                   0 |         0.554754 |       0.554754 |              0 | pass     | True                    |
+| panel_unique_combined |       0.471 | True              | True              |             0.872534 |           0.872534 |                  0 |            0.825099 |          0.825099 |                 0 |              0.770808 |            0.770808 |                   0 |         0.582499 |       0.582499 |              0 | pass     | True                    |
+
+Status: PASS. Metrics were recomputed from locked prediction files; no official hidden-test metric is claimed.

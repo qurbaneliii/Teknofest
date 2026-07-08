@@ -1,0 +1,5 @@
+dataset,schema_matches_master,missing_columns,extra_columns,order_matches_master
+MASTER,True,,,True
+KANSER,True,,,True
+PAH,True,,,True
+CFTR,True,,,True

@@ -1,11 +1,13 @@
 # V3 Evidence Map
 
-Protected final: `lightgbm_conservative_regularized`, threshold `0.471`, calibration `none`.
+## Verified final evidence
 
-Saved prediction audit is the priority source. Official test CSV/labels are absent; no official test metrics exist.
+1. `artifacts/predictions/final_master_cv_predictions.csv` and `artifacts/predictions/final_panel_predictions.csv` are the highest-priority prediction evidence.
+2. `artifacts/metrics/final_metrics.json`, `final_model_decision.json`, and `final_threshold.json` identify the protected final selection.
+3. `reports/tables/final_panel_specific_metrics.csv` supplies CFTR, KANSER, and PAH subgroup measurements.
 
-# Inconsistencies
+Official test labels and hidden-test performance are not present in the repository; they are marked unavailable, not estimated. The complete file-level inventory is `evidence_inventory.csv`.
 
-- **High**: `reports/master_prompt/` AUC-only Optuna and candidate outputs are not final selection evidence. Action: archive later.
-- **Medium**: archived FP/FN case row counts differ from selected OOF confusion counts, as documented in `final_model_selection_decision.md`. Action: use only qualitative error analysis.
-- **Medium**: pipeline-generated legacy reports may describe pre-selection LightGBM states. Action: prioritize saved prediction audits and final decision JSON.
+## Known evidence caveat
+
+The worktree contains uncommitted audit and inference changes predating V3. They may be useful, but their relationship to the protected baseline is not yet established. They are therefore neither deleted nor treated as final evidence.

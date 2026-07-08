@@ -1,0 +1,2 @@
+contract_complete,missing_files,empty_files,n_folds_expected,n_folds_completed,seeds,thresholds_tested,panels_evaluated,baseline_replaced,official_metric_claimed,final_decision,blockers
+True,[],[],25,25,"[42, 2026, 777, 123, 999]","['fixed_0_50', 'protected_baseline_0_471', 'validation_f1_macro', 'validation_mcc']","['KANSER', 'CFTR', 'PAH', 'panel_combined']",False,False,reject_candidate,[]

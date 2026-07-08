@@ -1,13 +1,2 @@
-feature_set_name: v3_frequency_heavy
-allow_target_encoding: false
-allow_categorical_onehot: false
-allow_frequency_encoding: true
-allow_aa_features: false
-allow_frequency_heavy_features: true
-allow_panel_robust_filtering: false
-clipping_quantiles: [0.001, 0.999]
-rare_category_min_count: 5
-target_encoding_smoothing: 30
-missingness_features: true
-acmg_inspired_features: true
-notes: ACMG-inspired frequency summaries
+feature_set: v3_frequency_heavy
+target_encoding: false

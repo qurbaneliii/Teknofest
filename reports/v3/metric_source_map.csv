@@ -1,30 +1,185 @@
-file_path,metric_context,model_name,threshold,split,dataset_or_panel,roc_auc,pr_auc,accuracy,balanced_accuracy,precision,recall,specificity,f1,f1_macro,mcc,tn,fp,fn,tp,source_priority,verified_from_predictions,selected_as_final,notes
-reports/tables/final_medical_metric_comparison.csv,MASTER_CV_saved_predictions,lightgbm,0.471,MASTER_CV_saved_predictions,MASTER_CV_saved_predictions,0.8475357255793643,0.9024943418220934,0.8121546961325967,0.769401654059607,0.8472964943553178,,0.6536388140161725,0.8658166363084396,0.7763927374176759,0.5547540953901987,485.0,257.0,185.0,1426.0,1,yes,unknown,saved audit preferred
-reports/tables/final_medical_metric_comparison.csv,CFTR_unique,lightgbm,0.471,CFTR_unique,CFTR_unique,0.972318339100346,0.973535590706871,0.9117647058823528,0.9117647058823528,0.9375,,0.9411764705882352,0.9090909090909092,0.9116883116883115,0.8249579113843054,16.0,1.0,2.0,15.0,1,yes,unknown,saved audit preferred
-reports/tables/final_medical_metric_comparison.csv,KANSER_unique,lightgbm,0.471,KANSER_unique,KANSER_unique,0.9021764032073312,0.8080619126684014,0.7394366197183099,0.7914089347079039,0.5526315789473685,,0.6494845360824743,0.6942148760330579,0.7336105055011914,0.5436835826810634,63.0,34.0,3.0,42.0,1,yes,unknown,saved audit preferred
-reports/tables/final_medical_metric_comparison.csv,PAH_unique,lightgbm,0.471,PAH_unique,PAH_unique,0.8151260504201681,0.8430032384949078,0.7692307692307693,0.7387454981992797,0.7411764705882353,,0.5510204081632653,0.8235294117647058,0.7450980392156863,0.5284856887949466,27.0,22.0,5.0,63.0,1,yes,unknown,saved audit preferred
-reports/tables/final_medical_metric_comparison.csv,panel_unique_combined,lightgbm,0.471,panel_unique_combined,panel_unique_combined,0.8725342142520056,0.8250992446464279,0.7713310580204779,0.7866918357715904,0.6779661016949152,,0.6503067484662577,0.7817589576547231,0.7708077942395479,0.5824989834450162,106.0,57.0,10.0,120.0,1,yes,unknown,saved audit preferred
-reports/tables/final_model_selection_table.csv,MASTER_CV,lightgbm,0.631,MASTER_CV,MASTER_CV,0.8375186763507625,0.9011216655590524,0.7981300467488313,0.7471644572941083,0.831002331002331,0.8851644941030415,0.6091644204851752,0.8572287345957319,0.756388116391412,0.5169367155703188,452.0,290.0,185.0,1426.0,2,unknown,False,saved audit preferred
-reports/tables/final_model_selection_table.csv,MASTER_CV,lightgbm,0.585,MASTER_CV,MASTER_CV,0.8375186763507625,0.9011216655590524,0.8091797705057373,0.7279723631837051,0.8070824524312896,0.947858472998138,0.5080862533692723,0.8718241507279475,0.7492952840090278,0.5337659809202171,377.0,365.0,84.0,1527.0,2,unknown,False,saved audit preferred
-reports/tables/final_model_selection_table.csv,MASTER_CV,lightgbm,0.681,MASTER_CV,MASTER_CV,0.8375186763507625,0.9011216655590524,0.7688057798555036,0.7671868438180234,0.875968992248062,0.771570453134699,0.7628032345013477,0.8204620462046205,0.7479398536512363,0.5074931124414884,566.0,176.0,368.0,1243.0,2,unknown,False,saved audit preferred
-reports/tables/final_model_selection_table.csv,MASTER_CV,lightgbm,0.681,MASTER_CV,MASTER_CV,0.8375186763507625,0.9011216655590524,0.7688057798555036,0.7671868438180234,0.875968992248062,0.771570453134699,0.7628032345013477,0.8204620462046205,0.7479398536512363,0.5074931124414884,566.0,176.0,368.0,1243.0,2,unknown,False,saved audit preferred
-reports/tables/final_model_selection_table.csv,MASTER_CV,lightgbm,0.652,MASTER_CV,MASTER_CV,0.817096829245032,0.8852162435446934,,,,,,,0.7546549863115626,0.509332218643742,,,,,2,unknown,False,saved audit preferred
-reports/tables/final_model_selection_table.csv,MASTER_CV,lightgbm,0.471,MASTER_CV,MASTER_CV,0.8475357255793643,0.9024943418220934,,,,,,,0.7763927374176759,0.5547540953901987,,,,,2,unknown,True,saved audit preferred
-reports/tables/final_model_selection_table.csv,MASTER_CV,lightgbm,0.657,MASTER_CV,MASTER_CV,0.8385430522302031,0.9019126247964004,,,,,,,0.759981598733038,0.5239782451114958,,,,,2,unknown,False,saved audit preferred
-reports/tables/final_model_selection_table.csv,MASTER_CV,lightgbm,0.63,MASTER_CV,MASTER_CV,0.8348680148775015,0.9005411347480612,,,,,,,0.763928204541104,0.5288946111758712,,,,,2,unknown,False,saved audit preferred
-reports/tables/model_zoo_metrics.csv,lightgbm_conservative_regularized,lightgbm_conservative_regularized,0.471,unknown,unknown,0.8475357255793643,0.9024943418220934,0.8121546961325967,0.769401654059607,0.8472964943553178,,0.6536388140161725,0.8658166363084396,0.7763927374176759,0.5547540953901987,485.0,257.0,185.0,1426.0,2,unknown,unknown,saved audit preferred
-reports/tables/model_zoo_metrics.csv,lightgbm_high_capacity_controlled,lightgbm_high_capacity_controlled,0.471,unknown,unknown,0.8423987879822179,0.9031641159180256,0.8053548661283468,0.7517137068101546,0.8318940702360391,,0.6064690026954178,0.8632019115890084,0.7629706170610726,0.5321037485696429,450.0,292.0,166.0,1445.0,2,unknown,unknown,saved audit preferred
-reports/tables/model_zoo_metrics.csv,catboost,catboost,0.471,unknown,unknown,0.850874044850012,0.9108810849795616,0.8215044623884403,0.7409713542843088,0.8135860979462876,,0.522911051212938,0.8803418803418803,0.7645856558900037,0.5674854463568186,388.0,354.0,66.0,1545.0,2,unknown,unknown,saved audit preferred
-reports/tables/model_zoo_metrics.csv,xgboost,xgboost,0.471,unknown,unknown,0.8447570694065898,0.9049761276755772,0.8181045473863153,0.7432137712257877,0.8171581769436997,,0.5404312668463612,0.8768699654775605,0.7644512429013819,0.5574662137514946,401.0,341.0,87.0,1524.0,2,unknown,unknown,saved audit preferred
-reports/tables/model_zoo_metrics.csv,extra_trees,extra_trees,0.471,unknown,unknown,0.8353055392425056,0.9041866662872546,0.7832554186145346,0.7337572216617225,0.8247787610619469,,0.5997304582210242,0.8457350272232305,0.7407246564687581,0.484001778193434,445.0,297.0,213.0,1398.0,2,unknown,unknown,saved audit preferred
-reports/tables/model_zoo_metrics.csv,elasticnet_logistic_regression,elasticnet_logistic_regression,0.471,unknown,unknown,0.8152463437853972,0.8876330175928511,0.7484062898427539,0.7370227596326469,0.8501718213058419,,0.706199460916442,0.806914546640574,0.7229694684422383,0.4534194061322462,524.0,218.0,374.0,1237.0,2,unknown,unknown,saved audit preferred
-reports/tables/final_ensemble_comparison.csv,table_row,simple_average,0.471,unknown,unknown,0.8517122846468266,0.9098668622018063,0.817254568635784,0.7531341970047567,0.8271468144044322,,0.5795148247978437,0.8741217798594848,0.7703942232630757,0.5565467564260825,430.0,312.0,118.0,1493.0,2,unknown,unknown,saved audit preferred
-reports/tables/final_ensemble_comparison.csv,table_row,rank_average,0.471,unknown,unknown,0.8513613449314935,0.9098905238150382,0.7420314492137696,0.7629002762343122,0.8946540880503144,,0.8194070080862533,0.7894554283732224,0.7282438963040001,0.4902463380135508,608.0,134.0,473.0,1138.0,2,unknown,unknown,saved audit preferred
-reports/tables/final_ensemble_comparison.csv,table_row,weighted_average,0.471,unknown,unknown,0.8517122846468267,0.909880039205647,0.817254568635784,0.7531341970047567,0.8271468144044322,,0.5795148247978437,0.8741217798594848,0.7703942232630757,0.5565467564260825,430.0,312.0,118.0,1493.0,2,unknown,unknown,saved audit preferred
-reports/tables/final_ensemble_comparison.csv,table_row,mcc_weighted_average,0.471,unknown,unknown,0.8517122846468266,0.9098668622018063,0.817254568635784,0.7531341970047567,0.8271468144044322,,0.5795148247978437,0.8741217798594848,0.7703942232630757,0.5565467564260825,430.0,312.0,118.0,1493.0,2,unknown,unknown,saved audit preferred
-reports/tables/final_ensemble_comparison.csv,table_row,medical_utility_weighted_average,0.471,unknown,unknown,0.8517122846468266,0.9098668622018063,0.817254568635784,0.7531341970047567,0.8271468144044322,,0.5795148247978437,0.8741217798594848,0.7703942232630757,0.5565467564260825,430.0,312.0,118.0,1493.0,2,unknown,unknown,saved audit preferred
-reports/tables/final_ensemble_comparison.csv,table_row,logistic_stacking,0.471,unknown,unknown,0.8492895875893662,0.903832079456165,0.8185295367615809,0.7522478546247915,0.8256325632563256,,0.5727762803234502,0.8754738990959463,0.7705482259771039,0.5592852544339968,425.0,317.0,110.0,1501.0,2,unknown,unknown,saved audit preferred
-reports/tables/final_ensemble_comparison.csv,table_row,ridge_stacking,0.471,unknown,unknown,0.8489541243573077,0.9053500428308464,0.8227794305142372,0.7462643115641956,0.8178913738019169,,0.5390835579514824,0.880481513327601,0.7689178314378351,0.5701466783830146,400.0,342.0,75.0,1536.0,2,unknown,unknown,saved audit preferred
-reports/tables/final_ensemble_comparison.csv,table_row,elasticnet_stacking,0.471,unknown,unknown,0.8494510449554193,0.9038069710873552,0.8164045898852529,0.7503325352487363,0.824793388429752,,0.5714285714285714,0.8739054290718039,0.7682027145359019,0.553946169636456,424.0,318.0,114.0,1497.0,2,unknown,unknown,saved audit preferred
-reports/tables/optuna_before_after_comparison.csv,lightgbm_conservative_regularized_reference,lightgbm_conservative_regularized_reference,0.471,unknown,unknown,,,,,,,,,,,,,,,2,unknown,unknown,saved audit preferred
-reports/tables/optuna_before_after_comparison.csv,optuna_medical_candidate,optuna_medical_candidate,0.3864287420365709,unknown,unknown,,,,,,,,,,,,,,,2,unknown,unknown,saved audit preferred
+path,source_priority,status,note
+artifacts/metrics/audited_final_model_decision.json,5,present,requires value-level audit before citation
+artifacts/metrics/experiments/experiment_001_initial/all_evaluation_metrics.csv,5,present,requires value-level audit before citation
+artifacts/metrics/experiments/experiment_001_initial/config.json,5,present,requires value-level audit before citation
+artifacts/metrics/experiments/experiment_001_initial/diagnosis.md,5,present,requires value-level audit before citation
+artifacts/metrics/experiments/experiment_001_initial/error_analysis.csv,5,present,requires value-level audit before citation
+artifacts/metrics/experiments/experiment_001_initial/feature_importance.csv,5,present,requires value-level audit before citation
+artifacts/metrics/experiments/experiment_001_initial/main_model_cv_results.csv,5,present,requires value-level audit before citation
+artifacts/metrics/experiments/experiment_001_initial/metrics.csv,5,present,requires value-level audit before citation
+artifacts/metrics/experiments/experiment_001_initial/panel_generalization_results.csv,5,present,requires value-level audit before citation
+artifacts/metrics/experiments/experiment_001_initial/threshold_results.csv,5,present,requires value-level audit before citation
+artifacts/metrics/experiments/experiment_002_f1_threshold/config.json,5,present,requires value-level audit before citation
+artifacts/metrics/experiments/experiment_002_f1_threshold/diagnosis.md,5,present,requires value-level audit before citation
+artifacts/metrics/experiments/experiment_002_f1_threshold/metrics.csv,5,present,requires value-level audit before citation
+artifacts/metrics/experiments/experiment_003_youden_threshold/config.json,5,present,requires value-level audit before citation
+artifacts/metrics/experiments/experiment_003_youden_threshold/diagnosis.md,5,present,requires value-level audit before citation
+artifacts/metrics/experiments/experiment_003_youden_threshold/metrics.csv,5,present,requires value-level audit before citation
+artifacts/metrics/experiments/experiment_004_extra_trees/config.json,5,present,requires value-level audit before citation
+artifacts/metrics/experiments/experiment_004_extra_trees/diagnosis.md,5,present,requires value-level audit before citation
+artifacts/metrics/experiments/experiment_004_extra_trees/metrics.csv,5,present,requires value-level audit before citation
+artifacts/metrics/experiments/experiment_005_catboost/config.json,5,present,requires value-level audit before citation
+artifacts/metrics/experiments/experiment_005_catboost/diagnosis.md,5,present,requires value-level audit before citation
+artifacts/metrics/experiments/experiment_005_catboost/metrics.csv,5,present,requires value-level audit before citation
+artifacts/metrics/experiments/experiment_006_ensemble_stack/config.json,5,present,requires value-level audit before citation
+artifacts/metrics/experiments/experiment_006_ensemble_stack/diagnosis.md,5,present,requires value-level audit before citation
+artifacts/metrics/experiments/experiment_006_ensemble_stack/metrics.csv,5,present,requires value-level audit before citation
+artifacts/metrics/experiments/experiment_007_lr_ek_only/config.json,5,present,requires value-level audit before citation
+artifacts/metrics/experiments/experiment_007_lr_ek_only/diagnosis.md,5,present,requires value-level audit before citation
+artifacts/metrics/experiments/experiment_007_lr_ek_only/metrics.csv,5,present,requires value-level audit before citation
+artifacts/metrics/experiments/experiment_008_ek_only_features/config.json,5,present,requires value-level audit before citation
+artifacts/metrics/experiments/experiment_008_ek_only_features/diagnosis.md,5,present,requires value-level audit before citation
+artifacts/metrics/experiments/experiment_008_ek_only_features/metrics.csv,5,present,requires value-level audit before citation
+artifacts/metrics/experiments/experiment_009_al_only_features/config.json,5,present,requires value-level audit before citation
+artifacts/metrics/experiments/experiment_009_al_only_features/diagnosis.md,5,present,requires value-level audit before citation
+artifacts/metrics/experiments/experiment_009_al_only_features/metrics.csv,5,present,requires value-level audit before citation
+artifacts/metrics/experiments/experiment_010_engineered_only/config.json,5,present,requires value-level audit before citation
+artifacts/metrics/experiments/experiment_010_engineered_only/diagnosis.md,5,present,requires value-level audit before citation
+artifacts/metrics/experiments/experiment_010_engineered_only/metrics.csv,5,present,requires value-level audit before citation
+artifacts/metrics/experiments/lightgbm_balanced_regularized/config.json,5,present,requires value-level audit before citation
+artifacts/metrics/experiments/lightgbm_balanced_regularized/metrics.csv,5,present,requires value-level audit before citation
+artifacts/metrics/experiments/lightgbm_conservative_regularized/config.json,5,present,requires value-level audit before citation
+artifacts/metrics/experiments/lightgbm_conservative_regularized/metrics.csv,5,present,requires value-level audit before citation
+artifacts/metrics/experiments/lightgbm_current_best/config.json,5,present,requires value-level audit before citation
+artifacts/metrics/experiments/lightgbm_current_best/metrics.csv,5,present,requires value-level audit before citation
+artifacts/metrics/experiments/lightgbm_high_capacity_controlled/config.json,5,present,requires value-level audit before citation
+artifacts/metrics/experiments/lightgbm_high_capacity_controlled/metrics.csv,5,present,requires value-level audit before citation
+artifacts/metrics/feature_list.json,5,present,requires value-level audit before citation
+artifacts/metrics/final_config.json,5,present,requires value-level audit before citation
+artifacts/metrics/final_feature_list.json,5,present,requires value-level audit before citation
+artifacts/metrics/final_metrics.json,5,present,requires value-level audit before citation
+artifacts/metrics/final_model_decision.json,5,present,requires value-level audit before citation
+artifacts/metrics/final_threshold.json,5,present,requires value-level audit before citation
+artifacts/metrics/optuna_medical_best_params.json,5,present,requires value-level audit before citation
+artifacts/models/experiments/experiment_002_f1_threshold/README.md,5,present,requires value-level audit before citation
+artifacts/models/experiments/experiment_003_youden_threshold/README.md,5,present,requires value-level audit before citation
+artifacts/predictions/audited_master_only_oof_predictions.csv,1,present,requires value-level audit before citation
+artifacts/predictions/audited_panel_unique_predictions.csv,1,present,requires value-level audit before citation
+artifacts/predictions/final_ensemble_oof_predictions.csv,1,present,requires value-level audit before citation
+artifacts/predictions/final_ensemble_panel_predictions.csv,1,present,requires value-level audit before citation
+artifacts/predictions/final_master_cv_predictions.csv,1,present,requires value-level audit before citation
+artifacts/predictions/final_panel_predictions.csv,1,present,requires value-level audit before citation
+artifacts/predictions/master_cv_model_predictions_phase9.csv,1,present,requires value-level audit before citation
+artifacts/predictions/model_zoo_folds/fold_0_predictions.csv,1,present,requires value-level audit before citation
+artifacts/predictions/model_zoo_folds/fold_1_predictions.csv,1,present,requires value-level audit before citation
+artifacts/predictions/model_zoo_folds/fold_2_predictions.csv,1,present,requires value-level audit before citation
+artifacts/predictions/model_zoo_folds/fold_3_predictions.csv,1,present,requires value-level audit before citation
+artifacts/predictions/model_zoo_folds/fold_4_predictions.csv,1,present,requires value-level audit before citation
+artifacts/predictions/model_zoo_oof_predictions.csv,1,present,requires value-level audit before citation
+artifacts/predictions/model_zoo_panel_predictions.csv,1,present,requires value-level audit before citation
+artifacts/predictions/oof_predictions.csv,1,present,requires value-level audit before citation
+artifacts/predictions/optuna_medical_candidate_oof_predictions.csv,1,present,requires value-level audit before citation
+artifacts/predictions/optuna_medical_candidate_panel_predictions.csv,1,present,requires value-level audit before citation
+artifacts/predictions/panel_unique_model_predictions_phase9.csv,1,present,requires value-level audit before citation
+artifacts/predictions/panel_unique_predictions.csv,1,present,requires value-level audit before citation
+audit_outputs/04_metric_audit_report.md,5,present,requires value-level audit before citation
+audit_outputs/09_threshold_calibration_audit.md,5,present,requires value-level audit before citation
+audit_outputs/recomputed_master_metrics.csv,5,present,requires value-level audit before citation
+audit_outputs/recomputed_panel_metrics.csv,5,present,requires value-level audit before citation
+audit_outputs/recomputed_subgroup_metrics.csv,5,present,requires value-level audit before citation
+audit_outputs/recomputed_threshold_sweep.csv,5,present,requires value-level audit before citation
+notebooks/03_model_training_and_evaluation.ipynb,5,present,requires value-level audit before citation
+outputs/audit/metric_audit_report.md,5,present,requires value-level audit before citation
+outputs/audit/threshold_audit_report.md,5,present,requires value-level audit before citation
+outputs/figures/threshold_optimization.png,5,present,requires value-level audit before citation
+outputs/final/final_metric_verification.csv,5,present,requires value-level audit before citation
+outputs/final/final_predictions.csv,1,present,requires value-level audit before citation
+outputs/final/model_selection_report.md,2,present,requires value-level audit before citation
+outputs/final/subgroup_metrics.csv,5,present,requires value-level audit before citation
+outputs/final/threshold_sweep.csv,5,present,requires value-level audit before citation
+outputs/pdr_assets/final_metric_verification.csv,5,present,requires value-level audit before citation
+outputs/pdr_assets/subgroup_metrics.csv,5,present,requires value-level audit before citation
+outputs/pdr_assets/threshold_optimization.png,5,present,requires value-level audit before citation
+outputs/pdr_assets/threshold_sweep.csv,5,present,requires value-level audit before citation
+reports/calibration_decision_review.md,5,present,requires value-level audit before citation
+reports/figures/advanced_threshold_comparison.png,5,present,requires value-level audit before citation
+reports/figures/calibration_curves.png,5,present,requires value-level audit before citation
+reports/figures/experiments/experiment_001_initial/advanced_threshold_comparison.png,5,present,requires value-level audit before citation
+reports/figures/experiments/experiment_001_initial/calibration_curves.png,5,present,requires value-level audit before citation
+reports/figures/experiments/experiment_001_initial/final_calibration_curve.png,5,present,requires value-level audit before citation
+reports/figures/experiments/experiment_001_initial/final_calibration_decision_plot.png,5,present,requires value-level audit before citation
+reports/figures/experiments/experiment_001_initial/final_panel_specific_metric_comparison.png,5,present,requires value-level audit before citation
+reports/figures/experiments/experiment_001_initial/final_threshold_analysis.png,5,present,requires value-level audit before citation
+reports/figures/experiments/experiment_001_initial/fold_threshold_distribution.png,5,present,requires value-level audit before citation
+reports/figures/experiments/experiment_001_initial/model_comparison_metrics.png,5,present,requires value-level audit before citation
+reports/figures/experiments/experiment_001_initial/threshold_comparison.png,5,present,requires value-level audit before citation
+reports/figures/experiments/experiment_001_initial/threshold_metric_curves.png,5,present,requires value-level audit before citation
+reports/figures/experiments/experiment_001_initial/threshold_optimization.png,5,present,requires value-level audit before citation
+reports/figures/experiments/experiment_001_initial/train_vs_validation_metrics.png,5,present,requires value-level audit before citation
+reports/figures/final_calibration_curve.png,5,present,requires value-level audit before citation
+reports/figures/final_calibration_decision_plot.png,5,present,requires value-level audit before citation
+reports/figures/final_panel_specific_metric_comparison.png,5,present,requires value-level audit before citation
+reports/figures/final_threshold_analysis.png,5,present,requires value-level audit before citation
+reports/figures/fold_threshold_distribution.png,5,present,requires value-level audit before citation
+reports/figures/model_comparison_metrics.png,5,present,requires value-level audit before citation
+reports/figures/threshold_comparison.png,5,present,requires value-level audit before citation
+reports/figures/threshold_metric_curves.png,5,present,requires value-level audit before citation
+reports/figures/threshold_optimization.png,5,present,requires value-level audit before citation
+reports/figures/train_vs_validation_metrics.png,5,present,requires value-level audit before citation
+reports/final_medical_metric_summary.md,5,present,requires value-level audit before citation
+reports/final_metric_verification_audit.md,5,present,requires value-level audit before citation
+reports/final_model_selection_decision.md,2,present,requires value-level audit before citation
+reports/master_prompt/CFTR_unique_calibration.csv,5,present,requires value-level audit before citation
+reports/master_prompt/CFTR_unique_calibration_curve.png,5,present,requires value-level audit before citation
+reports/master_prompt/final_panel_unique_predictions.csv,1,present,requires value-level audit before citation
+reports/master_prompt/KANSER_unique_calibration.csv,5,present,requires value-level audit before citation
+reports/master_prompt/KANSER_unique_calibration_curve.png,5,present,requires value-level audit before citation
+reports/master_prompt/l0_model_fold_metrics.csv,5,present,requires value-level audit before citation
+reports/master_prompt/l0_stack_oof_predictions.csv,1,present,requires value-level audit before citation
+reports/master_prompt/lightgbm_oof_predictions.csv,1,present,requires value-level audit before citation
+reports/master_prompt/PAH_unique_calibration.csv,5,present,requires value-level audit before citation
+reports/master_prompt/PAH_unique_calibration_curve.png,5,present,requires value-level audit before citation
+reports/tables/advanced_threshold_comparison.csv,5,present,requires value-level audit before citation
+reports/tables/all_evaluation_metrics.csv,5,present,requires value-level audit before citation
+reports/tables/calibration_comparison.csv,5,present,requires value-level audit before citation
+reports/tables/calibration_decision_matrix.csv,5,present,requires value-level audit before citation
+reports/tables/final_evaluation_metrics.csv,5,present,requires value-level audit before citation
+reports/tables/final_medical_metric_comparison.csv,5,present,requires value-level audit before citation
+reports/tables/final_metric_verification_audit.csv,5,present,requires value-level audit before citation
+reports/tables/final_model_selection_table.csv,2,present,requires value-level audit before citation
+reports/tables/final_panel_specific_metrics.csv,5,present,requires value-level audit before citation
+reports/tables/final_selection_board.csv,2,present,requires value-level audit before citation
+reports/tables/fold_threshold_stability.csv,5,present,requires value-level audit before citation
+reports/tables/model_comparison_metrics.csv,5,present,requires value-level audit before citation
+reports/tables/model_zoo_fold_metrics.csv,5,present,requires value-level audit before citation
+reports/tables/model_zoo_metrics.csv,5,present,requires value-level audit before citation
+reports/tables/optuna_medical_candidate_fold_metrics.csv,5,present,requires value-level audit before citation
+reports/tables/optuna_medical_candidate_overfitting_gaps.csv,5,present,requires value-level audit before citation
+reports/tables/overfitting_gap_analysis.csv,5,present,requires value-level audit before citation
+reports/tables/threshold_optimization.csv,5,present,requires value-level audit before citation
+reports/tables/threshold_results.csv,5,present,requires value-level audit before citation
+reports/test_evaluation/tables/test_schema_audit.csv,5,present,requires value-level audit before citation
+reports/test_evaluation/test_data_discovery.md,5,present,requires value-level audit before citation
+reports/v3/baseline_metrics.json,5,present,requires value-level audit before citation
+reports/v3/metric_source_map.csv,5,present,requires value-level audit before citation
+scripts/__pycache__/run_final_selection_board.cpython-312.pyc,2,present,requires value-level audit before citation
+scripts/__pycache__/run_final_test_evaluation.cpython-312.pyc,5,present,requires value-level audit before citation
+scripts/run_final_selection_board.py,2,present,requires value-level audit before citation
+scripts/run_final_test_evaluation.py,5,present,requires value-level audit before citation
+scripts/run_medical_metric_audit.py,5,present,requires value-level audit before citation
+src/__pycache__/evaluation.cpython-312.pyc,5,present,requires value-level audit before citation
+src/__pycache__/feature_stability_selection.cpython-312.pyc,2,present,requires value-level audit before citation
+src/__pycache__/final_selection_board.cpython-312.pyc,2,present,requires value-level audit before citation
+src/__pycache__/final_test_evaluation.cpython-312.pyc,5,present,requires value-level audit before citation
+src/__pycache__/final_thresholding.cpython-312.pyc,5,present,requires value-level audit before citation
+src/__pycache__/medical_metrics.cpython-312.pyc,5,present,requires value-level audit before citation
+src/calibration.py,5,present,requires value-level audit before citation
+src/evaluation.py,5,present,requires value-level audit before citation
+src/feature_stability_selection.py,2,present,requires value-level audit before citation
+src/final_calibration.py,5,present,requires value-level audit before citation
+src/final_selection_board.py,2,present,requires value-level audit before citation
+src/final_test_evaluation.py,5,present,requires value-level audit before citation
+src/final_thresholding.py,5,present,requires value-level audit before citation
+src/medical_metrics.py,5,present,requires value-level audit before citation
+src/metrics.py,5,present,requires value-level audit before citation
+src/model_selection.py,2,present,requires value-level audit before citation
+src/thresholding.py,5,present,requires value-level audit before citation
+tests/__pycache__/test_evaluation.cpython-312-pytest-9.0.2.pyc,5,present,requires value-level audit before citation
+tests/__pycache__/test_final_selection_board.cpython-312-pytest-9.0.2.pyc,2,present,requires value-level audit before citation
+tests/__pycache__/test_final_selection_board.cpython-312.pyc,2,present,requires value-level audit before citation
+tests/__pycache__/test_medical_metrics.cpython-312-pytest-9.0.2.pyc,5,present,requires value-level audit before citation
+tests/__pycache__/test_thresholding.cpython-312-pytest-9.0.2.pyc,5,present,requires value-level audit before citation
+tests/test_evaluation.py,5,present,requires value-level audit before citation
+tests/test_final_selection_board.py,2,present,requires value-level audit before citation
+tests/test_medical_metrics.py,5,present,requires value-level audit before citation
+tests/test_thresholding.py,5,present,requires value-level audit before citation

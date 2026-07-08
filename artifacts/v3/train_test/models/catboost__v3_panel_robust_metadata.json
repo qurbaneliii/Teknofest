@@ -1,0 +1,7 @@
+{
+  "model_id": "catboost",
+  "feature_set": "v3_panel_robust",
+  "feature_count": 21,
+  "trained_on": "MASTER train only",
+  "random_state": 42
+}

@@ -1,0 +1,6 @@
+{
+  "fixed_0_50": 0.5,
+  "protected_baseline_0_471": 0.471,
+  "validation_f1_macro": 0.6649999999999999,
+  "validation_mcc": 0.6649999999999999
+}

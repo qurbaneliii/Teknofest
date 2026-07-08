@@ -1,0 +1,18 @@
+{
+  "final_contract_complete": true,
+  "final_model_id": "lightgbm_conservative_regularized",
+  "final_threshold": 0.471,
+  "calibration": "none",
+  "ensemble_replaced_lightgbm": false,
+  "protected_baseline_overwritten": false,
+  "official_metric_claimed": false,
+  "hgb_promoted": false,
+  "missing_files": [],
+  "failed_checks": [],
+  "warnings": [
+    "No official test CSV was found locally."
+  ],
+  "final_decision": "protected LightGBM baseline locked as final",
+  "next_action": "Use the locked inference CLI only when organizer-format test data is supplied.",
+  "pytest_passed": true
+}

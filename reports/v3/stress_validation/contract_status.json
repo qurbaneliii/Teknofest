@@ -1,0 +1,30 @@
+{
+  "contract_complete": true,
+  "missing_files": [],
+  "empty_files": [],
+  "n_folds_expected": 25,
+  "n_folds_completed": 25,
+  "seeds": [
+    42,
+    2026,
+    777,
+    123,
+    999
+  ],
+  "thresholds_tested": [
+    "fixed_0_50",
+    "protected_baseline_0_471",
+    "validation_f1_macro",
+    "validation_mcc"
+  ],
+  "panels_evaluated": [
+    "KANSER",
+    "CFTR",
+    "PAH",
+    "panel_combined"
+  ],
+  "baseline_replaced": false,
+  "official_metric_claimed": false,
+  "final_decision": "reject_candidate",
+  "blockers": []
+}

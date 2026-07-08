@@ -1,0 +1,3 @@
+split,threshold,threshold_match,confusion_match,recomputed_roc_auc,reported_roc_auc,abs_diff_roc_auc,recomputed_pr_auc,reported_pr_auc,abs_diff_pr_auc,recomputed_f1_macro,reported_f1_macro,abs_diff_f1_macro,recomputed_mcc,reported_mcc,abs_diff_mcc,status,feature_leakage_check
+MASTER_OOF,0.471,True,True,0.8475357255793643,0.8475357255793643,0.0,0.9024943418220934,0.9024943418220934,0.0,0.7763927374176759,0.7763927374176759,0.0,0.5547540953901987,0.5547540953901987,0.0,pass,True
+panel_unique_combined,0.471,True,True,0.8725342142520056,0.8725342142520056,0.0,0.8250992446464279,0.8250992446464279,0.0,0.7708077942395479,0.7708077942395479,0.0,0.5824989834450162,0.5824989834450162,0.0,pass,True

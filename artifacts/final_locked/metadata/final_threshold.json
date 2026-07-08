@@ -1,0 +1,8 @@
+{
+  "threshold": 0.471,
+  "threshold_strategy": "profile_f1_macro_opt",
+  "selected_profile": "conservative_regularized",
+  "selection_score": 0.7203934446376183,
+  "model_strength": "moderate",
+  "main_issue": "thresholding_and_calibration"
+}

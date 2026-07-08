@@ -1,89 +1,92 @@
-file_path,purpose,imports_internal_modules,writes_outputs,reads_inputs,active_in_pipeline,called_by_readme,called_by_run_pipeline,related_phase,safe_to_archive_later,notes
-run_pipeline.py,Problem Definition,yes,yes,yes,yes,unknown,unknown,final,no,static audit
-scripts/build_fifth_section_explainability.py,module,yes,no,no,unknown,unknown,unknown,final,maybe,static audit
-scripts/build_validation_strategy.py,module,yes,yes,no,unknown,unknown,unknown,final,maybe,static audit
-scripts/create_eda_model_bridge.py,Decision Bridge,no,yes,yes,unknown,unknown,unknown,final,maybe,static audit
-scripts/create_eda_notebook.py,TEKNOFEST 2026 - Exploratory Data Analysis,no,yes,yes,unknown,unknown,unknown,final,maybe,static audit
-scripts/create_required_notebooks.py,module,yes,no,yes,unknown,unknown,unknown,final,maybe,static audit
-scripts/engineer_second_section.py,module,yes,yes,no,unknown,unknown,unknown,final,maybe,static audit
-scripts/execute_eda_notebook.py,module,no,no,no,unknown,unknown,unknown,final,maybe,static audit
-scripts/generate_final_report_assets.py,module,yes,no,no,unknown,unknown,unknown,final,maybe,static audit
-scripts/generate_final_submission.py,module,yes,no,yes,unknown,unknown,unknown,final,maybe,static audit
-scripts/prepare_first_section.py,module,yes,yes,no,unknown,unknown,unknown,final,maybe,static audit
-scripts/run_final_competition_pipeline.py,module,yes,no,no,unknown,unknown,unknown,final,maybe,static audit
-scripts/run_final_ensemble.py,module,yes,no,no,unknown,unknown,unknown,final,maybe,static audit
-scripts/run_final_model_zoo.py,module,yes,no,no,unknown,unknown,unknown,final,maybe,static audit
-scripts/run_final_selection_board.py,module,yes,no,no,unknown,unknown,unknown,final,maybe,static audit
-scripts/run_final_test_evaluation.py,Executive Summary,yes,yes,no,unknown,unknown,unknown,final,maybe,static audit
-scripts/run_master_prompt_requirements.py,module,yes,yes,yes,unknown,unknown,unknown,final,maybe,static audit
-scripts/run_medical_metric_audit.py,module,no,yes,yes,unknown,unknown,unknown,final,maybe,static audit
-scripts/run_model_performance_improvement.py,1. Current Baseline Performance,yes,yes,yes,yes,unknown,unknown,final,no,static audit
-scripts/run_optuna_lgbm_study.py,module,yes,yes,yes,unknown,unknown,unknown,final,maybe,static audit
-scripts/run_pdf_eda_prompt.py,module,yes,no,no,unknown,unknown,unknown,final,maybe,static audit
-scripts/run_phase9_outputs.py,module,yes,no,no,unknown,unknown,unknown,final,maybe,static audit
-scripts/train_fourth_section.py,module,yes,yes,no,unknown,unknown,unknown,final,maybe,static audit
-scripts/v2_repository_cleanup_audit.py,module,no,yes,no,unknown,unknown,unknown,final,maybe,static audit
-scripts/v3_baseline_freeze.py,module,no,yes,yes,unknown,unknown,unknown,final,maybe,static audit
-scripts/v3_evidence_audit.py,module,no,yes,yes,unknown,unknown,unknown,final,maybe,static audit
-src/advanced_bio_features.py,"Standard BLOSUM62 matrix, stored compactly to keep substitution handling deterministic.",no,no,no,unknown,unknown,unknown,final,maybe,static audit
-src/baselines.py,module,yes,no,no,unknown,unknown,unknown,final,maybe,static audit
-src/calibration.py,module,yes,no,no,unknown,unknown,unknown,final,maybe,static audit
-src/config.py,module,no,no,no,unknown,unknown,unknown,final,maybe,static audit
-src/data_loading.py,module,yes,yes,no,unknown,unknown,unknown,final,maybe,static audit
-src/ensembling.py,module,yes,no,no,unknown,unknown,unknown,final,maybe,static audit
-src/error_analysis.py,module,no,no,no,unknown,unknown,unknown,final,maybe,static audit
-src/evaluation.py,module,yes,no,no,unknown,unknown,unknown,final,maybe,static audit
-src/explainability.py,module,yes,no,no,unknown,unknown,unknown,final,maybe,static audit
-src/features.py,module,yes,no,no,unknown,unknown,unknown,final,maybe,static audit
-src/feature_stability_selection.py,Prefer lower missingness and non-target-encoded representatives.,yes,yes,no,unknown,unknown,unknown,final,maybe,static audit
-src/final_calibration.py,module,no,yes,no,unknown,unknown,unknown,final,maybe,static audit
-src/final_competition_pipeline.py,module,yes,yes,yes,unknown,unknown,unknown,final,maybe,static audit
-src/final_ensembling.py,module,no,yes,yes,unknown,unknown,unknown,final,maybe,static audit
-src/final_error_analysis.py,module,no,yes,no,unknown,unknown,unknown,final,maybe,static audit
-src/final_inference.py,module,no,yes,yes,unknown,unknown,unknown,final,maybe,static audit
-src/final_model_zoo.py,module,yes,yes,yes,unknown,unknown,unknown,final,maybe,static audit
-src/final_report_assets.py,module,yes,yes,yes,unknown,unknown,unknown,final,maybe,static audit
-src/final_selection_board.py,module,no,yes,yes,unknown,unknown,unknown,final,maybe,static audit
-src/final_test_evaluation.py,module,no,yes,yes,unknown,unknown,unknown,final,maybe,static audit
-src/final_thresholding.py,module,no,yes,no,unknown,unknown,unknown,final,maybe,static audit
-src/final_validation.py,module,yes,yes,no,unknown,unknown,unknown,final,maybe,static audit
-src/medical_metrics.py,0.25 is the Brier loss of an uninformative balanced binary predictor.,no,no,no,unknown,unknown,unknown,final,maybe,static audit
-src/metrics.py,module,no,no,no,unknown,unknown,unknown,final,maybe,static audit
-src/models.py,module,yes,no,no,unknown,unknown,unknown,final,maybe,static audit
-src/model_selection.py,module,yes,no,no,unknown,unknown,unknown,final,maybe,static audit
-src/optimization.py,module,yes,no,no,unknown,unknown,unknown,final,maybe,static audit
-src/phase10_improvements.py,Interpretation,yes,yes,yes,unknown,unknown,unknown,final,maybe,static audit
-src/phase9_outputs.py,module,yes,yes,yes,unknown,unknown,unknown,final,maybe,static audit
-src/smoke_test.py,module,yes,no,no,unknown,unknown,unknown,final,maybe,static audit
-src/thresholding.py,module,no,no,no,unknown,unknown,unknown,final,maybe,static audit
-src/train_improved.py,module,yes,no,no,unknown,unknown,unknown,final,maybe,static audit
-src/utils.py,module,no,no,no,unknown,unknown,unknown,final,maybe,static audit
-src/validation.py,module,yes,no,no,unknown,unknown,unknown,final,maybe,static audit
-src/__init__.py,module,no,no,no,unknown,unknown,unknown,final,maybe,static audit
-tests/conftest.py,module,no,no,no,unknown,unknown,unknown,final,maybe,static audit
-tests/test_advanced_bio_features.py,module,no,no,no,unknown,unknown,unknown,final,maybe,static audit
-tests/test_data_loading.py,module,yes,no,no,unknown,unknown,unknown,final,maybe,static audit
-tests/test_ensembling.py,module,yes,no,no,unknown,unknown,unknown,final,maybe,static audit
-tests/test_evaluation.py,module,no,no,no,unknown,unknown,unknown,final,maybe,static audit
-tests/test_features.py,module,yes,no,no,unknown,unknown,unknown,final,maybe,static audit
-tests/test_final_inference_schema.py,module,yes,yes,no,unknown,unknown,unknown,final,maybe,static audit
-tests/test_final_model_zoo.py,module,yes,no,no,unknown,unknown,unknown,final,maybe,static audit
-tests/test_final_selection_board.py,module,yes,no,no,unknown,unknown,unknown,final,maybe,static audit
-tests/test_fold_safe_target_encoding.py,module,yes,no,no,unknown,unknown,unknown,final,maybe,static audit
-tests/test_medical_metrics.py,module,no,no,no,unknown,unknown,unknown,final,maybe,static audit
-tests/test_medical_optuna.py,module,yes,no,no,unknown,unknown,unknown,final,maybe,static audit
-tests/test_no_variant_id_leakage.py,module,yes,no,no,unknown,unknown,unknown,final,maybe,static audit
-tests/test_thresholding.py,module,yes,no,no,unknown,unknown,unknown,final,maybe,static audit
-tests/test_validation.py,module,yes,no,no,unknown,unknown,unknown,final,maybe,static audit
-src/teknofest/data_prep.py,module,no,no,yes,yes,unknown,unknown,final,no,static audit
-src/teknofest/eda.py,Executive Summary,yes,yes,no,yes,unknown,unknown,final,no,static audit
-src/teknofest/experiments.py,Critical Checklist,yes,yes,no,yes,unknown,unknown,final,no,static audit
-src/teknofest/explainability.py,module,yes,yes,yes,yes,unknown,unknown,final,no,static audit
-src/teknofest/features.py,module,no,no,no,yes,unknown,unknown,final,no,static audit
-src/teknofest/training.py,Reusing fold-engineered matrices keeps the Optuna loop honest and much faster.,yes,yes,no,yes,unknown,unknown,final,no,static audit
-src/teknofest/validation.py,module,no,no,no,yes,unknown,unknown,final,no,static audit
-src/teknofest/__init__.py,module,no,no,no,yes,unknown,unknown,final,no,static audit
-teknofest2026_artificialintelligenceinhealtcare-main/src/config.py,Columns that behave like identifiers or show near-perfect target purity.,no,no,no,unknown,unknown,unknown,final,maybe,static audit
-teknofest2026_artificialintelligenceinhealtcare-main/src/feature_engineering.py,Global missing count,no,no,no,unknown,unknown,unknown,final,maybe,static audit
-teknofest2026_artificialintelligenceinhealtcare-main/src/preprocessing.py,Compatibility with older sklearn,no,no,no,unknown,unknown,unknown,final,maybe,static audit
-teknofest2026_artificialintelligenceinhealtcare-main/src/utils/config.py,module,no,no,no,unknown,unknown,unknown,final,maybe,static audit
+code_file,classification,dependency_basis
+run_pipeline.py,PROTECTED_DO_NOT_TOUCH,source file inventory; detailed import graph deferred until worktree is resolved
+scripts/build_fifth_section_explainability.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+scripts/build_validation_strategy.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+scripts/create_eda_model_bridge.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+scripts/create_eda_notebook.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+scripts/create_required_notebooks.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+scripts/engineer_second_section.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+scripts/execute_eda_notebook.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+scripts/generate_final_report_assets.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+scripts/generate_final_submission.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+scripts/package_audited_final_outputs.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+scripts/prepare_first_section.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+scripts/run_final_competition_pipeline.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+scripts/run_final_ensemble.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+scripts/run_final_model_zoo.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+scripts/run_final_selection_board.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+scripts/run_final_test_evaluation.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+scripts/run_master_prompt_requirements.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+scripts/run_medical_metric_audit.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+scripts/run_model_performance_improvement.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+scripts/run_optuna_lgbm_study.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+scripts/run_pdf_eda_prompt.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+scripts/run_phase9_outputs.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+scripts/run_teknofest_readiness_audit.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+scripts/train_fourth_section.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+scripts/v3_freeze_and_audit.py,V3_NEW,source file inventory; detailed import graph deferred until worktree is resolved
+src/__init__.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+src/advanced_bio_features.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+src/baselines.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+src/calibration.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+src/config.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+src/data_loading.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+src/ensembling.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+src/error_analysis.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+src/evaluation.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+src/explainability.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+src/feature_stability_selection.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+src/features.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+src/final_calibration.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+src/final_competition_pipeline.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+src/final_ensembling.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+src/final_error_analysis.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+src/final_inference.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+src/final_model_zoo.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+src/final_report_assets.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+src/final_selection_board.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+src/final_test_evaluation.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+src/final_thresholding.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+src/final_validation.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+src/medical_metrics.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+src/metrics.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+src/model_selection.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+src/models.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+src/optimization.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+src/phase10_improvements.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+src/phase9_outputs.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+src/predict_final.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+src/run_final_pipeline.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+src/sanity_check_final.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+src/smoke_test.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+src/teknofest/__init__.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+src/teknofest/data_prep.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+src/teknofest/eda.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+src/teknofest/experiments.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+src/teknofest/explainability.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+src/teknofest/features.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+src/teknofest/training.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+src/teknofest/validation.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+src/thresholding.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+src/train_improved.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+src/utils.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+src/validation.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+teknofest2026_artificialintelligenceinhealtcare-main/src/config.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+teknofest2026_artificialintelligenceinhealtcare-main/src/feature_engineering.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+teknofest2026_artificialintelligenceinhealtcare-main/src/preprocessing.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+teknofest2026_artificialintelligenceinhealtcare-main/src/utils/config.py,ACTIVE_CORE,source file inventory; detailed import graph deferred until worktree is resolved
+tests/conftest.py,PROTECTED_DO_NOT_TOUCH,source file inventory; detailed import graph deferred until worktree is resolved
+tests/test_advanced_bio_features.py,PROTECTED_DO_NOT_TOUCH,source file inventory; detailed import graph deferred until worktree is resolved
+tests/test_data_loading.py,PROTECTED_DO_NOT_TOUCH,source file inventory; detailed import graph deferred until worktree is resolved
+tests/test_ensembling.py,PROTECTED_DO_NOT_TOUCH,source file inventory; detailed import graph deferred until worktree is resolved
+tests/test_evaluation.py,PROTECTED_DO_NOT_TOUCH,source file inventory; detailed import graph deferred until worktree is resolved
+tests/test_features.py,PROTECTED_DO_NOT_TOUCH,source file inventory; detailed import graph deferred until worktree is resolved
+tests/test_final_inference_schema.py,PROTECTED_DO_NOT_TOUCH,source file inventory; detailed import graph deferred until worktree is resolved
+tests/test_final_model_zoo.py,PROTECTED_DO_NOT_TOUCH,source file inventory; detailed import graph deferred until worktree is resolved
+tests/test_final_selection_board.py,PROTECTED_DO_NOT_TOUCH,source file inventory; detailed import graph deferred until worktree is resolved
+tests/test_fold_safe_target_encoding.py,PROTECTED_DO_NOT_TOUCH,source file inventory; detailed import graph deferred until worktree is resolved
+tests/test_medical_metrics.py,PROTECTED_DO_NOT_TOUCH,source file inventory; detailed import graph deferred until worktree is resolved
+tests/test_medical_optuna.py,PROTECTED_DO_NOT_TOUCH,source file inventory; detailed import graph deferred until worktree is resolved
+tests/test_no_variant_id_leakage.py,PROTECTED_DO_NOT_TOUCH,source file inventory; detailed import graph deferred until worktree is resolved
+tests/test_thresholding.py,PROTECTED_DO_NOT_TOUCH,source file inventory; detailed import graph deferred until worktree is resolved
+tests/test_validation.py,PROTECTED_DO_NOT_TOUCH,source file inventory; detailed import graph deferred until worktree is resolved

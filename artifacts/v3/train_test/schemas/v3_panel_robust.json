@@ -1,0 +1,26 @@
+{
+  "feature_set": "v3_panel_robust",
+  "features": [
+    "EK_1",
+    "EK_2",
+    "EK_3",
+    "EK_4",
+    "EK_5",
+    "EK_6",
+    "EK_7",
+    "EK_8",
+    "EK_9",
+    "v3_freq_CAT_1",
+    "v3_freq_CAT_2",
+    "v3_freq_CAT_3",
+    "v3_freq_CAT_4",
+    "v3_freq_CAT_5",
+    "v3_freq_CAT_6",
+    "v3_freq_AA_1",
+    "v3_freq_AA_2",
+    "v3_global_missing_rate",
+    "v3_ek_mean",
+    "v3_ek_std",
+    "v3_ek_nonmissing"
+  ]
+}

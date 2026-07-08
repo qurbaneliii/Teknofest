@@ -1,13 +1,2 @@
-feature_set_name: v3_panel_robust
-allow_target_encoding: false
-allow_categorical_onehot: false
-allow_frequency_encoding: true
-allow_aa_features: true
-allow_frequency_heavy_features: false
-allow_panel_robust_filtering: true
-clipping_quantiles: [0.001, 0.999]
-rare_category_min_count: 5
-target_encoding_smoothing: 30
-missingness_features: true
-acmg_inspired_features: true
-notes: later KANSER stress filtering
+feature_set: v3_panel_robust
+target_encoding: false
