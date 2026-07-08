@@ -1,0 +1,409 @@
+path,extension,bytes,classification,reason,proposed_archive_root
+.pytest_cache/.gitignore,,39,LEGACY_ARCHIVE,retain as evidence pending archive execution,archive/previous_results/
+.pytest_cache/CACHEDIR.TAG,.tag,191,LEGACY_ARCHIVE,retain as evidence pending archive execution,archive/previous_results/
+.pytest_cache/v/cache/nodeids,,1683,LEGACY_ARCHIVE,retain as evidence pending archive execution,archive/previous_results/
+artifacts/metrics/experiments/experiment_001_initial/all_evaluation_metrics.csv,.csv,9901,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+artifacts/metrics/experiments/experiment_001_initial/config.json,.json,174,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+artifacts/metrics/experiments/experiment_001_initial/diagnosis.md,.md,212,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+artifacts/metrics/experiments/experiment_001_initial/error_analysis.csv,.csv,4952,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+artifacts/metrics/experiments/experiment_001_initial/feature_importance.csv,.csv,10363,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+artifacts/metrics/experiments/experiment_001_initial/main_model_cv_results.csv,.csv,3750,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+artifacts/metrics/experiments/experiment_001_initial/metrics.csv,.csv,2439,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+artifacts/metrics/experiments/experiment_001_initial/panel_generalization_results.csv,.csv,147,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+artifacts/metrics/experiments/experiment_001_initial/threshold_results.csv,.csv,170,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+artifacts/metrics/experiments/experiment_002_f1_threshold/config.json,.json,188,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+artifacts/metrics/experiments/experiment_002_f1_threshold/diagnosis.md,.md,205,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+artifacts/metrics/experiments/experiment_002_f1_threshold/metrics.csv,.csv,2439,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+artifacts/metrics/experiments/experiment_003_youden_threshold/config.json,.json,189,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+artifacts/metrics/experiments/experiment_003_youden_threshold/diagnosis.md,.md,186,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+artifacts/metrics/experiments/experiment_003_youden_threshold/metrics.csv,.csv,2439,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+artifacts/metrics/experiments/experiment_004_extra_trees/config.json,.json,189,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+artifacts/metrics/experiments/experiment_004_extra_trees/diagnosis.md,.md,148,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+artifacts/metrics/experiments/experiment_004_extra_trees/metrics.csv,.csv,1145,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+artifacts/metrics/experiments/experiment_005_catboost/config.json,.json,189,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+artifacts/metrics/experiments/experiment_005_catboost/diagnosis.md,.md,142,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+artifacts/metrics/experiments/experiment_005_catboost/metrics.csv,.csv,1136,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+artifacts/metrics/experiments/experiment_006_ensemble_stack/config.json,.json,189,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+artifacts/metrics/experiments/experiment_006_ensemble_stack/diagnosis.md,.md,165,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+artifacts/metrics/experiments/experiment_006_ensemble_stack/metrics.csv,.csv,1153,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+artifacts/metrics/experiments/experiment_007_lr_ek_only/config.json,.json,188,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+artifacts/metrics/experiments/experiment_007_lr_ek_only/diagnosis.md,.md,172,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+artifacts/metrics/experiments/experiment_007_lr_ek_only/metrics.csv,.csv,2222,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+artifacts/metrics/experiments/experiment_008_ek_only_features/config.json,.json,177,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+artifacts/metrics/experiments/experiment_008_ek_only_features/diagnosis.md,.md,160,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+artifacts/metrics/experiments/experiment_008_ek_only_features/metrics.csv,.csv,427,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+artifacts/metrics/experiments/experiment_009_al_only_features/config.json,.json,177,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+artifacts/metrics/experiments/experiment_009_al_only_features/diagnosis.md,.md,160,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+artifacts/metrics/experiments/experiment_009_al_only_features/metrics.csv,.csv,427,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+artifacts/metrics/experiments/experiment_010_engineered_only/config.json,.json,177,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+artifacts/metrics/experiments/experiment_010_engineered_only/diagnosis.md,.md,175,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+artifacts/metrics/experiments/experiment_010_engineered_only/metrics.csv,.csv,441,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+artifacts/metrics/experiments/lightgbm_balanced_regularized/config.json,.json,327,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+artifacts/metrics/experiments/lightgbm_balanced_regularized/metrics.csv,.csv,782,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+artifacts/metrics/experiments/lightgbm_conservative_regularized/config.json,.json,327,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+artifacts/metrics/experiments/lightgbm_conservative_regularized/metrics.csv,.csv,806,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+artifacts/metrics/experiments/lightgbm_current_best/config.json,.json,291,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+artifacts/metrics/experiments/lightgbm_current_best/metrics.csv,.csv,736,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+artifacts/metrics/experiments/lightgbm_high_capacity_controlled/config.json,.json,330,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+artifacts/metrics/experiments/lightgbm_high_capacity_controlled/metrics.csv,.csv,793,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+artifacts/metrics/feature_list.json,.json,5696,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+artifacts/metrics/optuna_medical_best_params.json,.json,2766,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+artifacts/models/lightgbm_final.joblib,.joblib,9797876,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+artifacts/models/model_columns.txt,.txt,3495,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+artifacts/predictions/master_cv_model_predictions_phase9.csv,.csv,1178574,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+artifacts/predictions/model_zoo_folds/fold_0_predictions.csv,.csv,69533,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+artifacts/predictions/model_zoo_folds/fold_1_predictions.csv,.csv,69073,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+artifacts/predictions/model_zoo_folds/fold_2_predictions.csv,.csv,69039,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+artifacts/predictions/model_zoo_folds/fold_3_predictions.csv,.csv,69999,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+artifacts/predictions/model_zoo_folds/fold_4_predictions.csv,.csv,70372,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+artifacts/predictions/model_zoo_oof_predictions.csv,.csv,317968,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+artifacts/predictions/model_zoo_panel_predictions.csv,.csv,41687,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+artifacts/predictions/oof_predictions.csv,.csv,140654,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+artifacts/predictions/optuna_medical_candidate_oof_predictions.csv,.csv,190893,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+artifacts/predictions/optuna_medical_candidate_panel_predictions.csv,.csv,19912,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+artifacts/predictions/panel_unique_model_predictions_phase9.csv,.csv,21316,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+artifacts/predictions/panel_unique_predictions.csv,.csv,19465,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+artifacts/preprocessors/feature_engineer.joblib,.joblib,40787,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+catboost_info/catboost_training.json,.json,19447,LEGACY_ARCHIVE,retain as evidence pending archive execution,archive/previous_results/
+catboost_info/learn/events.out.tfevents,.tfevents,10870,LEGACY_ARCHIVE,retain as evidence pending archive execution,archive/previous_results/
+catboost_info/learn_error.tsv,.tsv,3275,LEGACY_ARCHIVE,retain as evidence pending archive execution,archive/previous_results/
+catboost_info/time_left.tsv,.tsv,2868,LEGACY_ARCHIVE,retain as evidence pending archive execution,archive/previous_results/
+data/processed/adsiz_dokuman_extracted.txt,.txt,12175,LEGACY_ARCHIVE,retain as evidence pending archive execution,archive/previous_results/
+data/processed/binary_al_flag_columns.txt,.txt,806,LEGACY_ARCHIVE,retain as evidence pending archive execution,archive/previous_results/
+data/processed/cftr_engineered.csv,.csv,352456,LEGACY_ARCHIVE,retain as evidence pending archive execution,archive/previous_results/
+data/processed/cftr_prepared.csv,.csv,281583,LEGACY_ARCHIVE,retain as evidence pending archive execution,archive/previous_results/
+data/processed/cftr_unique.csv,.csv,95961,LEGACY_ARCHIVE,retain as evidence pending archive execution,archive/previous_results/
+data/processed/cftr_unique_engineered.csv,.csv,118296,LEGACY_ARCHIVE,retain as evidence pending archive execution,archive/previous_results/
+data/processed/codex_repository_pdf_extracted.txt,.txt,17571,LEGACY_ARCHIVE,retain as evidence pending archive execution,archive/previous_results/
+data/processed/engineered_feature_columns.txt,.txt,924,LEGACY_ARCHIVE,retain as evidence pending archive execution,archive/previous_results/
+data/processed/first_section_overlap_summary.csv,.csv,483,LEGACY_ARCHIVE,retain as evidence pending archive execution,archive/previous_results/
+data/processed/kanser_engineered.csv,.csv,897755,LEGACY_ARCHIVE,retain as evidence pending archive execution,archive/previous_results/
+data/processed/kanser_prepared.csv,.csv,661299,LEGACY_ARCHIVE,retain as evidence pending archive execution,archive/previous_results/
+data/processed/kanser_unique.csv,.csv,307386,LEGACY_ARCHIVE,retain as evidence pending archive execution,archive/previous_results/
+data/processed/kanser_unique_engineered.csv,.csv,395794,LEGACY_ARCHIVE,retain as evidence pending archive execution,archive/previous_results/
+data/processed/lgbm_best_params.json,.json,297,LEGACY_ARCHIVE,retain as evidence pending archive execution,archive/previous_results/
+data/processed/lgbm_optuna_trials.csv,.csv,425,LEGACY_ARCHIVE,retain as evidence pending archive execution,archive/previous_results/
+data/processed/master_contamination_aware_fold_summary.csv,.csv,375,LEGACY_ARCHIVE,retain as evidence pending archive execution,archive/previous_results/
+data/processed/master_contamination_aware_folds.csv,.csv,78088,LEGACY_ARCHIVE,retain as evidence pending archive execution,archive/previous_results/
+data/processed/master_engineered.csv,.csv,6936387,LEGACY_ARCHIVE,retain as evidence pending archive execution,archive/previous_results/
+data/processed/master_prepared.csv,.csv,5169930,LEGACY_ARCHIVE,retain as evidence pending archive execution,archive/previous_results/
+data/processed/model_performance_improvement_plan_extracted.txt,.txt,16348,LEGACY_ARCHIVE,retain as evidence pending archive execution,archive/previous_results/
+data/processed/model_training_cv_results.csv,.csv,14625,LEGACY_ARCHIVE,retain as evidence pending archive execution,archive/previous_results/
+data/processed/model_training_cv_summary.csv,.csv,2287,LEGACY_ARCHIVE,retain as evidence pending archive execution,archive/previous_results/
+data/processed/pah_engineered.csv,.csv,1048535,LEGACY_ARCHIVE,retain as evidence pending archive execution,archive/previous_results/
+data/processed/pah_prepared.csv,.csv,815650,LEGACY_ARCHIVE,retain as evidence pending archive execution,archive/previous_results/
+data/processed/pah_unique.csv,.csv,241962,LEGACY_ARCHIVE,retain as evidence pending archive execution,archive/previous_results/
+data/processed/pah_unique_engineered.csv,.csv,315372,LEGACY_ARCHIVE,retain as evidence pending archive execution,archive/previous_results/
+data/processed/panel_unique_lightgbm_results.csv,.csv,2413,LEGACY_ARCHIVE,retain as evidence pending archive execution,archive/previous_results/
+data/processed/pdr_template_extracted.txt,.txt,5759,LEGACY_ARCHIVE,retain as evidence pending archive execution,archive/previous_results/
+data/processed/phase9_pdf_extracted.txt,.txt,5705,LEGACY_ARCHIVE,retain as evidence pending archive execution,archive/previous_results/
+data/processed/prompt_pdf_extracted.txt,.txt,24448,LEGACY_ARCHIVE,retain as evidence pending archive execution,archive/previous_results/
+data/processed/sartname_pdf_extracted.txt,.txt,40848,LEGACY_ARCHIVE,retain as evidence pending archive execution,archive/previous_results/
+models/feature_engineer.joblib,.joblib,40787,LEGACY_ARCHIVE,retain as evidence pending archive execution,archive/previous_results/
+models/lightgbm_final.joblib,.joblib,9797876,LEGACY_ARCHIVE,retain as evidence pending archive execution,archive/previous_results/
+models/model_columns.txt,.txt,3495,LEGACY_ARCHIVE,retain as evidence pending archive execution,archive/previous_results/
+notebooks/01_data_understanding.ipynb,.ipynb,2593,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+notebooks/02_feature_engineering_and_validation.ipynb,.ipynb,2568,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+notebooks/03_model_training_and_evaluation.ipynb,.ipynb,2836,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+notebooks/04_explainability_and_report_outputs.ipynb,.ipynb,2447,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/calibration_decision_review.md,.md,2787,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/current_results_verification.md,.md,995,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/eda/EDA_MODEL_BRIDGE.md,.md,8368,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/eda/EDA_REPORT.md,.md,43480,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/eda/TEKNOFEST2026_EDA.ipynb,.ipynb,28779,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/eda/TEKNOFEST2026_EDA_EXECUTED.ipynb,.ipynb,417453,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/eda/figures/al_pca_cumulative_variance.png,.png,58350,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/eda/figures/eda_model_feature_alignment.png,.png,50241,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/eda/figures/ek_spearman_correlation.png,.png,50477,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/eda/figures/missingness_top80.png,.png,128762,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/eda/figures/top10_numeric_boxplots.png,.png,110355,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/eda/tables/eda_model_feature_alignment.csv,.csv,30605,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/eda/tables/eda_panel_model_alignment.csv,.csv,409,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/eda/tables/eda_to_model_decision_bridge.csv,.csv,1639,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/eda/tables/phase1_constant_near_constant.csv,.csv,1721,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/eda/tables/phase1_missingness_bands.csv,.csv,65,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/eda/tables/phase1_missingness_profile.csv,.csv,13688,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/eda/tables/phase1_overlaps.csv,.csv,233,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/eda/tables/phase1_schema_class_balance.csv,.csv,298,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/eda/tables/phase2_aa_frequency.csv,.csv,619,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/eda/tables/phase2_aa_nonstandard_codes.csv,.csv,127,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/eda/tables/phase2_aa_pairs.csv,.csv,1205,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/eda/tables/phase2_al_distribution_summary.csv,.csv,48880,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/eda/tables/phase2_al_groups_by_n_notna.csv,.csv,384,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/eda/tables/phase2_cat_label_rates.csv,.csv,4145,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/eda/tables/phase2_cat_summary.csv,.csv,280,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/eda/tables/phase2_ek_spearman_correlation.csv,.csv,1535,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/eda/tables/phase2_ek_summary.csv,.csv,1364,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/eda/tables/phase3_missingness_as_feature.csv,.csv,36720,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/eda/tables/phase3_numeric_auc_ranked.csv,.csv,28559,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/eda/tables/phase4_al_pca.csv,.csv,974,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/eda/tables/phase4_al_triplet_correlations.csv,.csv,8540,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/eda/tables/phase4_cross_group_spearman.csv,.csv,4537,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/eda/tables/phase4_high_cross_group_correlations.csv,.csv,173,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/eda/tables/phase4_leakage_suspects.csv,.csv,79,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/eda/tables/phase5_panel_unique_vs_shared.csv,.csv,536,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/eda/tables/phase5_top10_cross_dataset_shift.csv,.csv,4119,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/eda/tables/phase6_acmg_interpretation.csv,.csv,3298,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/eda_notebook_outputs/figures/al_pca_cumulative_variance.png,.png,58350,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/eda_notebook_outputs/figures/ek_spearman_correlation.png,.png,50477,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/eda_notebook_outputs/figures/missingness_top80.png,.png,130462,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/eda_notebook_outputs/figures/top10_numeric_boxplots.png,.png,110355,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/eda_notebook_outputs/tables/phase1_constant_near_constant.csv,.csv,1721,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/eda_notebook_outputs/tables/phase1_missingness_profile.csv,.csv,13688,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/eda_notebook_outputs/tables/phase1_overlaps.csv,.csv,233,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/eda_notebook_outputs/tables/phase1_schema_class_balance.csv,.csv,298,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/eda_notebook_outputs/tables/phase2_aa_frequency.csv,.csv,619,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/eda_notebook_outputs/tables/phase2_aa_pairs.csv,.csv,1205,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/eda_notebook_outputs/tables/phase2_al_distribution_summary.csv,.csv,48880,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/eda_notebook_outputs/tables/phase2_al_groups_by_n_notna.csv,.csv,384,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/eda_notebook_outputs/tables/phase2_cat_label_rates.csv,.csv,4145,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/eda_notebook_outputs/tables/phase2_cat_summary.csv,.csv,280,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/eda_notebook_outputs/tables/phase2_ek_spearman_correlation.csv,.csv,1535,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/eda_notebook_outputs/tables/phase2_ek_summary.csv,.csv,1364,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/eda_notebook_outputs/tables/phase3_missingness_as_feature.csv,.csv,29754,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/eda_notebook_outputs/tables/phase3_numeric_auc_ranked.csv,.csv,28559,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/eda_notebook_outputs/tables/phase4_al_pca.csv,.csv,974,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/eda_notebook_outputs/tables/phase4_al_triplet_correlations.csv,.csv,8540,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/eda_notebook_outputs/tables/phase4_cross_group_spearman.csv,.csv,4537,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/eda_notebook_outputs/tables/phase4_high_cross_group_correlations.csv,.csv,173,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/eda_notebook_outputs/tables/phase4_leakage_suspects.csv,.csv,79,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/eda_notebook_outputs/tables/phase5_panel_unique_vs_shared.csv,.csv,536,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/eda_notebook_outputs/tables/phase5_top10_cross_dataset_shift.csv,.csv,4119,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/eda_notebook_outputs/tables/phase6_acmg_interpretation.csv,.csv,3298,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/explainability/acmg_feature_mapping.csv,.csv,616,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/explainability/shap_beeswarm.png,.png,307620,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/explainability/shap_case_confusion_matrix.csv,.csv,46,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/explainability/shap_case_panel_unique_confusion_matrix.csv,.csv,44,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/explainability/shap_dependence_EK7_by_EK9.png,.png,229937,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/explainability/shap_dependence_npops_by_maxAF.png,.png,67010,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/explainability/shap_global_bar.png,.png,62847,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/explainability/shap_global_importance.csv,.csv,10363,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/explainability/shap_group_importance.csv,.csv,249,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/explainability/shap_waterfall_01_TP.png,.png,133876,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/explainability/shap_waterfall_02_TP.png,.png,131617,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/explainability/shap_waterfall_03_TP.png,.png,130778,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/explainability/shap_waterfall_04_TP.png,.png,137533,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/explainability/shap_waterfall_05_TP.png,.png,134504,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/explainability/shap_waterfall_06_TN.png,.png,136261,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/explainability/shap_waterfall_07_TN.png,.png,133897,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/explainability/shap_waterfall_08_TN.png,.png,138396,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/explainability/shap_waterfall_09_TN.png,.png,134452,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/explainability/shap_waterfall_10_TN.png,.png,136567,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/explainability/shap_waterfall_11_FN.png,.png,134323,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/explainability/shap_waterfall_12_FN.png,.png,134323,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/explainability/shap_waterfall_13_FN.png,.png,134323,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/explainability/shap_waterfall_14_FN.png,.png,134323,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/explainability/shap_waterfall_15_FN.png,.png,134323,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/explainability/shap_waterfall_cases.csv,.csv,637,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/explainability/shap_waterfall_panel_unique_01_TP.png,.png,132859,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/explainability/shap_waterfall_panel_unique_02_TP.png,.png,128819,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/explainability/shap_waterfall_panel_unique_03_TP.png,.png,133895,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/explainability/shap_waterfall_panel_unique_04_TP.png,.png,127364,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/explainability/shap_waterfall_panel_unique_05_TP.png,.png,133598,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/explainability/shap_waterfall_panel_unique_06_TN.png,.png,138733,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/explainability/shap_waterfall_panel_unique_07_TN.png,.png,139032,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/explainability/shap_waterfall_panel_unique_08_TN.png,.png,141393,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/explainability/shap_waterfall_panel_unique_09_TN.png,.png,143636,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/explainability/shap_waterfall_panel_unique_10_TN.png,.png,136851,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/explainability/shap_waterfall_panel_unique_11_FP.png,.png,134863,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/explainability/shap_waterfall_panel_unique_12_FP.png,.png,126874,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/explainability/shap_waterfall_panel_unique_13_FP.png,.png,135930,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/explainability/shap_waterfall_panel_unique_14_FP.png,.png,134442,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/explainability/shap_waterfall_panel_unique_15_FP.png,.png,130992,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/explainability/shap_waterfall_panel_unique_16_FN.png,.png,134805,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/explainability/shap_waterfall_panel_unique_17_FN.png,.png,133000,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/explainability/shap_waterfall_panel_unique_18_FN.png,.png,130986,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/explainability/shap_waterfall_panel_unique_19_FN.png,.png,131881,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/explainability/shap_waterfall_panel_unique_20_FN.png,.png,134323,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/explainability/shap_waterfall_panel_unique_cases.csv,.csv,1086,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/figures/advanced_threshold_comparison.png,.png,86591,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/brier_logloss_comparison.png,.png,42803,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/calibration_curves.png,.png,127938,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/class_distribution_by_dataset.png,.png,136109,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/confusion_matrix_cftr_unique.png,.png,84102,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/confusion_matrix_kanser_unique.png,.png,92877,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/confusion_matrix_master.png,.png,108099,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/confusion_matrix_pah_unique.png,.png,89661,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/confusion_matrix_panel_unique_combined.png,.png,95487,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/correlation_matrix_top_features.png,.png,335912,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/error_analysis_key_features.png,.png,184959,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/experiments/experiment_001_initial/advanced_threshold_comparison.png,.png,86591,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/experiments/experiment_001_initial/brier_logloss_comparison.png,.png,42803,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/experiments/experiment_001_initial/calibration_curves.png,.png,127938,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/experiments/experiment_001_initial/class_distribution_by_dataset.png,.png,136109,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/experiments/experiment_001_initial/confusion_matrix_cftr_unique.png,.png,84102,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/experiments/experiment_001_initial/confusion_matrix_kanser_unique.png,.png,92877,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/experiments/experiment_001_initial/confusion_matrix_master.png,.png,108099,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/experiments/experiment_001_initial/confusion_matrix_pah_unique.png,.png,89661,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/experiments/experiment_001_initial/confusion_matrix_panel_unique_combined.png,.png,95487,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/experiments/experiment_001_initial/correlation_matrix_top_features.png,.png,335912,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/experiments/experiment_001_initial/error_analysis_key_features.png,.png,184959,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/experiments/experiment_001_initial/feature_group_ablation_comparison.png,.png,105542,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/experiments/experiment_001_initial/feature_importance.png,.png,62847,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/experiments/experiment_001_initial/feature_importance_top30.png,.png,152299,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/experiments/experiment_001_initial/final_calibration_curve.png,.png,127938,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/experiments/experiment_001_initial/final_calibration_decision_plot.png,.png,57585,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/experiments/experiment_001_initial/final_confusion_matrix_master.png,.png,108099,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/experiments/experiment_001_initial/final_error_group_feature_distributions.png,.png,87133,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/experiments/experiment_001_initial/final_feature_importance.png,.png,62847,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/experiments/experiment_001_initial/final_feature_importance_top30.png,.png,87821,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/experiments/experiment_001_initial/final_fp_fn_feature_contrast.png,.png,61488,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/experiments/experiment_001_initial/final_model_comparison.png,.png,107813,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/experiments/experiment_001_initial/final_panel_specific_confusion_matrices.png,.png,36958,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/experiments/experiment_001_initial/final_panel_specific_metric_comparison.png,.png,61429,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/experiments/experiment_001_initial/final_pr_curve_master.png,.png,114868,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/experiments/experiment_001_initial/final_roc_curve_master.png,.png,129207,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/experiments/experiment_001_initial/final_threshold_analysis.png,.png,119718,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/experiments/experiment_001_initial/fold_threshold_distribution.png,.png,39189,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/experiments/experiment_001_initial/missingness_by_feature_group.png,.png,84214,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/experiments/experiment_001_initial/model_comparison.png,.png,66194,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/experiments/experiment_001_initial/model_comparison_metrics.png,.png,218707,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/experiments/experiment_001_initial/optuna_medical_optimization_history.png,.png,96262,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/experiments/experiment_001_initial/optuna_param_importance.png,.png,53561,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/experiments/experiment_001_initial/panel_confusion_matrices.png,.png,43865,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/experiments/experiment_001_initial/panel_error_feature_distributions.png,.png,124442,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/experiments/experiment_001_initial/phase10_before_after_comparison.png,.png,81403,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/experiments/experiment_001_initial/pr_curve_master.png,.png,114868,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/experiments/experiment_001_initial/pr_curve_panel_unique.png,.png,154268,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/experiments/experiment_001_initial/roc_curve_master.png,.png,129207,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/experiments/experiment_001_initial/roc_curve_panel_unique.png,.png,147580,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/experiments/experiment_001_initial/threshold_comparison.png,.png,25939,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/experiments/experiment_001_initial/threshold_metric_curves.png,.png,119718,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/experiments/experiment_001_initial/threshold_optimization.png,.png,220571,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/experiments/experiment_001_initial/train_vs_validation_metrics.png,.png,106006,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/feature_group_ablation_comparison.png,.png,105542,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/feature_importance.png,.png,62847,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/feature_importance_top30.png,.png,152299,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/final_calibration_curve.png,.png,127938,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/final_calibration_decision_plot.png,.png,57585,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/final_confusion_matrix_master.png,.png,108099,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/final_error_group_feature_distributions.png,.png,87133,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/final_feature_importance.png,.png,62847,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/final_feature_importance_top30.png,.png,87821,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/final_fp_fn_feature_contrast.png,.png,61488,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/final_model_comparison.png,.png,107813,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/final_panel_specific_confusion_matrices.png,.png,36958,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/final_panel_specific_metric_comparison.png,.png,61429,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/final_pr_curve_master.png,.png,114868,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/final_roc_curve_master.png,.png,129207,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/final_threshold_analysis.png,.png,119718,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/fold_threshold_distribution.png,.png,39189,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/missingness_by_feature_group.png,.png,84214,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/model_comparison.png,.png,66194,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/model_comparison_metrics.png,.png,218707,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/optuna_medical_optimization_history.png,.png,96262,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/optuna_param_importance.png,.png,53561,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/panel_confusion_matrices.png,.png,43663,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/panel_error_feature_distributions.png,.png,124442,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/phase10_before_after_comparison.png,.png,81403,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/pr_curve_master.png,.png,114868,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/pr_curve_panel_unique.png,.png,154268,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/roc_curve_master.png,.png,129207,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/roc_curve_panel_unique.png,.png,147580,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/threshold_comparison.png,.png,25939,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/threshold_metric_curves.png,.png,119718,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/threshold_optimization.png,.png,220571,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/figures/train_vs_validation_metrics.png,.png,106006,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/final_competition_repository_audit.md,.md,3199,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/final_ensemble_decision.md,.md,2732,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/final_feature_interpretation.md,.md,705,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/final_inference_audit.md,.md,215,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/final_medical_metric_summary.md,.md,2908,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/final_metric_verification_audit.md,.md,1453,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/final_model_report_summary.md,.md,3708,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/final_model_selection_decision.md,.md,11407,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/final_model_strength_statement.md,.md,753,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/final_performance_analysis.md,.md,3527,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/final_test_performance_report.md,.md,1300,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/implementation_checklist.md,.md,5485,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/master_prompt/CFTR_unique_calibration.csv,.csv,657,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/master_prompt/CFTR_unique_calibration_curve.png,.png,82766,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/master_prompt/KANSER_unique_calibration.csv,.csv,751,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/master_prompt/KANSER_unique_calibration_curve.png,.png,72375,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/master_prompt/MASTER_PROMPT_IMPLEMENTATION_REPORT.md,.md,11076,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/master_prompt/PAH_unique_calibration.csv,.csv,768,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/master_prompt/PAH_unique_calibration_curve.png,.png,78342,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/master_prompt/ablation_fold_results.csv,.csv,11575,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/master_prompt/ablation_summary.csv,.csv,3810,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/master_prompt/critical_implementation_checklist.csv,.csv,1950,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/master_prompt/final_panel_unique_predictions.csv,.csv,19465,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/master_prompt/l0_model_fold_metrics.csv,.csv,1359,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/master_prompt/l0_model_summary.csv,.csv,590,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/master_prompt/l0_stack_oof_predictions.csv,.csv,426464,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/master_prompt/lgbm_best_params_resumable.json,.json,291,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/master_prompt/lgbm_optuna_convergence.png,.png,94800,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/master_prompt/lgbm_optuna_trials_resumable.csv,.csv,16006,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/master_prompt/lightgbm_oof_predictions.csv,.csv,140654,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/master_prompt/optuna_lgbm_study.sqlite3,.sqlite3,454656,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/master_prompt/overlap_summary.csv,.csv,483,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/master_prompt/panel_unique_bootstrap_ci.csv,.csv,1537,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/master_prompt/statistical_tests.csv,.csv,491,LEGACY_ARCHIVE,useful previous evidence or generated visualization,archive/previous_results/
+reports/model_diagnosis.md,.md,393,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/model_performance_audit.md,.md,2735,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/model_performance_improvement_report.md,.md,6204,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/model_zoo_summary.md,.md,1878,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/optuna_medical_optimization_report.md,.md,3682,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/panel_specific_final_interpretation.md,.md,549,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/tables/acmg_feature_mapping.csv,.csv,616,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/tables/advanced_threshold_comparison.csv,.csv,25260,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/tables/all_evaluation_metrics.csv,.csv,9901,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/tables/baseline_results.csv,.csv,1922,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/tables/calibration_comparison.csv,.csv,3183,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/tables/calibration_decision_matrix.csv,.csv,2381,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/tables/class_distribution_by_dataset.csv,.csv,329,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/tables/correlation_matrix_top_features.csv,.csv,20678,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/tables/dataset_summary.csv,.csv,251,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/tables/error_analysis.csv,.csv,4952,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/tables/error_analysis_key_features.csv,.csv,1227,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/tables/experiment_comparison.csv,.csv,2707,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/tables/feature_group_ablation_results.csv,.csv,2075,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/tables/feature_importance.csv,.csv,10363,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/tables/feature_importance_top30.csv,.csv,837,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/tables/final_acmg_feature_mapping.csv,.csv,2341,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/tables/final_ensemble_comparison.csv,.csv,9108,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/tables/final_ensemble_weights.csv,.csv,8258,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/tables/final_error_group_feature_summary.csv,.csv,21766,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/tables/final_evaluation_metrics.csv,.csv,1205,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/tables/final_false_negative_cases.csv,.csv,37625,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/tables/final_false_positive_cases.csv,.csv,61902,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/tables/final_feature_importance_top30.csv,.csv,365,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/tables/final_medical_metric_comparison.csv,.csv,3170,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/tables/final_metric_verification_audit.csv,.csv,596,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/tables/final_model_selection_table.csv,.csv,5985,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/tables/final_panel_specific_metrics.csv,.csv,1129,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/tables/final_selection_board.csv,.csv,17186,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/tables/fold_threshold_stability.csv,.csv,5546,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/tables/main_model_cv_results.csv,.csv,3750,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/tables/missingness_by_feature_group.csv,.csv,541,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/tables/missingness_summary.csv,.csv,45816,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/tables/model_comparison_metrics.csv,.csv,860,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/tables/model_diagnosis_summary.csv,.csv,359,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/tables/model_zoo_fold_metrics.csv,.csv,15198,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/tables/model_zoo_metrics.csv,.csv,6526,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/tables/optuna_before_after_comparison.csv,.csv,1182,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/tables/optuna_medical_best_params.csv,.csv,332,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/tables/optuna_medical_candidate_fold_metrics.csv,.csv,2484,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/tables/optuna_medical_candidate_overfitting_gaps.csv,.csv,356,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/tables/optuna_medical_trials.csv,.csv,34021,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/tables/overfitting_gap_analysis.csv,.csv,5684,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/tables/overlap_summary.csv,.csv,483,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/tables/panel_generalization_results.csv,.csv,147,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/tables/panel_specific_error_analysis.csv,.csv,42275,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/tables/panel_unique_bootstrap_ci.csv,.csv,1513,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/tables/phase10_before_after_comparison.csv,.csv,1717,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/tables/threshold_optimization.csv,.csv,14527,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/tables/threshold_results.csv,.csv,170,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/tables/validation_split_diagnostics.csv,.csv,375,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/test_evaluation/tables/test_schema_audit.csv,.csv,2,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/test_evaluation/test_data_discovery.md,.md,518,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/v2/archive_plan.csv,.csv,65337,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/v2/archive_plan.md,.md,296,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/v2/baseline_file_inventory.csv,.csv,797,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/v2/baseline_metrics.json,.json,435,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/v2/baseline_state_manifest.md,.md,853,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/v2/repository_cleanup_audit.md,.md,649,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/v2/repository_file_classification.csv,.csv,308385,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/v3/00_baseline_freeze.md,.md,882,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/v3/baseline_artifact_manifest.csv,.csv,858,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/v3/baseline_metrics.json,.json,1953,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/
+reports/v3/baseline_reproduction_log.md,.md,412,LEGACY_ARCHIVE,report or experiment output not required for direct inference,archive/previous_results/

@@ -1,0 +1,13 @@
+category,path,status
+protected_model,artifacts/models/final_model.pkl,protected
+protected_preprocessor,artifacts/preprocessors/final_preprocessor.pkl,protected
+protected_threshold,artifacts/metrics/final_threshold.json,protected
+protected_decision,artifacts/metrics/final_model_decision.json,protected
+protected_oof_predictions,artifacts/predictions/final_master_cv_predictions.csv,protected
+protected_panel_predictions,artifacts/predictions/final_panel_predictions.csv,protected
+metric_audit,reports/tables/final_medical_metric_comparison.csv,active
+selection_report,reports/final_model_selection_decision.md,active
+pipeline,run_pipeline.py,active
+performance_report,scripts/run_model_performance_improvement.py,active
+tests,tests/,protected
+legacy_v3_freeze,reports/v3/,legacy_archive_candidate

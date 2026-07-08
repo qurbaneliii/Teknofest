@@ -1,40 +1,12 @@
 from __future__ import annotations
-
 from pathlib import Path
-
 import pandas as pd
-
-
-DATASETS = {"MASTER": "YARISMA_TRAIN_MASTER.csv", "KANSER": "YARISMA_TRAIN_KANSER.csv", "CFTR": "YARISMA_TRAIN_CFTR.csv", "PAH": "YARISMA_TRAIN_PAH.csv"}
-
-
-def load_labeled_competition_data(data_dir: str | Path) -> dict[str, pd.DataFrame]:
-    root = Path(data_dir)
-    result: dict[str, pd.DataFrame] = {}
-    for name, filename in DATASETS.items():
-        candidates = list(root.rglob(filename))
-        if not candidates:
-            raise FileNotFoundError(f"Missing {filename} under {root}")
-        frame = pd.read_csv(candidates[0])
-        if "Label" not in frame:
-            raise ValueError(f"{candidates[0]} has no Label column and cannot be used for internal evaluation.")
-        result[name] = frame
-    return result
-
-
-def find_unlabeled_test_files(data_dir: str | Path) -> list[Path]:
-    root = Path(data_dir)
-    found = []
-    for path in root.rglob("*.csv"):
-        relative_parts = path.relative_to(root).parts
-        if any(part in {"artifacts", "reports", "outputs", ".git"} for part in relative_parts):
-            continue
-        if "test" not in path.name.lower():
-            continue
-        try:
-            columns = pd.read_csv(path, nrows=1).columns
-        except (pd.errors.EmptyDataError, OSError, UnicodeDecodeError):
-            continue
-        if "Label" not in columns:
-            found.append(path)
-    return found
+def infer_dataset_group(path):
+ n=Path(path).stem.upper(); return next((x for x in ['MASTER','KANSER','CFTR','PAH'] if x in n),'UNKNOWN')
+def infer_label_column(df): return 'Label' if 'Label' in df.columns else None
+def split_features_labels_metadata(df,label_col=None):
+ label_col=label_col or infer_label_column(df); meta=df[[c for c in ['Variant_ID'] if c in df]].copy(); y=df[label_col].copy() if label_col else None; return df.drop(columns=[c for c in ['Variant_ID',label_col] if c],errors='ignore'),y,meta
+def find_competition_files(data_dir): return sorted(Path(data_dir).rglob('*.csv'))
+def load_dataset(path,dataset_name=None):
+ df=pd.read_csv(path); x,y,m=split_features_labels_metadata(df); return x,y,m,dataset_name or infer_dataset_group(path)
+def load_available_datasets(data_dir): return {infer_dataset_group(p):load_dataset(p) for p in find_competition_files(data_dir) if infer_dataset_group(p)!='UNKNOWN'}

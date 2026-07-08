@@ -1,0 +1,26 @@
+feature,auc_equivalent,proposed_acmg_category,justification,confidence
+EK_7,0.7380420940311062,PP3/BP4,Computational/evolutionary pathogenicity evidence.,medium
+EK7xEK9,0.7260589377568342,PP3/BP4,Computational/evolutionary pathogenicity evidence.,medium
+EK_9,0.6955127226224948,PP3/BP4,Computational/evolutionary pathogenicity evidence.,medium
+EK_3,0.6902082510299679,PP3/BP4,Computational/evolutionary pathogenicity evidence.,medium
+n_pops,0.3160950968689416,PM2/BS2 proxy,Database absence/presence aggregate; missingness encodes rarity and ascertainment.,high
+EK_2,0.6737696397387603,PP3/BP4,Computational/evolutionary pathogenicity evidence.,medium
+n_nonmiss_AL,0.3368428663066983,PM2/BS2 proxy,Database absence/presence aggregate; missingness encodes rarity and ascertainment.,high
+AL_287,0.3427640825336058,BA1/BS1/PM2,Population frequency or rarity evidence; direction must be interpreted from AUC and distributions.,medium
+AL_215,0.3516697877652934,BA1/BS1/PM2,Population frequency or rarity evidence; direction must be interpreted from AUC and distributions.,medium
+AL_26,0.3552820865438416,BA1/BS1/PM2,Population frequency or rarity evidence; direction must be interpreted from AUC and distributions.,medium
+EK_4,0.6373921519575578,PP3/BP4,Computational/evolutionary pathogenicity evidence.,medium
+AL_186,0.36653842352624577,BA1/BS1/PM2,Population frequency or rarity evidence; direction must be interpreted from AUC and distributions.,medium
+AL_251,0.3690804752448588,BA1/BS1/PM2,Population frequency or rarity evidence; direction must be interpreted from AUC and distributions.,medium
+AL_73,0.36964358073883974,BA1/BS1/PM2,Population frequency or rarity evidence; direction must be interpreted from AUC and distributions.,medium
+max_AF,0.3720876539257538,BA1/BS1/PM2,Population frequency or rarity evidence; direction must be interpreted from AUC and distributions.,medium
+AL_94,0.37391650291142753,BA1/BS1/PM2,Population frequency or rarity evidence; direction must be interpreted from AUC and distributions.,medium
+AL_79,0.3740370589157193,BA1/BS1/PM2,Population frequency or rarity evidence; direction must be interpreted from AUC and distributions.,medium
+AL_184,0.37900641025641024,BA1/BS1/PM2,Population frequency or rarity evidence; direction must be interpreted from AUC and distributions.,medium
+AL_327,0.3809099018733274,BA1/BS1/PM2,Population frequency or rarity evidence; direction must be interpreted from AUC and distributions.,medium
+AL_136,0.38670866077526017,BA1/BS1/PM2,Population frequency or rarity evidence; direction must be interpreted from AUC and distributions.,medium
+AL_224,0.39005384615384614,BA1/BS1/PM2,Population frequency or rarity evidence; direction must be interpreted from AUC and distributions.,medium
+EK_6,0.6094898991002982,PP3/BP4,Computational/evolutionary pathogenicity evidence.,medium
+AL_91,0.3939589386249382,BA1/BS1/PM2,Population frequency or rarity evidence; direction must be interpreted from AUC and distributions.,medium
+AL_260,0.3944730769230769,BA1/BS1/PM2,Population frequency or rarity evidence; direction must be interpreted from AUC and distributions.,medium
+AL_178,0.39884821983711993,BA1/BS1/PM2,Population frequency or rarity evidence; direction must be interpreted from AUC and distributions.,medium

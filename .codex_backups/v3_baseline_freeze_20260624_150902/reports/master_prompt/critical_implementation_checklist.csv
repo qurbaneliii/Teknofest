@@ -1,0 +1,25 @@
+requirement,completed,evidence_or_limitation
+AL_185 dropped,True,AL_186 kept and AL_185 absent after preparation.
+Overlap maps computed,True,overlap_summary.csv written.
+Missingness flags before imputation,True,FeatureEngineer creates flags before model matrix imputation.
+n_pops from AL_1:26,True,FeatureEngineer.al_raw is AL_1..AL_26.
+EK negative values preserved,True,No abs() is used on EK columns.
+EK_3 left as NaN,True,Tree models consume NaN natively; LR-only baseline imputes only its local matrix.
+CAT_1 training-fold target encoding,True,FeatureEngineer is fit on each CV train fold.
+CAT_1 multipop flag,True,cat1_multipop implemented.
+BLOSUM62 scores,True,blosum62_approx implemented.
+AA physicochemical classes,True,aa1_class/aa2_class and binary flags implemented.
+CV excludes MASTER-shared validation,True,contamination_aware_folds implemented.
+Panel-unique tests,True,final_panel_unique_predictions.csv written.
+Dataset-specific class weights,True,Models use class_weight/scale_pos_weight; panel-specific evaluation is separate and not used for training.
+Threshold optimization,True,Ablation and CV helpers report default and F1-opt thresholds.
+Optuna 100-trial study saved,False,1/100 complete trials in reports\master_prompt\lgbm_optuna_trials_resumable.csv; convergence plot exists=True.
+SHAP plots,True,SHAP report artifacts detected.
+All 10 ablations,True,ablation_summary.csv written with ABL-01 through ABL-10 rows.
+Bootstrap CI n=1000,True,Bootstrap rows written with n=1000.
+McNemar test,True,statistical_tests.csv written.
+Calibration curve and ECE,True,Calibration CSV and PNG files written.
+Global random seeds,True,np.random.seed(42) set; model constructors use random_state=42.
+requirements.txt saved,True,Dependency file exists.
+Final probabilities and labels,True,final_panel_unique_predictions.csv written.
+L0 ensemble stack,True,l0_stack_oof_predictions.csv and l0_model_summary.csv written.

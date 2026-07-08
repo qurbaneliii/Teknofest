@@ -1,6 +1,5 @@
-"""Isolated, label-safe utilities for controlled V3 experiments."""
+"""Isolated, fold-safe V3 feature engineering foundations."""
 
-from .features import V3FeatureBuilder
-from .metrics import binary_metrics
+from .preprocessing import V3FeatureBuilder
 
-__all__ = ["V3FeatureBuilder", "binary_metrics"]
+__all__ = ["V3FeatureBuilder"]

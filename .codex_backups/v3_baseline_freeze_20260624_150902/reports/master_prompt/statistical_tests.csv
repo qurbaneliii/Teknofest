@@ -1,0 +1,4 @@
+test,b01_a_correct_b_wrong,b10_a_wrong_b_correct,statistic,p_value,status,lightgbm_mean_auc,catboost_mean_auc,full_model_auc,baseline_auc,auc_delta,z_statistic
+McNemar LightGBM vs ACMG,518.0,897.0,100.97809187279152,9.300647252045005e-24,,,,,,,
+Wilcoxon LightGBM vs CatBoost,,,0.0,0.0625,computed,0.8399087774560321,0.8464573304835703,,,,
+DeLong full LightGBM vs EK-only LR,,,,1.3237856767541484e-31,computed,,,0.8389692829452502,0.7052441017867392,0.13372518115851095,11.69678220764425
